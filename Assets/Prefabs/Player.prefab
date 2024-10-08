@@ -157,6 +157,7 @@ MonoBehaviour:
   InCover: 0
   HighCast: 2
   LowCast: 0.5
+  DetectionRadius: 5
 --- !u!114 &4693068161900402620
 MonoBehaviour:
   m_ObjectHideFlags: 0
