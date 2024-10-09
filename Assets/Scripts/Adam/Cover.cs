@@ -64,11 +64,12 @@ public class Cover : MonoBehaviour
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(0, GetComponent<Rigidbody>().linearVelocity.y, GetComponent<Rigidbody>().linearVelocity.z);
                     transform.position = new Vector3(EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x, transform.position.y, transform.position.z);
 
-                    if (Physics.SphereCast(transform.position, DetectionRadius, Vector3.one, out RaycastHit HitInfo))
+                    if (Physics.SphereCast(transform.position, DetectionRadius, GetComponent<Movement>().MoveDirection, out RaycastHit HitInfo))
                     {
                         if (HitInfo.collider.gameObject != CoverHit && HitInfo.transform.position.x < transform.position.x)
                         {
-                            SecondaryCoverHit = HitInfo.collider.gameObject;
+                            //SecondaryCoverHit = HitInfo.collider.gameObject;
+                            //EdgeDetection = SecondaryCoverHit.transform.Find("Edge_Detection");
                         }
                     }
                 }
@@ -78,11 +79,12 @@ public class Cover : MonoBehaviour
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(0, GetComponent<Rigidbody>().linearVelocity.y, GetComponent<Rigidbody>().linearVelocity.z);
                     transform.position = new Vector3(EdgeDetection.transform.position.x + 0.5f * CoverHit.transform.localScale.x, transform.position.y, transform.position.z);
 
-                    if (Physics.SphereCast(transform.position, DetectionRadius, Vector3.one, out RaycastHit HitInfo))
+                    if (Physics.SphereCast(transform.position, DetectionRadius, GetComponent<Movement>().MoveDirection, out RaycastHit HitInfo))
                     {
                         if (HitInfo.collider.gameObject != CoverHit && HitInfo.transform.position.x > transform.position.x)
                         {
-                            SecondaryCoverHit = HitInfo.collider.gameObject;
+                            //SecondaryCoverHit = HitInfo.collider.gameObject;
+                            //EdgeDetection = SecondaryCoverHit.transform.Find("Edge_Detection");
                         }
                     }
                 }
@@ -95,15 +97,28 @@ public class Cover : MonoBehaviour
                 if (transform.position.z <= EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, GetComponent<Rigidbody>().linearVelocity.y, 0);
-                    transform.position = new Vector3(transform.position.x, transform.position.y, EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z);
 
-                    if (Physics.SphereCast(transform.position, DetectionRadius, Vector3.one, out RaycastHit HitInfo))
+                    
+                        transform.position = new Vector3(transform.position.x, transform.position.y, EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z);
+                    
+                    
+
+                    if (Physics.SphereCast(transform.position, DetectionRadius, GetComponent<Movement>().MoveDirection, out RaycastHit HitInfo))
                     {
                         if (HitInfo.collider.gameObject != CoverHit && HitInfo.transform.position.z < transform.position.z)
                         {
-                            SecondaryCoverHit = HitInfo.collider.gameObject;
+                            
+
+                            if (Input.GetKeyDown(KeyCode.C))
+                            {
+                                SecondaryCoverHit = HitInfo.collider.gameObject;
+                                EdgeDetection = SecondaryCoverHit.transform.Find("Edge_Detection");
+                                GetComponent<Rigidbody>().MovePosition(EdgeDetection.transform.position/* * GetComponent<Movement>().Speed*/);
+                            }
                         }
                     }
+
+                    
                 }
 
                 else if (transform.position.z >= EdgeDetection.transform.position.z + 0.5f * CoverHit.transform.localScale.z)
@@ -111,11 +126,16 @@ public class Cover : MonoBehaviour
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, GetComponent<Rigidbody>().linearVelocity.y, 0);
                     transform.position = new Vector3(transform.position.x, transform.position.y, EdgeDetection.transform.position.z + 0.5f * CoverHit.transform.localScale.z);
 
-                    if (Physics.SphereCast(transform.position, DetectionRadius, Vector3.one, out RaycastHit HitInfo))
+                    if (Physics.SphereCast(transform.position, DetectionRadius, GetComponent<Movement>().MoveDirection, out RaycastHit HitInfo))
                     {
                         if (HitInfo.collider.gameObject != CoverHit && HitInfo.transform.position.z > transform.position.z)
                         {
-                            SecondaryCoverHit = HitInfo.collider.gameObject;
+                            if (Input.GetKeyDown(KeyCode.C))
+                            {
+                                SecondaryCoverHit = HitInfo.collider.gameObject;
+                                EdgeDetection = SecondaryCoverHit.transform.Find("Edge_Detection");
+                                GetComponent<Rigidbody>().MovePosition(transform.position + EdgeDetection.transform.position * GetComponent<Movement>().Speed);
+                            }
                         }
                     }
                 }
@@ -174,10 +194,10 @@ public class Cover : MonoBehaviour
                 
             }
 
-            else
-            {
-                InCover = false;
-            }
+            //else
+            //{
+            //    InCover = false;
+            //}
         }
 
         yield return new WaitForSeconds(0.5f);
