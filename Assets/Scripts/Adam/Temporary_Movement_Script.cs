@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     public bool IsGrounded;
     public float JumpForce;
     public Transform Cam;
+    public Vector3 MoveDirection;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -39,7 +40,7 @@ public class Movement : MonoBehaviour
         Vector3 ForwardLook = MoveZ * CamX;
         Vector3 HorizontalLook = MoveX * CamZ;
 
-        Vector3 MoveDirection = ForwardLook + HorizontalLook;
+        MoveDirection = ForwardLook + HorizontalLook;
 
         rb.linearVelocity = new Vector3(MoveDirection.x * Speed, rb.linearVelocity.y, MoveDirection.z * Speed);
 
