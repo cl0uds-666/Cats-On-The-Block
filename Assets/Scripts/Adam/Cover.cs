@@ -111,9 +111,9 @@ public class Cover : MonoBehaviour
 
                             if (Input.GetKeyDown(KeyCode.C))
                             {
-                                SecondaryCoverHit = HitInfo.collider.gameObject;
-                                EdgeDetection = SecondaryCoverHit.transform.Find("Edge_Detection");
-                                GetComponent<Rigidbody>().MovePosition(EdgeDetection.transform.position/* * GetComponent<Movement>().Speed*/);
+                                CoverHit = HitInfo.collider.gameObject;
+                                EdgeDetection = CoverHit.transform.Find("Edge_Detection");
+                                transform.position = EdgeDetection.transform.position;
                             }
                         }
                     }
@@ -132,9 +132,9 @@ public class Cover : MonoBehaviour
                         {
                             if (Input.GetKeyDown(KeyCode.C))
                             {
-                                SecondaryCoverHit = HitInfo.collider.gameObject;
-                                EdgeDetection = SecondaryCoverHit.transform.Find("Edge_Detection");
-                                GetComponent<Rigidbody>().MovePosition(transform.position + EdgeDetection.transform.position * GetComponent<Movement>().Speed);
+                                CoverHit = HitInfo.collider.gameObject;
+                                EdgeDetection = CoverHit.transform.Find("Edge_Detection");
+                                transform.position = new Vector3(EdgeDetection.transform.position.x + 0.5f * CoverHit.transform.localScale.x, transform.position.y, EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z);
                             }
                         }
                     }
