@@ -1025,7 +1025,7 @@ Transform:
   m_Children:
   - {fileID: 452991484}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}h
 --- !u!114 &674372033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2167,11 +2167,8 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1371618049}
   - {fileID: 1366784485}
   - {fileID: 1476027779}
-  - {fileID: 1262804901}
-  - {fileID: 163714925}
   - {fileID: 1407385357}
   - {fileID: 173007706}
   - {fileID: 1465801082}

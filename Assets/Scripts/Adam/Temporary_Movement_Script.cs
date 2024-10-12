@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour
         Vector3 ForwardLook = MoveZ * CamX;
         Vector3 HorizontalLook = MoveX * CamZ;
 
-        MoveDirection = ForwardLook + HorizontalLook;
+        Vector3 MoveDirection = ForwardLook + HorizontalLook;
 
         rb.linearVelocity = new Vector3(MoveDirection.x * Speed, rb.linearVelocity.y, MoveDirection.z * Speed);
 
