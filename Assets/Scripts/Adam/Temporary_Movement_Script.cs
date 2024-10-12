@@ -1,6 +1,5 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
@@ -11,6 +10,10 @@ public class Movement : MonoBehaviour
     public bool IsGrounded;
     public float JumpForce;
     public Transform Cam;
+    public Vector3 MoveDirection;
+    public bool IsDashing = false;
+    public float DashTime;
+    public bool IsSprinting = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,6 +25,33 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
             rb.AddForce(Vector3.up * JumpForce);
+        }
+
+        if (Input.GetKeyDown(KeyCode.C) && IsGrounded && !IsDashing && rb.linearVelocity.x != 0 || Input.GetKeyDown(KeyCode.C) && IsGrounded && !IsDashing && rb.linearVelocity.z != 0)
+        {
+            StartCoroutine(Dash());
+        }
+
+        if (IsDashing)
+        {
+            print("is dashing");
+        }
+
+        else
+        {
+            print("is not dashing");
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            IsSprinting = true;
+            print("is sprinting");
+        }
+
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            IsSprinting = false;
+            print("is not sprinting");
         }
     }
 
@@ -63,5 +93,12 @@ public class Movement : MonoBehaviour
         {
             IsGrounded = false;
         }
+    }
+
+    private IEnumerator Dash()
+    {
+        IsDashing = true;
+        yield return new WaitForSeconds(DashTime);
+        IsDashing = false;
     }
 }
