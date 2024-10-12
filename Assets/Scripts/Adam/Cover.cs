@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Transactions;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cover : MonoBehaviour
@@ -10,21 +7,29 @@ public class Cover : MonoBehaviour
     GameObject CoverHit;
     Transform EdgeDetection;
     RaycastHit hit;
+    RaycastHit PreviousHit;
     bool stop;
     public float HighCast;
     public float LowCast;
-    public float DetectionRadius;
-    public bool SwitchCover = false;
     public LayerMask CoverLayer;
     private void Update()
     {
         if (InCover)
         {
+            if (GetComponent<Movement>().IsSprinting)
+            {
+                ToggleCover();
+            }
+
+            if (GetComponent<Movement>().IsDashing)
+            {
+                ToggleCover();
+            }
+
             if (hit.normal.z == -1)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, (EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f) - 0.5f);
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
-
             }
 
             else if (hit.normal.z == 1)
@@ -55,123 +60,79 @@ public class Cover : MonoBehaviour
             }
             if (stop)
             {
-                if (transform.position.x <= EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x)
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
+
+                if (transform.position.x <= EdgeDetection.transform.position.x - 0.4f * CoverHit.transform.localScale.x)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(0, GetComponent<Rigidbody>().linearVelocity.y, GetComponent<Rigidbody>().linearVelocity.z);
-
-                    if (!SwitchCover)
+                    
+                    if (PreviousHit.normal.z == -1)
                     {
-                        transform.position = new Vector3(EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f) - 0.5f);
+                        transform.position = new Vector3(EdgeDetection.transform.position.x - 0.4f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f) - 0.5f);
                     }
 
-                    if (Physics.SphereCast(transform.position, DetectionRadius, GetComponent<Movement>().MoveDirection, out hit, CoverLayer))
+                    else if (PreviousHit.normal.z == 1)
                     {
-                        if (hit.collider.gameObject != CoverHit && hit.transform.position.x < transform.position.x)
-                        {
-                            CoverHit = hit.collider.gameObject;
-                            EdgeDetection = CoverHit.transform.Find("Edge_Detection");
-                            transform.position = EdgeDetection.transform.position;
-                        }
+                        transform.position = new Vector3(EdgeDetection.transform.position.x - 0.4f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f) + 0.5f);
                     }
                 }
 
-                else if (transform.position.x >= EdgeDetection.transform.position.x + 0.5f * CoverHit.transform.localScale.x)
+                else if (transform.position.x >= EdgeDetection.transform.position.x + 0.4f * CoverHit.transform.localScale.x)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(0, GetComponent<Rigidbody>().linearVelocity.y, GetComponent<Rigidbody>().linearVelocity.z);
 
-                    if (!SwitchCover)
+                    if (PreviousHit.normal.z == -1)
                     {
-                        transform.position = new Vector3(EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f) + 0.5f);
+                        transform.position = new Vector3(EdgeDetection.transform.position.x + 0.4f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f) - 0.5f);
                     }
 
-                    if (Physics.SphereCast(transform.position, DetectionRadius, GetComponent<Movement>().MoveDirection, out hit, CoverLayer))
+                    else if (PreviousHit.normal.z == 1)
                     {
-                        if (hit.collider.gameObject != CoverHit && hit.transform.position.x > transform.position.x)
-                        {
-                            if (Input.GetKeyDown(KeyCode.C))
-                            {
-                                SwitchCover = true;
-                                CoverHit = hit.collider.gameObject;
-                                EdgeDetection = CoverHit.transform.Find("Edge_Detection");
-                            }
-
-                        }
+                        transform.position = new Vector3(EdgeDetection.transform.position.x + 0.4f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f) + 0.5f);
                     }
                 }
-
-                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
             }
 
             else
             {
-                if (transform.position.z <= EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z)
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX;
+                if (transform.position.z <= EdgeDetection.transform.position.z - 0.4f * CoverHit.transform.localScale.z)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, GetComponent<Rigidbody>().linearVelocity.y, 0);
 
-                    if (!SwitchCover)
+                    if (PreviousHit.normal.x == -1)
                     {
-                        //if (hit.normal.x == -1)
-                        //{
-                            transform.position = new Vector3((EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f) - 0.5f, transform.position.y, EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z);
-                        //}
+                        transform.position = new Vector3((EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f) - 0.5f, transform.position.y, EdgeDetection.transform.position.z - 0.4f * CoverHit.transform.localScale.z);
                     }
 
-                    if (Physics.SphereCast(transform.position, DetectionRadius, GetComponent<Movement>().MoveDirection, out hit, CoverLayer))
+                    else if (PreviousHit.normal.x == 1)
                     {
-                        if (hit.collider.gameObject != CoverHit && hit.transform.position.z < transform.position.z)
-                        {
-                            if (Input.GetKeyDown(KeyCode.C))
-                            {
-                                SwitchCover = true;
-                                CoverHit = hit.collider.gameObject;
-                                EdgeDetection = CoverHit.transform.Find("Edge_Detection");
-                            }
-                        }
+                        transform.position = new Vector3((EdgeDetection.transform.position.x + CoverHit.transform.localScale.x / 2f) + 0.5f, transform.position.y, EdgeDetection.transform.position.z - 0.4f * CoverHit.transform.localScale.z);
                     }
-
-                    
                 }
 
-                else if (transform.position.z >= EdgeDetection.transform.position.z + 0.5f * CoverHit.transform.localScale.z)
+                else if (transform.position.z >= EdgeDetection.transform.position.z + 0.4f * CoverHit.transform.localScale.z)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, GetComponent<Rigidbody>().linearVelocity.y, 0);
-                    if (!SwitchCover)
+
+                    if (PreviousHit.normal.x == -1)
                     {
-                        //if (hit.normal.x == -1)
-                        //{
-                            transform.position = new Vector3((EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f) - 0.5f, transform.position.y, EdgeDetection.transform.position.z + 0.5f * CoverHit.transform.localScale.z);
-                        //}
+                        transform.position = new Vector3((EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f) - 0.5f, transform.position.y, EdgeDetection.transform.position.z + 0.4f * CoverHit.transform.localScale.z);
                     }
 
-                    if (Physics.SphereCast(transform.position, DetectionRadius, GetComponent<Movement>().MoveDirection, out hit, CoverLayer))
+                    else if (PreviousHit.normal.x == 1)
                     {
-                        if (hit.collider.gameObject != CoverHit && hit.transform.position.z > transform.position.z)
-                        {
-                            if (Input.GetKeyDown(KeyCode.C))
-                            {
-                                SwitchCover = true;
-                                CoverHit = hit.collider.gameObject;
-                                EdgeDetection = CoverHit.transform.Find("Edge_Detection");
-                                
-                            }
-                        }
+                        transform.position = new Vector3((EdgeDetection.transform.position.x + CoverHit.transform.localScale.x / 2f) + 0.5f, transform.position.y, EdgeDetection.transform.position.z + 0.4f * CoverHit.transform.localScale.z);
                     }
                 }
-
-                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
-            }
-
-            
-
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                ToggleCover();
             }
         }
 
         else
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward * Distance);
+            Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward * Distance);
         }
 
         if (Input.GetKeyDown(KeyCode.C) && !InCover && GetComponent<Movement>().IsGrounded)
@@ -184,8 +145,6 @@ public class Cover : MonoBehaviour
             }
         }
 
-       
-
         if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance) && Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance))
         {
             print("Low Cover");
@@ -195,69 +154,32 @@ public class Cover : MonoBehaviour
         {
             print("High Cover");
         }
-
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward * Distance);
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward * Distance);
     }
-
-    private void FixedUpdate()
-    {
-       
-        if (SwitchCover)
-        {
-            print(hit.normal);
-            if (hit.normal.z == -1)
-            {
-                print("1");
-                GetComponent<Rigidbody>().MovePosition(transform.position + new Vector3(EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f - 0.5f, transform.position.y, EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z) * Time.deltaTime * 0.25f);
-            }
-
-            else if (hit.normal.z == 1)
-            {
-                print("2");
-                GetComponent<Rigidbody>().MovePosition(transform.position + new Vector3(EdgeDetection.transform.position.x + CoverHit.transform.localScale.x / 2f + 0.5f, transform.position.y, EdgeDetection.transform.position.z + 0.5f * CoverHit.transform.localScale.z) * Time.deltaTime * 0.25f);
-            }
-
-            else if (hit.normal.x == 1)
-            {
-                print("3");
-                GetComponent<Rigidbody>().MovePosition(transform.position + new Vector3(EdgeDetection.transform.position.x + 0.5f * CoverHit.transform.localScale.x, transform.position.y, EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f + 0.5f) * Time.deltaTime * 0.25f);
-            }
-            else if (hit.normal.x == 1)
-            {
-
-                GetComponent<Rigidbody>().MovePosition(transform.position + new Vector3(EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x, transform.position.y, EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f - 0.5f) * Time.deltaTime * 0.25f);
-            }
-        }
-    }
-
     void ToggleCover()
     {
         if (!InCover)
         {
+            PreviousHit = hit;
             InCover = true;
-
         }
 
-        else if (!SwitchCover)
+        else
         {
             InCover = false;
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnCollisionStay(Collision collision)
     {
-        if (InCover)
+        if (collision.gameObject.CompareTag("Cover") && GetComponent<Movement>().IsDashing)
         {
-            Gizmos.DrawWireSphere(transform.position, DetectionRadius);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Cover") && InCover && SwitchCover)
-        {
-            SwitchCover = false;
+            if (Physics.Raycast(new Vector3(transform.position.x, HighCast, transform.position.z), transform.forward, out hit, Distance) || Physics.Raycast(new Vector3(transform.position.x, LowCast, transform.position.z), transform.forward, out hit, Distance))
+            {
+                GetComponent<Movement>().IsDashing = false;
+                CoverHit = hit.transform.gameObject;
+                EdgeDetection = CoverHit.transform.Find("Edge_Detection");
+                ToggleCover();
+            }
         }
     }
 }
