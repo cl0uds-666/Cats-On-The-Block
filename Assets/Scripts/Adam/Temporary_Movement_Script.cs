@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -100,5 +102,14 @@ public class Movement : MonoBehaviour
         IsDashing = true;
         yield return new WaitForSeconds(DashTime);
         IsDashing = false;
+    }
+
+    void OnCoverDash(InputValue Value)
+    {
+        print("B");
+        if (IsGrounded && !IsDashing && rb.linearVelocity.x != 0 || IsGrounded && !IsDashing && rb.linearVelocity.z != 0)
+        {
+            StartCoroutine(Dash());
+        }
     }
 }
