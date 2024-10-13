@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Cover : MonoBehaviour
 {
@@ -176,6 +177,20 @@ public class Cover : MonoBehaviour
             if (Physics.Raycast(new Vector3(transform.position.x, HighCast, transform.position.z), transform.forward, out hit, Distance) || Physics.Raycast(new Vector3(transform.position.x, LowCast, transform.position.z), transform.forward, out hit, Distance))
             {
                 GetComponent<Movement>().IsDashing = false;
+                CoverHit = hit.transform.gameObject;
+                EdgeDetection = CoverHit.transform.Find("Edge_Detection");
+                ToggleCover();
+            }
+        }
+    }
+
+    void OnCoverDash(InputValue Value)
+    {
+        print("B");
+        if (!InCover && GetComponent<Movement>().IsGrounded)
+        {
+            if (Physics.Raycast(new Vector3(transform.position.x, HighCast, transform.position.z), transform.forward, out hit, Distance) || Physics.Raycast(new Vector3(transform.position.x, LowCast, transform.position.z), transform.forward, out hit, Distance))
+            {
                 CoverHit = hit.transform.gameObject;
                 EdgeDetection = CoverHit.transform.Find("Edge_Detection");
                 ToggleCover();
