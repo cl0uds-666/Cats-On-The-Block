@@ -63,33 +63,33 @@ public class Cover : MonoBehaviour
             {
                 GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
 
-                if (transform.position.x <= EdgeDetection.transform.position.x - 0.4f * CoverHit.transform.localScale.x)
+                if (transform.position.x <= EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x + transform.localScale.x / 2)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(0, GetComponent<Rigidbody>().linearVelocity.y, GetComponent<Rigidbody>().linearVelocity.z);
                     
                     if (PreviousHit.normal.z == -1)
                     {
-                        transform.position = new Vector3(EdgeDetection.transform.position.x - 0.4f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f) - 0.5f);
+                        transform.position = new Vector3(EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x + transform.localScale.x / 2, transform.position.y, (EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f) - 0.5f);
                     }
 
                     else if (PreviousHit.normal.z == 1)
                     {
-                        transform.position = new Vector3(EdgeDetection.transform.position.x - 0.4f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f) + 0.5f);
+                        transform.position = new Vector3(EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x + transform.localScale.x / 2, transform.position.y, (EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f) + 0.5f);
                     }
                 }
 
-                else if (transform.position.x >= EdgeDetection.transform.position.x + 0.4f * CoverHit.transform.localScale.x)
+                else if (transform.position.x >= EdgeDetection.transform.position.x + 0.5f * CoverHit.transform.localScale.x - transform.localScale.x / 2)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(0, GetComponent<Rigidbody>().linearVelocity.y, GetComponent<Rigidbody>().linearVelocity.z);
 
                     if (PreviousHit.normal.z == -1)
                     {
-                        transform.position = new Vector3(EdgeDetection.transform.position.x + 0.4f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f) - 0.5f);
+                        transform.position = new Vector3(EdgeDetection.transform.position.x + 0.5f * CoverHit.transform.localScale.x - transform.localScale.x / 2, transform.position.y, (EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f) - 0.5f);
                     }
 
                     else if (PreviousHit.normal.z == 1)
                     {
-                        transform.position = new Vector3(EdgeDetection.transform.position.x + 0.4f * CoverHit.transform.localScale.x, transform.position.y, (EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f) + 0.5f);
+                        transform.position = new Vector3(EdgeDetection.transform.position.x + 0.5f * CoverHit.transform.localScale.x - transform.localScale.x / 2, transform.position.y, (EdgeDetection.transform.position.z + CoverHit.transform.localScale.z / 2f) + 0.5f);
                     }
                 }
             }
@@ -97,33 +97,33 @@ public class Cover : MonoBehaviour
             else
             {
                 GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX;
-                if (transform.position.z <= EdgeDetection.transform.position.z - 0.4f * CoverHit.transform.localScale.z)
+                if (transform.position.z <= EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z + transform.localScale.z / 2)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, GetComponent<Rigidbody>().linearVelocity.y, 0);
 
                     if (PreviousHit.normal.x == -1)
                     {
-                        transform.position = new Vector3((EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f) - 0.5f, transform.position.y, EdgeDetection.transform.position.z - 0.4f * CoverHit.transform.localScale.z);
+                        transform.position = new Vector3((EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f) - 0.5f, transform.position.y, EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z + transform.localScale.z / 2);
                     }
 
                     else if (PreviousHit.normal.x == 1)
                     {
-                        transform.position = new Vector3((EdgeDetection.transform.position.x + CoverHit.transform.localScale.x / 2f) + 0.5f, transform.position.y, EdgeDetection.transform.position.z - 0.4f * CoverHit.transform.localScale.z);
+                        transform.position = new Vector3((EdgeDetection.transform.position.x + CoverHit.transform.localScale.x / 2f) + 0.5f, transform.position.y, EdgeDetection.transform.position.z - 0.5f * CoverHit.transform.localScale.z + transform.localScale.z / 2);
                     }
                 }
 
-                else if (transform.position.z >= EdgeDetection.transform.position.z + 0.4f * CoverHit.transform.localScale.z)
+                else if (transform.position.z >= EdgeDetection.transform.position.z + 0.5f * CoverHit.transform.localScale.z - transform.localScale.z / 2)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, GetComponent<Rigidbody>().linearVelocity.y, 0);
 
                     if (PreviousHit.normal.x == -1)
                     {
-                        transform.position = new Vector3((EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f) - 0.5f, transform.position.y, EdgeDetection.transform.position.z + 0.4f * CoverHit.transform.localScale.z);
+                        transform.position = new Vector3((EdgeDetection.transform.position.x - CoverHit.transform.localScale.x / 2f) - 0.5f, transform.position.y, EdgeDetection.transform.position.z + 0.5f * CoverHit.transform.localScale.z - transform.localScale.z / 2);
                     }
 
                     else if (PreviousHit.normal.x == 1)
                     {
-                        transform.position = new Vector3((EdgeDetection.transform.position.x + CoverHit.transform.localScale.x / 2f) + 0.5f, transform.position.y, EdgeDetection.transform.position.z + 0.4f * CoverHit.transform.localScale.z);
+                        transform.position = new Vector3((EdgeDetection.transform.position.x + CoverHit.transform.localScale.x / 2f) + 0.5f, transform.position.y, EdgeDetection.transform.position.z + 0.5f * CoverHit.transform.localScale.z - transform.localScale.z / 2);
                     }
                 }
             }
@@ -195,6 +195,11 @@ public class Cover : MonoBehaviour
                 EdgeDetection = CoverHit.transform.Find("Edge_Detection");
                 ToggleCover();
             }
+        }
+
+        else if (InCover && GetComponent<Movement>().IsGrounded)
+        {
+            ToggleCover();
         }
     }
 }
