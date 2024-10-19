@@ -6,7 +6,7 @@ public class Cover : MonoBehaviour
     public float Distance;
     public bool InCover = false;
     GameObject CoverHit;
-    Transform EdgeDetection;
+    public Transform EdgeDetection;
     RaycastHit hit;
     RaycastHit PreviousHit;
     bool stop;

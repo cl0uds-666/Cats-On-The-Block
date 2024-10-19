@@ -17,6 +17,7 @@ public class EnemyCombat : MonoBehaviour
     public GameObject Player;
     public Vector3 EyeLevel;
     public Vector3 PlayerEyeLevel;
+    public bool IsAttacking;
     void Update()
     {
         if (Physics.Raycast(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position), out RaycastHit hit) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Cover"))
@@ -63,6 +64,11 @@ public class EnemyCombat : MonoBehaviour
         if (Health <= 0)
         {
             Destroy(gameObject);
+        }
+
+        if (CanSeePlayer)
+        {
+            IsAttacking = true;
         }
     }
     private void OnDrawGizmos()
