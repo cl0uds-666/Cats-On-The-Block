@@ -30,8 +30,4 @@ public class Cover_Points : MonoBehaviour
         Point7.transform.position = new Vector3(Point7.transform.position.x - transform.localScale.x / 2f - 0.5f, Point7.transform.position.y, Point7.transform.position.z + 0.5f * transform.localScale.z - transform.localScale.z);
         Point8.transform.position = new Vector3(Point8.transform.position.x + transform.localScale.x / 2f + 0.5f, Point8.transform.position.y, Point8.transform.position.z + 0.5f * transform.localScale.z - transform.localScale.z);
     }
-    private void Update()
-    {
-        
-    }
 }

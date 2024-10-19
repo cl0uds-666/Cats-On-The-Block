@@ -18,16 +18,16 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GetComponent<EnemyCombat>().CanSeePlayer)
+        if (!GetComponent<EnemyCombat>().IsAttacking)
         {
             TargetDestination = Waypoints[Index].position;
             Agent.destination = TargetDestination;
         }
         
-        else
-        {
-            Agent.destination = Player.transform.position;
-        }
+        //else
+        //{
+        //    Agent.destination = Player.transform.position;
+        //}
 
         if (Vector3.Distance(TargetDestination, transform.position) < 1f)
         {
