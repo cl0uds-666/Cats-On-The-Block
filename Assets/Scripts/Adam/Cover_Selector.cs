@@ -15,7 +15,6 @@ public class Cover_Selector : MonoBehaviour
     private RaycastHit Hit;
     private Transform TargetCover;
     private bool IsFunctionRunning;
-    public Transform InitialTarget;
 
     void Update()
     {
@@ -30,52 +29,29 @@ public class Cover_Selector : MonoBehaviour
             OptimalCover.Clear();
             print("InCover");
             IsFunctionRunning = false;
-
-            if (TargetCover.name == "Point1")
-            {
-                print(1);
-            }
-
-            else if (TargetCover.name == "Point2")
-            {
-                print(2);
-            }
-
-            else if (TargetCover.name == "Point3")
-            {
-                print(3);
-            }
-
-            else if (TargetCover.name == "Point4")
-            {
-                print(4);
-            }
-
-            else if (TargetCover.name == "Point5")
-            {
-                
-                print(5);
-            }
-
-            else if (TargetCover.name == "Point6")
-            {
-                print(6);
-            }
-
-            else if (TargetCover.name == "Point7")
-            {
-                print(7);
-            }
-
-            else if (TargetCover.name == "Point8")
-            {
-                print(8);
-            }
         }
 
         if (InCover)
         {
-            
+            if (TargetCover.name == "Point1" || TargetCover.name == "Point3")
+            {
+                transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+            }
+
+            else if (TargetCover.name == "Point2" || TargetCover.name == "Point4")
+            {
+                transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+            }
+
+            else if (TargetCover.name == "Point5" || TargetCover.name == "Point7")
+            {
+                transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            }
+
+            else if (TargetCover.name == "Point6" || TargetCover.name == "Point8")
+            {
+                transform.localRotation = Quaternion.Euler(0f, -180f, 0f);
+            }
         }
     }
 
@@ -135,7 +111,6 @@ public class Cover_Selector : MonoBehaviour
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point7);
             }
 
-            
             if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point8.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal8");
@@ -151,19 +126,16 @@ public class Cover_Selector : MonoBehaviour
 
     private void FindTargetCover()
     {
-        TargetCover = transform;
+        TargetCover = OptimalCover[0];
         foreach (Transform Cover in OptimalCover)
         {
-            if (Vector3.Distance(transform.position, Cover.transform.position) > Vector3.Distance(transform.position, TargetCover.transform.position))
+            if (Vector3.Distance(Player.transform.position, Cover.transform.position) > Vector3.Distance(Player.transform.position, TargetCover.transform.position))
             {
                 TargetCover = Cover;
             }
         }
 
-        if (TargetCover != transform)
-        {
-            GetComponent<NavMeshAgent>().destination = TargetCover.transform.position;
-        }
+        GetComponent<NavMeshAgent>().destination = TargetCover.transform.position;
     }
 
     private void OnDrawGizmos()
