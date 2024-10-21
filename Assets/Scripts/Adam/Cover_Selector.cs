@@ -30,6 +30,47 @@ public class Cover_Selector : MonoBehaviour
             OptimalCover.Clear();
             print("InCover");
             IsFunctionRunning = false;
+
+            if (TargetCover.name == "Point1")
+            {
+                print(1);
+            }
+
+            else if (TargetCover.name == "Point2")
+            {
+                print(2);
+            }
+
+            else if (TargetCover.name == "Point3")
+            {
+                print(3);
+            }
+
+            else if (TargetCover.name == "Point4")
+            {
+                print(4);
+            }
+
+            else if (TargetCover.name == "Point5")
+            {
+                
+                print(5);
+            }
+
+            else if (TargetCover.name == "Point6")
+            {
+                print(6);
+            }
+
+            else if (TargetCover.name == "Point7")
+            {
+                print(7);
+            }
+
+            else if (TargetCover.name == "Point8")
+            {
+                print(8);
+            }
         }
 
         if (InCover)

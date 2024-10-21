@@ -73,7 +73,7 @@ public class Movement : MonoBehaviour
 
         Vector3 MoveDirection = ForwardLook + HorizontalLook;
 
-        rb.linearVelocity = new Vector3(MoveDirection.x * Speed, rb.linearVelocity.y, MoveDirection.z * Speed);
+        rb.linearVelocity = new Vector3(MoveDirection.x * Speed * Time.fixedDeltaTime, rb.linearVelocity.y, MoveDirection.z * Speed * Time.fixedDeltaTime);
 
         if (MoveDirection != Vector3.zero && !GetComponent<Cover>().InCover)
         {
