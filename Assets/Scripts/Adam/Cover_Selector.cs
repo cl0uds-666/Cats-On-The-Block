@@ -12,7 +12,7 @@ public class Cover_Selector : MonoBehaviour
     public GameObject Player;
     private RaycastHit Hit;
     public Transform TargetCover;
-    private bool IsFunctionRunning;
+    public bool IsFunctionRunning;
     public bool FindCover = true;
 
     void Update()

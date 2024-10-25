@@ -23,10 +23,13 @@ public class EnemyCombat : MonoBehaviour
     public NavMeshAgent Agent;
     public float CoverWaitTime;
     private bool PeakFunctionRunning = false;
-
+    public GameObject Bullet;
+    public Transform BulletSpawnPoint;
+    private float ShootDelay;
     private void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
+        ShootDelay = 1f;
     }
     void Update()
     {
@@ -107,12 +110,23 @@ public class EnemyCombat : MonoBehaviour
         {
             foreach (Collider Enemy in Player.GetComponent<Enemy_Detection>().AllEnemies)
             {
-                Enemy.gameObject.GetComponent<EnemyCombat>().IsAttacking = true;
+                if (Vector3.Distance(Enemy.transform.position, Player.transform.position) < 100)
+                {
+                    Enemy.gameObject.GetComponent<EnemyCombat>().IsAttacking = true;
+                }
+
+                else
+                {
+                    Enemy.gameObject.GetComponent<EnemyCombat>().IsAttacking = false;
+                    Enemy.gameObject.GetComponent<Cover_Selector>().InCover = false;
+                    Enemy.gameObject.GetComponent<Cover_Selector>().FindCover = false;
+                }
+                
             }
             Shoot();
         }
 
-        if (CanSeePlayer && IsAttacking && !GetComponent<Cover_Selector>().FindCover)
+        if (CanSeePlayer && IsAttacking)
         {
             transform.LookAt(Player.transform.position);
         }
@@ -186,7 +200,23 @@ public class EnemyCombat : MonoBehaviour
             GetComponent<Cover_Selector>().InCover = false;
         }
 
-        if (!GetComponent<Cover_Selector>().FindCover && Vector3.Distance(transform.position, Player.transform.position) >= 6f)
+        if (CanSeePlayer && !GetComponent<Cover_Selector>().IsFunctionRunning)
+        {
+            if (ShootDelay <= 0f)
+            {
+                GameObject Instance = Instantiate(Bullet, BulletSpawnPoint.transform.position, transform.rotation);
+                Instance.GetComponent<Enemy_Bullet>().DeathTimer = 5f;
+                Instance.GetComponent<Enemy_Bullet>().Move = true;
+                ShootDelay = 1f;
+            }
+
+            else
+            {
+                ShootDelay -= Time.deltaTime;
+            }
+        }
+
+        if (!GetComponent<Cover_Selector>().FindCover && Vector3.Distance(transform.position, Player.transform.position) >= 10f)
         {
             Agent.destination = Player.transform.position;
         }
