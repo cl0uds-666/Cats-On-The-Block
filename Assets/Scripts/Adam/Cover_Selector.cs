@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
 using UnityEngine.AI;
-using System;
 
 public class Cover_Selector : MonoBehaviour
 {
@@ -13,18 +11,18 @@ public class Cover_Selector : MonoBehaviour
     public bool InCover;
     public GameObject Player;
     private RaycastHit Hit;
-    private Transform TargetCover;
-    private bool IsFunctionRunning;
-    public Transform InitialTarget;
+    public Transform TargetCover;
+    public bool IsFunctionRunning;
+    public bool FindCover = true;
 
     void Update()
     {
-        if (GetComponent<EnemyCombat>().IsAttacking && !InCover && !IsFunctionRunning)
+        if (GetComponent<EnemyCombat>().IsAttacking && !InCover && !IsFunctionRunning && FindCover)
         {
             FindOptimalCover();
         }
 
-        if (Vector3.Distance(GetComponent<NavMeshAgent>().destination, transform.position) < 1.1f && GetComponent<EnemyCombat>().IsAttacking && OptimalCover.Capacity > 0)
+        if (TargetCover != null && Vector3.Distance(GetComponent<EnemyCombat>().Agent.transform.position, transform.position) < 1.1f && GetComponent<EnemyCombat>().IsAttacking && OptimalCover.Capacity > 0)
         {
             InCover = true;
             OptimalCover.Clear();
@@ -32,15 +30,50 @@ public class Cover_Selector : MonoBehaviour
             IsFunctionRunning = false;
         }
 
-        if (InCover)
+        if (InCover && !GetComponent<EnemyCombat>().CanSeePlayer)
         {
-            
+            if (TargetCover.name == "Point1" || TargetCover.name == "Point3")
+            {
+                transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+            }
+
+            else if (TargetCover.name == "Point2" || TargetCover.name == "Point4")
+            {
+                transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+            }
+
+            else if (TargetCover.name == "Point5" || TargetCover.name == "Point7")
+            {
+                transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            }
+
+            else if (TargetCover.name == "Point6" || TargetCover.name == "Point8")
+            {
+                transform.localRotation = Quaternion.Euler(0f, -180f, 0f);
+            }
+        }
+
+        if (!Player.GetComponent<Enemy_Detection>().EnemiesInCover.Contains(gameObject))
+        {
+            if (InCover)
+            {
+                Player.GetComponent<Enemy_Detection>().EnemiesInCover.Add(gameObject);
+            }
+
+            else
+            {
+                Player.GetComponent<Enemy_Detection>().EnemiesInCover.Remove(gameObject);
+            }
+        }
+
+        if (InCover && Vector3.Distance(GetComponent<EnemyCombat>().Agent.transform.position, transform.position) >= 1.1f)
+        {
+            InCover = false;
         }
     }
 
     private void FindOptimalCover()
     {
-        
         IsFunctionRunning = true;
         DetectedCover = Physics.OverlapSphere(transform.position, CoverDetectionRadius, CoverMask);
 
@@ -94,7 +127,6 @@ public class Cover_Selector : MonoBehaviour
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point7);
             }
 
-            
             if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point8.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal8");
@@ -110,26 +142,24 @@ public class Cover_Selector : MonoBehaviour
 
     private void FindTargetCover()
     {
-        TargetCover = transform;
+        TargetCover = OptimalCover[0];
         foreach (Transform Cover in OptimalCover)
         {
-            if (Vector3.Distance(transform.position, Cover.transform.position) > Vector3.Distance(transform.position, TargetCover.transform.position))
+            if (Vector3.Distance(transform.position, Cover.transform.position) < Vector3.Distance(transform.position, TargetCover.transform.position) && !Cover.GetComponent<Occupied_Detection>().IsOccupied)
             {
                 TargetCover = Cover;
             }
         }
 
-        if (TargetCover != transform)
-        {
-            GetComponent<NavMeshAgent>().destination = TargetCover.transform.position;
-        }
+        TargetCover.GetComponent<Occupied_Detection>().IsOccupied = true;
+        GetComponent<NavMeshAgent>().destination = TargetCover.transform.position;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, CoverDetectionRadius);
-        if (GetComponent<EnemyCombat>().IsAttacking)
+        if (GetComponent<EnemyCombat>().IsAttacking && TargetCover != null)
         {
             Debug.DrawRay(Player.transform.position, TargetCover.transform.position - Player.transform.position);
         }

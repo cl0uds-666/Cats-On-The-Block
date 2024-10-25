@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Agent = GetComponent<NavMeshAgent>();
         Player = GameObject.Find("Player");
-        //transform.position = Waypoints[Index].position;
+        transform.position = Waypoints[Index].position;
         Index = 1;
     }
 
@@ -23,11 +23,6 @@ public class EnemyMovement : MonoBehaviour
             TargetDestination = Waypoints[Index].position;
             Agent.destination = TargetDestination;
         }
-        
-        //else
-        //{
-        //    Agent.destination = Player.transform.position;
-        //}
 
         if (Vector3.Distance(TargetDestination, transform.position) < 1f)
         {
