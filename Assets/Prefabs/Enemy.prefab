@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 4747000102796975051}
   - component: {fileID: 4187690888827165903}
   - component: {fileID: 6183959851937723722}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -369,6 +369,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Health: 3
+  Player: {fileID: 0}
+  EyeLevel: {x: 0, y: 0, z: 0}
+  PlayerEyeLevel: {x: 0, y: 0, z: 0}
+  IsAttacking: 0
+  Agent: {fileID: 0}
+  CoverWaitTime: 0
 --- !u!1 &4790567513262101043
 GameObject:
   m_ObjectHideFlags: 0

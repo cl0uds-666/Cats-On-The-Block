@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
 using UnityEngine.AI;
-using System;
 
 public class Cover_Selector : MonoBehaviour
 {
@@ -13,17 +11,18 @@ public class Cover_Selector : MonoBehaviour
     public bool InCover;
     public GameObject Player;
     private RaycastHit Hit;
-    private Transform TargetCover;
+    public Transform TargetCover;
     private bool IsFunctionRunning;
+    public bool FindCover = true;
 
     void Update()
     {
-        if (GetComponent<EnemyCombat>().IsAttacking && !InCover && !IsFunctionRunning)
+        if (GetComponent<EnemyCombat>().IsAttacking && !InCover && !IsFunctionRunning && FindCover)
         {
             FindOptimalCover();
         }
 
-        if (Vector3.Distance(GetComponent<NavMeshAgent>().destination, transform.position) < 1.1f && GetComponent<EnemyCombat>().IsAttacking && OptimalCover.Capacity > 0)
+        if (TargetCover != null && Vector3.Distance(GetComponent<EnemyCombat>().Agent.transform.position, transform.position) < 1.1f && GetComponent<EnemyCombat>().IsAttacking && OptimalCover.Capacity > 0)
         {
             InCover = true;
             OptimalCover.Clear();
@@ -31,7 +30,7 @@ public class Cover_Selector : MonoBehaviour
             IsFunctionRunning = false;
         }
 
-        if (InCover)
+        if (InCover && !GetComponent<EnemyCombat>().CanSeePlayer)
         {
             if (TargetCover.name == "Point1" || TargetCover.name == "Point3")
             {
@@ -53,11 +52,28 @@ public class Cover_Selector : MonoBehaviour
                 transform.localRotation = Quaternion.Euler(0f, -180f, 0f);
             }
         }
+
+        if (!Player.GetComponent<Enemy_Detection>().EnemiesInCover.Contains(gameObject))
+        {
+            if (InCover)
+            {
+                Player.GetComponent<Enemy_Detection>().EnemiesInCover.Add(gameObject);
+            }
+
+            else
+            {
+                Player.GetComponent<Enemy_Detection>().EnemiesInCover.Remove(gameObject);
+            }
+        }
+
+        if (InCover && Vector3.Distance(GetComponent<EnemyCombat>().Agent.transform.position, transform.position) >= 1.1f)
+        {
+            InCover = false;
+        }
     }
 
     private void FindOptimalCover()
     {
-        
         IsFunctionRunning = true;
         DetectedCover = Physics.OverlapSphere(transform.position, CoverDetectionRadius, CoverMask);
 
@@ -129,12 +145,13 @@ public class Cover_Selector : MonoBehaviour
         TargetCover = OptimalCover[0];
         foreach (Transform Cover in OptimalCover)
         {
-            if (Vector3.Distance(Player.transform.position, Cover.transform.position) > Vector3.Distance(Player.transform.position, TargetCover.transform.position))
+            if (Vector3.Distance(transform.position, Cover.transform.position) < Vector3.Distance(transform.position, TargetCover.transform.position) && !Cover.GetComponent<Occupied_Detection>().IsOccupied)
             {
                 TargetCover = Cover;
             }
         }
 
+        TargetCover.GetComponent<Occupied_Detection>().IsOccupied = true;
         GetComponent<NavMeshAgent>().destination = TargetCover.transform.position;
     }
 
@@ -142,7 +159,7 @@ public class Cover_Selector : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, CoverDetectionRadius);
-        if (GetComponent<EnemyCombat>().IsAttacking)
+        if (GetComponent<EnemyCombat>().IsAttacking && TargetCover != null)
         {
             Debug.DrawRay(Player.transform.position, TargetCover.transform.position - Player.transform.position);
         }
