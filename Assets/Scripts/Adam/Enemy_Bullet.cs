@@ -8,6 +8,7 @@ public class Enemy_Bullet : MonoBehaviour
     private Rigidbody rb;
     public bool Move;
     public float DeathTimer;
+    public int Damage;
 
     private void Start()
     {
@@ -40,7 +41,7 @@ public class Enemy_Bullet : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Player_Stats>().Health--;
+            collision.gameObject.GetComponent<Player_Stats>().Health -= Damage;
         }
     }
 }
