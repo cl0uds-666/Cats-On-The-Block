@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &95373662028639575
+--- !u!1001 &3300396093627088761
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.27677
+      value: 93.49713
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13147163
+      value: 0.13147354
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.01704
+      value: 21.987469
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,22 +51,22 @@ PrefabInstance:
     - target: {fileID: -3924934729321778958, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 71361a94c2bd1e54a8cad4a678efd0b1, type: 2}
+      objectReference: {fileID: 2100000, guid: f4ecfe851f194da46a85344c45378678, type: 2}
     - target: {fileID: -98078248142583408, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: eab02c82095ddf04f9405ab5ec1e8c8a, type: 2}
+      objectReference: {fileID: 2100000, guid: c3930a8634dd94c419546d807c753a4b, type: 2}
     - target: {fileID: -85744201872177665, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: fbaf70a6b9f04ce4e92a8020905349f9, type: 2}
+      objectReference: {fileID: 2100000, guid: 6362551d2d9d06a45b1dc06daf5b0849, type: 2}
     - target: {fileID: 24502703549710518, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: fbaf70a6b9f04ce4e92a8020905349f9, type: 2}
+      objectReference: {fileID: 2100000, guid: 6362551d2d9d06a45b1dc06daf5b0849, type: 2}
     - target: {fileID: 919132149155446097, guid: 4f629bb53c4c47f419fe1d1307142eae, type: 3}
       propertyPath: m_Name
-      value: 2x2w_Building
+      value: 2x2w_Building (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
