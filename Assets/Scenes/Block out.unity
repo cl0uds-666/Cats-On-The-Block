@@ -3591,6 +3591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CatsOn3dsBlockoutMap
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b00a19657e6187445a85dd1644a39df1, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -7359278958463129214, guid: b00a19657e6187445a85dd1644a39df1, type: 3}
