@@ -1,6 +1,6 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -12,6 +12,9 @@ public class Movement : MonoBehaviour
     public float JumpForce;
     public Transform Cam;
     public Vector3 MoveDirection;
+    public bool IsDashing = false;
+    public float DashTime;
+    public bool IsSprinting = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,6 +26,33 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
             rb.AddForce(Vector3.up * JumpForce);
+        }
+
+        if (Input.GetKeyDown(KeyCode.C) && IsGrounded && !IsDashing && rb.linearVelocity.x != 0 || Input.GetKeyDown(KeyCode.C) && IsGrounded && !IsDashing && rb.linearVelocity.z != 0)
+        {
+            StartCoroutine(Dash());
+        }
+
+        if (IsDashing)
+        {
+            print("is dashing");
+        }
+
+        else
+        {
+            //print("is not dashing");
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            IsSprinting = true;
+            print("is sprinting");
+        }
+
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            IsSprinting = false;
+           // print("is not sprinting");
         }
     }
 
@@ -40,9 +70,9 @@ public class Movement : MonoBehaviour
         Vector3 ForwardLook = MoveZ * CamX;
         Vector3 HorizontalLook = MoveX * CamZ;
 
-        MoveDirection = ForwardLook + HorizontalLook;
+        Vector3 MoveDirection = ForwardLook + HorizontalLook;
 
-        rb.linearVelocity = new Vector3(MoveDirection.x * Speed, rb.linearVelocity.y, MoveDirection.z * Speed);
+        rb.linearVelocity = new Vector3(MoveDirection.x * Speed * Time.fixedDeltaTime, rb.linearVelocity.y, MoveDirection.z * Speed * Time.fixedDeltaTime);
 
         if (MoveDirection != Vector3.zero && !GetComponent<Cover>().InCover)
         {
@@ -63,6 +93,22 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             IsGrounded = false;
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        IsDashing = true;
+        yield return new WaitForSeconds(DashTime);
+        IsDashing = false;
+    }
+
+    void OnCoverDash(InputValue Value)
+    {
+        print("B");
+        if (IsGrounded && !IsDashing && rb.linearVelocity.x != 0 || IsGrounded && !IsDashing && rb.linearVelocity.z != 0)
+        {
+            StartCoroutine(Dash());
         }
     }
 }

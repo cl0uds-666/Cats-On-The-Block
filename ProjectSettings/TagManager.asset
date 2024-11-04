@@ -5,16 +5,21 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Cover
+  - Enemy Health
+  - Enemy
+  - Bullet
+  - Melee Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Cover
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Bullet
   - 
   - 
   - 
