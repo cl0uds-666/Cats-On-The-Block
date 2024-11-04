@@ -2297,6 +2297,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6875636765221280699, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6926766965586076854, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
       propertyPath: RadialAxis.Value
       value: 1
@@ -3595,6 +3599,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2463706537061040287, guid: b00a19657e6187445a85dd1644a39df1, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -7359278958463129214, guid: b00a19657e6187445a85dd1644a39df1, type: 3}
@@ -3612,9 +3620,6 @@ PrefabInstance:
       insertIndex: 7
       addedObject: {fileID: 2091375999}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b00a19657e6187445a85dd1644a39df1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2137524378}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b00a19657e6187445a85dd1644a39df1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2137524379}
@@ -3897,28 +3902,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b00a19657e6187445a85dd1644a39df1, type: 3}
   m_PrefabInstance: {fileID: 2137524376}
   m_PrefabAsset: {fileID: 0}
---- !u!195 &2137524378
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137524377}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &2137524379
 MonoBehaviour:
   m_ObjectHideFlags: 0
