@@ -5,10 +5,6 @@ public class WeaponSwitching : MonoBehaviour
     public GameObject[] weapons;                // Array of weapon GameObjects
     public int currentWeaponIndex = 0;          // Index of the currently selected weapon
     public WaterBar waterBarUI;                 // Reference to the WaterBar UI script (set in Inspector)
-    public PlayerProjectileShooting GetActiveWeapon()
-    {
-        return weapons[currentWeaponIndex].GetComponent<PlayerProjectileShooting>();
-    }
 
     private PlayerProjectileShooting currentShootingScript;
 
@@ -25,7 +21,7 @@ public class WeaponSwitching : MonoBehaviour
 
     void Update()
     {
-        // Number keys to switch weapons
+        // Keyboard inputs for switching weapons
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SelectWeapon(0);  // Switch to weapon at index 0 (e.g., Pistol)
@@ -35,13 +31,41 @@ public class WeaponSwitching : MonoBehaviour
             SelectWeapon(1);  // Switch to weapon at index 1 (e.g., Tommy Gun)
         }
 
-        // Optional: Cycle through weapons with scroll wheel
+        // Optional: Cycle through weapons with mouse scroll wheel
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
             SelectWeapon(currentWeaponIndex);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+            SelectWeapon(currentWeaponIndex);
+        }
+
+        // Xbox Controller support for weapon switching:
+        // Left bumper (LB) to switch to previous weapon
+        if (Input.GetButtonDown("Xbox_LB"))
+        {
+            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+            SelectWeapon(currentWeaponIndex);
+        }
+
+        // Right bumper (RB) to switch to next weapon
+        if (Input.GetButtonDown("Xbox_RB"))
+        {
+            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+            SelectWeapon(currentWeaponIndex);
+        }
+
+        // Optional: D-pad support to cycle through weapons
+        float dPadHorizontal = Input.GetAxis("DPad_Horizontal");
+        if (dPadHorizontal > 0f) // D-pad right
+        {
+            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+            SelectWeapon(currentWeaponIndex);
+        }
+        else if (dPadHorizontal < 0f) // D-pad left
         {
             currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
             SelectWeapon(currentWeaponIndex);
@@ -78,5 +102,11 @@ public class WeaponSwitching : MonoBehaviour
 
         currentShootingScript.OnAmmoChanged += waterBarUI.UpdateWaterBar;
         currentShootingScript.UpdateAmmoUI();    // Update UI immediately with the new weapon's ammo
+    }
+
+    // Optionally, add this function if you want to retrieve the current active weapon's shooting script
+    public PlayerProjectileShooting GetActiveWeapon()
+    {
+        return weapons[currentWeaponIndex].GetComponent<PlayerProjectileShooting>();
     }
 }

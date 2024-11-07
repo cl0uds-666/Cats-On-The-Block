@@ -23,7 +23,8 @@ public class PlayerProjectileShooting : MonoBehaviour
     void Update()
     {
         // Check for shooting input and cooldown
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && currentAmmo > 0)
+        // Check for Fire1 (Left Mouse, Ctrl, or Right Trigger on Xbox controller)
+        if ((Input.GetButton("Fire1") || Input.GetAxis("Fire1") > 0) && Time.time >= nextFireTime && currentAmmo > 0)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
