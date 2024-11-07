@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1783202385426466857
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4912223722360208356, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a020d6b21302141bd60e1f227f87d9, type: 2}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 109.95335
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13147628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.036258
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.49999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.49999973
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080024078496366731, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857650737764719153, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
+      propertyPath: m_Name
+      value: Catflap_Door (3) Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eabd49691b861bd408a3b85d854f4aac, type: 3}
