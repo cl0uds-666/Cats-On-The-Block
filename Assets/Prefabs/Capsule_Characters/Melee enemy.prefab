@@ -476,6 +476,7 @@ MonoBehaviour:
   CanMove: 0
   AttackTimer: 3
   Enemy: {fileID: 4679740446207543748}
+  AttackForce: 100
 --- !u!1 &6732920927695292302
 GameObject:
   m_ObjectHideFlags: 0
