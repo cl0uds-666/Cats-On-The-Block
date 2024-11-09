@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
 
         else
         {
-            print("is not dashing");
+            //print("is not dashing");
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             IsSprinting = false;
-            print("is not sprinting");
+           // print("is not sprinting");
         }
     }
 

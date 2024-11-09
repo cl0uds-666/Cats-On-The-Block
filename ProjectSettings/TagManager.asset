@@ -9,6 +9,7 @@ TagManager:
   - Enemy Health
   - Enemy
   - Bullet
+  - Melee Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Player
   - Enemy
   - Bullet
-  - 
+  - Gun
   - 
   - 
   - 
