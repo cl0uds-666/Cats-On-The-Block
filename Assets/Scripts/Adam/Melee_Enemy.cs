@@ -14,6 +14,7 @@ public class Melee_Enemy : MonoBehaviour
     private RaycastHit Hit;
     public LayerMask PlayerLayer;
     public Vector3 BoxSize;
+    public int Health;
     
     void Update()
     {
@@ -43,6 +44,11 @@ public class Melee_Enemy : MonoBehaviour
             {
                 IsAttacking = true;
             }
+        }
+
+        if (Health <=0)
+        {
+            Destroy(gameObject);
         }
     }
 
