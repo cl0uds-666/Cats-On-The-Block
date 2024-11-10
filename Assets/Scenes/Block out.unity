@@ -6335,7 +6335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.35
+      value: 45.2
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6343,7 +6343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.55
+      value: -36.41
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6736,7 +6736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331108348279137772, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 85.72
+      value: 84.7
       objectReference: {fileID: 0}
     - target: {fileID: 4331108348279137772, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6744,7 +6744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331108348279137772, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.51
+      value: 46.2
       objectReference: {fileID: 0}
     - target: {fileID: 4475885852773580027, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6777,6 +6777,10 @@ PrefabInstance:
     - target: {fileID: 6482983874050369723, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260900139708818818, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7260900139708818818, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
       propertyPath: WayPoints.Array.size
@@ -19641,7 +19645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004326126470554179, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.186
+      value: -25.185974
       objectReference: {fileID: 0}
     - target: {fileID: 5004326126470554179, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
       propertyPath: m_ConstrainProportionsScale
