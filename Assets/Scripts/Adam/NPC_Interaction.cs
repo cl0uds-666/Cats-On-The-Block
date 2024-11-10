@@ -24,7 +24,7 @@ public class NPC_Interaction : MonoBehaviour
         {
             Agent.speed = 0f;
             canvas.gameObject.SetActive(true);
-            transform.LookAt(Player.transform.position);
+            transform.LookAt(new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z));
             canvas.transform.LookAt(new Vector3(Camera.main.transform.position.x, canvas.transform.position.y, Camera.main.transform.position.z));
             RandomDialogue();
         }
