@@ -12,9 +12,11 @@ public class EnemyCombat : MonoBehaviour
     public Transform LineOfSightPosition3;
     public Transform LineOfSightPosition4;
     public float Distance;
+    public float GunDistance;
     private RaycastHit Hit;
     public LayerMask PlayerLayer;
     public LayerMask EnemyLayer;
+    public LayerMask GunLayerDetection;
     public int Health;
     public GameObject Player;
     public Vector3 EyeLevel;
@@ -24,7 +26,7 @@ public class EnemyCombat : MonoBehaviour
     public float CoverWaitTime;
     private bool PeakFunctionRunning = false;
     public GameObject Bullet;
-    public Transform BulletSpawnPoint;
+    public GameObject BulletSpawnPoint;
     private float ShootDelay;
     private void Start()
     {
@@ -138,11 +140,6 @@ public class EnemyCombat : MonoBehaviour
         Debug.DrawRay(LineOfSightPosition2.transform.position, LineOfSightPosition2.transform.forward * Distance);
         Debug.DrawRay(LineOfSightPosition3.transform.position, LineOfSightPosition3.transform.forward * Distance);
         Debug.DrawRay(LineOfSightPosition4.transform.position, LineOfSightPosition4.transform.forward * Distance);
-
-        if (CanSeePlayer)
-        {
-            Debug.DrawRay(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position));
-        }
     }
 
     private IEnumerator Peak()
