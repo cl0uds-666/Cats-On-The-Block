@@ -15,7 +15,6 @@ public class Player_Movment_Murray : MonoBehaviour
     public float groundCheckRadius = 0.2f; // Radius for ground detection
 
     private bool isGrounded; // To check if the player is on the ground
-    private bool isSprinting; // To check if the player is sprinting
     private float currentSpeed; // To store the current speed
 
     void Start()
@@ -33,6 +32,7 @@ public class Player_Movment_Murray : MonoBehaviour
     void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
+        Debug.Log("OnMove called with movement: " + movement);
     }
 
     private void FixedUpdate()
@@ -63,14 +63,14 @@ public class Player_Movment_Murray : MonoBehaviour
     void OnSprint()
     {
         // Enable sprinting by increasing speed
-        isSprinting = true;
         currentSpeed = sprintSpeed;
+        Debug.Log("Sprinting activated, speed: " + sprintSpeed);
     }
 
     void OnSprintRelease()
     {
         // Disable sprinting by resetting speed
-        isSprinting = false;
         currentSpeed = Speed;
+        Debug.Log("Sprinting activated, speed: " +Speed);
     }
 }
