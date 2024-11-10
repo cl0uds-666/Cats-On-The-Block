@@ -578,10 +578,10 @@
                 {
                     "name": "",
                     "id": "99307dda-b0ca-4ee9-b0e2-afc44cff92c8",
-                    "path": "",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Vault",
                     "isComposite": false,
                     "isPartOfComposite": false

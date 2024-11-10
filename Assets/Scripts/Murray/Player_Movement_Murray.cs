@@ -17,16 +17,21 @@ public class Player_Movment_Murray : MonoBehaviour
     private bool isGrounded; // To check if the player is on the ground
     private float currentSpeed; // To store the current speed
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         currentSpeed = Speed;
+
+        var playerInput = GetComponent<PlayerInput>();
+        Debug.Log("PlayerInput Component: " + (playerInput != null ? "Found" : "Not Found"));
     }
+
 
     void Update()
     {
         // Check if the player is on the ground
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
+        Debug.Log("IsGrounded: " + isGrounded);
     }
 
     void OnMove(InputValue value)
@@ -38,15 +43,16 @@ public class Player_Movment_Murray : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 moveDirection = new Vector3(movement.x, 0f, movement.y);
-        rb.MovePosition(transform.position + moveDirection * Time.deltaTime * currentSpeed);
+        rb.MovePosition(transform.position + moveDirection * Time.fixedDeltaTime * currentSpeed);
+        Debug.Log("FixedUpdate Move Position: " + moveDirection * currentSpeed);
     }
 
     void OnJump()
     {
-        // Jump if the player is grounded
         if (isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            Debug.Log("Jumped with force: " + jumpForce);
         }
     }
 
@@ -57,20 +63,19 @@ public class Player_Movment_Murray : MonoBehaviour
             direction = value.Get<Vector2>();
             float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
+            Debug.Log("Rotated to angle: " + angle);
         }
     }
 
     void OnSprint()
     {
-        // Enable sprinting by increasing speed
         currentSpeed = sprintSpeed;
         Debug.Log("Sprinting activated, speed: " + sprintSpeed);
     }
 
     void OnSprintRelease()
     {
-        // Disable sprinting by resetting speed
         currentSpeed = Speed;
-        Debug.Log("Sprinting activated, speed: " +Speed);
+        Debug.Log("Sprinting deactivated, speed: " + Speed);
     }
 }
