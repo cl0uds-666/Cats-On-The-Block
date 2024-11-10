@@ -12,9 +12,11 @@ public class EnemyCombat : MonoBehaviour
     public Transform LineOfSightPosition3;
     public Transform LineOfSightPosition4;
     public float Distance;
+    public float GunDistance;
     private RaycastHit Hit;
     public LayerMask PlayerLayer;
     public LayerMask EnemyLayer;
+    public LayerMask GunLayerDetection;
     public int Health;
     public GameObject Player;
     public Vector3 EyeLevel;
@@ -24,12 +26,19 @@ public class EnemyCombat : MonoBehaviour
     public float CoverWaitTime;
     private bool PeakFunctionRunning = false;
     public GameObject Bullet;
-    public Transform BulletSpawnPoint;
+    public GameObject BulletSpawnPoint;
     private float ShootDelay;
+    public GameObject GunRight;
+    public GameObject GunLeft;
+    public GameObject RightHand;
+    public GameObject LeftHand;
     private void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
         ShootDelay = 1f;
+        GunLeft.SetActive(false);
+        GunRight.SetActive(true);
+        BulletSpawnPoint.transform.position = new Vector3(RightHand.transform.position.x, BulletSpawnPoint.transform.position.y, BulletSpawnPoint.transform.position.z);
     }
     void Update()
     {
@@ -130,6 +139,26 @@ public class EnemyCombat : MonoBehaviour
         {
             transform.LookAt(Player.transform.position);
         }
+
+        if (GunLeft.activeSelf)
+        {
+            if (Physics.Raycast(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward, GunDistance, GunLayerDetection))
+            {
+                GunLeft.SetActive(false);
+                GunRight.SetActive(true);
+                BulletSpawnPoint.transform.position = new Vector3(RightHand.transform.position.x, BulletSpawnPoint.transform.position.y, BulletSpawnPoint.transform.position.z);
+            }
+        }
+
+        else if (GunRight.activeSelf)
+        {
+            if (Physics.Raycast(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward, GunDistance, GunLayerDetection))
+            {
+                GunRight.SetActive(false);
+                GunLeft.SetActive(true);
+                BulletSpawnPoint.transform.position = new Vector3(LeftHand.transform.position.x, BulletSpawnPoint.transform.position.y, BulletSpawnPoint.transform.position.z);
+            }
+        }
     }
     private void OnDrawGizmos()
     {
@@ -138,6 +167,16 @@ public class EnemyCombat : MonoBehaviour
         Debug.DrawRay(LineOfSightPosition2.transform.position, LineOfSightPosition2.transform.forward * Distance);
         Debug.DrawRay(LineOfSightPosition3.transform.position, LineOfSightPosition3.transform.forward * Distance);
         Debug.DrawRay(LineOfSightPosition4.transform.position, LineOfSightPosition4.transform.forward * Distance);
+
+        if (GunLeft.activeSelf)
+        {
+            Debug.DrawRay(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward * GunDistance);
+        }
+
+        else if (GunRight.activeSelf)
+        {
+            Debug.DrawRay(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward * GunDistance);
+        }
 
         if (CanSeePlayer)
         {
