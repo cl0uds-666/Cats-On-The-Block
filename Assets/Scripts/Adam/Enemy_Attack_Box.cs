@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting.ReorderableList;
 
 public class Enemy_Attack_Box : MonoBehaviour
 {
@@ -37,12 +38,12 @@ public class Enemy_Attack_Box : MonoBehaviour
                 PushPlayer = true;
                 Scratch = false;
             }
-        }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        StartCoroutine(AttackDelay());
+            else if (!Scratch && CanMove)
+            {
+                StartCoroutine(AttackDelay());
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
