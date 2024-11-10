@@ -22,11 +22,6 @@ public class Cover : MonoBehaviour
                 ToggleCover();
             }
 
-            if (GetComponent<Movement>().IsDashing)
-            {
-                ToggleCover();
-            }
-
             if (hit.normal.z == -1)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, (EdgeDetection.transform.position.z - CoverHit.transform.localScale.z / 2f) - 0.5f);
@@ -136,16 +131,6 @@ public class Cover : MonoBehaviour
             Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward * Distance);
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && !InCover && GetComponent<Movement>().IsGrounded)
-        {
-            if (Physics.Raycast(new Vector3(transform.position.x, HighCast, transform.position.z), transform.forward, out hit, Distance) || Physics.Raycast(new Vector3(transform.position.x, LowCast, transform.position.z), transform.forward, out hit, Distance))
-            {
-                CoverHit = hit.transform.gameObject;
-                EdgeDetection = CoverHit.transform.Find("Edge_Detection");
-                ToggleCover();
-            }
-        }
-
         if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance) && Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance))
         {
             print("Low Cover");
@@ -174,7 +159,7 @@ public class Cover : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cover") && GetComponent<Movement>().IsDashing)
         {
-            if (Physics.Raycast(new Vector3(transform.position.x, HighCast, transform.position.z), transform.forward, out hit, Distance) || Physics.Raycast(new Vector3(transform.position.x, LowCast, transform.position.z), transform.forward, out hit, Distance))
+            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance) || Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance))
             {
                 GetComponent<Movement>().IsDashing = false;
                 CoverHit = hit.transform.gameObject;
@@ -189,8 +174,9 @@ public class Cover : MonoBehaviour
         print("B");
         if (!InCover && GetComponent<Movement>().IsGrounded)
         {
-            if (Physics.Raycast(new Vector3(transform.position.x, HighCast, transform.position.z), transform.forward, out hit, Distance) || Physics.Raycast(new Vector3(transform.position.x, LowCast, transform.position.z), transform.forward, out hit, Distance))
+            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance) || Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance))
             {
+                print("yes");
                 CoverHit = hit.transform.gameObject;
                 EdgeDetection = CoverHit.transform.Find("Edge_Detection");
                 ToggleCover();
