@@ -11928,6 +11928,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6268548064407643762, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: Health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268548064407643762, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: BoxSize.x
       value: 7
       objectReference: {fileID: 0}
@@ -11938,6 +11942,10 @@ PrefabInstance:
     - target: {fileID: 6268548064407643762, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: BoxSize.z
       value: 2.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268548064407643762, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6500938855587809426, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39501,6 +39509,14 @@ PrefabInstance:
     - target: {fileID: 3505071599139553697, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
       propertyPath: m_RaycastTarget
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004326126470554179, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 652
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004326126470554179, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 93
       objectReference: {fileID: 0}
     - target: {fileID: 5004326126470554179, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
       propertyPath: m_LocalScale.x
