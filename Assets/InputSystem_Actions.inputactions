@@ -112,6 +112,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Vault",
+                    "type": "Button",
+                    "id": "fb082148-d37d-4f4a-aee4-8c267f8a05d1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -545,37 +554,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "a717018f-a637-4512-a04e-e76243164c59",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "b58d8339-fb88-4563-a5ff-2014ca03bc26",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "SprintRelease",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "defc79da-9beb-4d9d-82b8-cbc62a5a6453",
-                    "path": "",
+                    "name": "",
+                    "id": "fa7519f6-314f-4628-8287-62268c30ec29",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "SprintRelease",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Vault",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "positive",
-                    "id": "c8c62489-c7f0-4597-97ef-57f96c1ea961",
+                    "name": "",
+                    "id": "99307dda-b0ca-4ee9-b0e2-afc44cff92c8",
                     "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SprintRelease",
+                    "action": "Vault",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         },
