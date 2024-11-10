@@ -5,12 +5,24 @@ using UnityEngine;
 public class Vaulting : MonoBehaviour
 {
     private int vault_layer;
-    public Camera Cam;
+    public Transform Cam; // Camera Transform to be assigned
     private float PlayerHeight = 2;
     private float PlayerRadius = 0.5f;
 
     void Start()
     {
+        // Automatically find the camera as a child of the player
+        if (Cam == null)
+        {
+            Cam = transform.Find("CameraName");  // Replace "CameraName" with the actual name of your camera GameObject
+        }
+
+        // Check if Cam is still null and handle the error if camera is not found
+        if (Cam == null)
+        {
+            Debug.LogError("Camera not found! Make sure the Camera GameObject is a child of the player or assigned properly.");
+        }
+
         // Directly get the vault layer without inverting it
         vault_layer = LayerMask.NameToLayer("Vault_Layer");
     }

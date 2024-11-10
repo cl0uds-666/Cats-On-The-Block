@@ -6,7 +6,9 @@ public class Player_Movment_Murray : MonoBehaviour
     private Rigidbody rb;
     private Vector2 movement;
     private Vector2 direction;
-
+    float MoveX;
+    float MoveZ;
+    public Transform Cam;
     public float Speed = 5f;
     public float sprintSpeed = 8f; // Speed when sprinting
     public float jumpForce = 5f;   // The force applied for jumping
@@ -45,6 +47,26 @@ public class Player_Movment_Murray : MonoBehaviour
         Vector3 moveDirection = new Vector3(movement.x, 0f, movement.y);
         rb.MovePosition(transform.position + moveDirection * Time.fixedDeltaTime * currentSpeed);
         Debug.Log("FixedUpdate Move Position: " + moveDirection * currentSpeed);
+        MoveX = Input.GetAxis("Horizontal");
+        MoveZ = Input.GetAxis("Vertical");
+
+        Vector3 CamX = Cam.forward;
+        Vector3 CamZ = Cam.right;
+
+        CamX.y = 0;
+        CamZ.y = 0;
+
+        Vector3 ForwardLook = MoveZ * CamX;
+        Vector3 HorizontalLook = MoveX * CamZ;
+
+        Vector3 MoveDirection = ForwardLook + HorizontalLook;
+
+        rb.linearVelocity = new Vector3(MoveDirection.x * Speed * Time.fixedDeltaTime, rb.linearVelocity.y, MoveDirection.z * Speed * Time.fixedDeltaTime);
+
+        if (MoveDirection != Vector3.zero && !GetComponent<Cover>().InCover)
+        {
+            transform.forward = MoveDirection;
+        }
     }
 
     void OnJump()
@@ -56,16 +78,16 @@ public class Player_Movment_Murray : MonoBehaviour
         }
     }
 
-    void OnLook(InputValue value)
-    {
-        if (value.Get<Vector2>() != Vector2.zero)
-        {
-            direction = value.Get<Vector2>();
-            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
-            Debug.Log("Rotated to angle: " + angle);
-        }
-    }
+    //void OnLook(InputValue value)
+    //{
+    //    if (value.Get<Vector2>() != Vector2.zero)
+    //    {
+    //        direction = value.Get<Vector2>();
+    //        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+    //        transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
+    //        Debug.Log("Rotated to angle: " + angle);
+    //    }
+    //}
 
     void OnSprint()
     {
