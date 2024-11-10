@@ -8,16 +8,20 @@ public class Player_Movment_Murray : MonoBehaviour
     private Vector2 direction;
 
     public float Speed = 5f;
-    public float jumpForce = 5f;  // The force applied for jumping
-    public LayerMask groundLayer; // The layer that represents the ground
-    public Transform groundCheck; // The transform to check if the player is on the ground
+    public float sprintSpeed = 8f; // Speed when sprinting
+    public float jumpForce = 5f;   // The force applied for jumping
+    public LayerMask groundLayer;  // The layer that represents the ground
+    public Transform groundCheck;  // The transform to check if the player is on the ground
     public float groundCheckRadius = 0.2f; // Radius for ground detection
 
     private bool isGrounded; // To check if the player is on the ground
+    private bool isSprinting; // To check if the player is sprinting
+    private float currentSpeed; // To store the current speed
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        currentSpeed = Speed;
     }
 
     void Update()
@@ -34,7 +38,7 @@ public class Player_Movment_Murray : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 moveDirection = new Vector3(movement.x, 0f, movement.y);
-        rb.MovePosition(transform.position + moveDirection * Time.deltaTime * Speed);
+        rb.MovePosition(transform.position + moveDirection * Time.deltaTime * currentSpeed);
     }
 
     void OnJump()
@@ -54,5 +58,19 @@ public class Player_Movment_Murray : MonoBehaviour
             float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
         }
+    }
+
+    void OnSprint()
+    {
+        // Enable sprinting by increasing speed
+        isSprinting = true;
+        currentSpeed = sprintSpeed;
+    }
+
+    void OnSprintRelease()
+    {
+        // Disable sprinting by resetting speed
+        isSprinting = false;
+        currentSpeed = Speed;
     }
 }
