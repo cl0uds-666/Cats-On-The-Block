@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 4747000102796975051}
   - component: {fileID: 6268548064407643762}
   - component: {fileID: 617550500251180399}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: Melee Enemy
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 2203850697205509456}
   - component: {fileID: 4124252099898547425}
   - component: {fileID: 3535004495918511168}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: attack box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
