@@ -5,20 +5,15 @@ public class Enemy_Bullet : MonoBehaviour
 {
     public float Speed;
     public GameObject Player;
-    private Rigidbody rb;
     public bool Move;
     public float DeathTimer;
     public int Damage;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
     void Update()
     {
         if (Move)
         {
-            rb.AddForce(transform.forward * Speed);
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, Speed * Time.deltaTime);
         }
 
         if (DeathTimer <= 0)

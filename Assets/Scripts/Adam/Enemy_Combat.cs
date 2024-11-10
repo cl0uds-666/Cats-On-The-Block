@@ -28,17 +28,10 @@ public class EnemyCombat : MonoBehaviour
     public GameObject Bullet;
     public GameObject BulletSpawnPoint;
     private float ShootDelay;
-    public GameObject GunRight;
-    public GameObject GunLeft;
-    public GameObject RightHand;
-    public GameObject LeftHand;
     private void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
         ShootDelay = 1f;
-        GunLeft.SetActive(false);
-        GunRight.SetActive(true);
-        BulletSpawnPoint.transform.position = new Vector3(RightHand.transform.position.x, BulletSpawnPoint.transform.position.y, BulletSpawnPoint.transform.position.z);
     }
     void Update()
     {
@@ -139,26 +132,6 @@ public class EnemyCombat : MonoBehaviour
         {
             transform.LookAt(Player.transform.position);
         }
-
-        if (GunLeft.activeSelf)
-        {
-            if (Physics.Raycast(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward, GunDistance, GunLayerDetection))
-            {
-                GunLeft.SetActive(false);
-                GunRight.SetActive(true);
-                BulletSpawnPoint.transform.position = new Vector3(RightHand.transform.position.x, BulletSpawnPoint.transform.position.y, BulletSpawnPoint.transform.position.z);
-            }
-        }
-
-        else if (GunRight.activeSelf)
-        {
-            if (Physics.Raycast(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward, GunDistance, GunLayerDetection))
-            {
-                GunRight.SetActive(false);
-                GunLeft.SetActive(true);
-                BulletSpawnPoint.transform.position = new Vector3(LeftHand.transform.position.x, BulletSpawnPoint.transform.position.y, BulletSpawnPoint.transform.position.z);
-            }
-        }
     }
     private void OnDrawGizmos()
     {
@@ -167,21 +140,6 @@ public class EnemyCombat : MonoBehaviour
         Debug.DrawRay(LineOfSightPosition2.transform.position, LineOfSightPosition2.transform.forward * Distance);
         Debug.DrawRay(LineOfSightPosition3.transform.position, LineOfSightPosition3.transform.forward * Distance);
         Debug.DrawRay(LineOfSightPosition4.transform.position, LineOfSightPosition4.transform.forward * Distance);
-
-        if (GunLeft.activeSelf)
-        {
-            Debug.DrawRay(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward * GunDistance);
-        }
-
-        else if (GunRight.activeSelf)
-        {
-            Debug.DrawRay(BulletSpawnPoint.transform.position, BulletSpawnPoint.transform.forward * GunDistance);
-        }
-
-        if (CanSeePlayer)
-        {
-            Debug.DrawRay(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position));
-        }
     }
 
     private IEnumerator Peak()
