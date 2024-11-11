@@ -43,34 +43,34 @@ public class WeaponSwitching : MonoBehaviour
             SelectWeapon(currentWeaponIndex);
         }
 
-        // Xbox Controller support for weapon switching:
-        // Left bumper (LB) to switch to previous weapon
-        if (Input.GetButtonDown("Xbox_LB"))
-        {
-            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
-            SelectWeapon(currentWeaponIndex);
-        }
+        //// Xbox Controller support for weapon switching:
+        //// Left bumper (LB) to switch to previous weapon
+        //if (Input.GetButtonDown("Xbox_LB"))
+        //{
+        //    currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+        //    SelectWeapon(currentWeaponIndex);
+        //}
 
-        // Right bumper (RB) to switch to next weapon
-        if (Input.GetButtonDown("Xbox_RB"))
-        {
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
-            SelectWeapon(currentWeaponIndex);
-        }
+        //// Right bumper (RB) to switch to next weapon
+        //if (Input.GetButtonDown("Xbox_RB"))
+        //{
+        //    currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+        //    SelectWeapon(currentWeaponIndex);
+        //}
 
-        // Optional: D-pad support to cycle through weapons
-        float dPadHorizontal = Input.GetAxis("DPad_Horizontal");
-        if (dPadHorizontal > 0f) // D-pad right
-        {
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
-            SelectWeapon(currentWeaponIndex);
+    //    // Optional: D-pad support to cycle through weapons
+    //    float dPadHorizontal = Input.GetAxis("DPad_Horizontal");
+    //    if (dPadHorizontal > 0f) // D-pad right
+    //    {
+    //        currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+    //        SelectWeapon(currentWeaponIndex);
+    //    }
+    //    else if (dPadHorizontal < 0f) // D-pad left
+    //    {
+    //        currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+    //        SelectWeapon(currentWeaponIndex);
+    //    }
         }
-        else if (dPadHorizontal < 0f) // D-pad left
-        {
-            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
-            SelectWeapon(currentWeaponIndex);
-        }
-    }
 
     void SelectWeapon(int index)
     {
