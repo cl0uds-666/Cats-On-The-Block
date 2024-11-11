@@ -121,6 +121,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Value",
+                    "id": "409026bb-fda1-40dc-94aa-3da75d36775f",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -594,6 +603,17 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Vault",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91daf56a-ccd8-4638-b258-de2b39d5cbcb",
+                    "path": "<XInputController>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
