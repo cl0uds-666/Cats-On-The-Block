@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Stats : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Player_Stats : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }
