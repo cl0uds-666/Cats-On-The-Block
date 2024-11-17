@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Bullet
   - Melee Enemy
+  - Player Bullet
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Bullet
   - Gun
   - Vault_Layer
-  - 
+  - Attack Box
   - 
   - 
   - 

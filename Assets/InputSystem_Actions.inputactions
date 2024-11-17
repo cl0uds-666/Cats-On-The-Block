@@ -11,7 +11,7 @@
                     "id": "351f2ccd-1f9f-44bf-9bec-d62ac5c5f408",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Tap",
+                    "interactions": "Hold",
                     "initialStateCheck": true
                 },
                 {
@@ -128,7 +128,7 @@
                     "id": "409026bb-fda1-40dc-94aa-3da75d36775f",
                     "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 }
             ],

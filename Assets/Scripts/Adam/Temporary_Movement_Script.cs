@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
         // Jump if grounded
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
-            rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * JumpForce * Time.deltaTime, ForceMode.Impulse);
         }
 
         // Start dash if grounded, moving, and not already dashing
@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
 
         float currentSpeed = IsSprinting ? SprintSpeed : Speed;
 
-        rb.linearVelocity = new Vector3(MoveDirection.x * currentSpeed, rb.linearVelocity.y, MoveDirection.z * currentSpeed);
+        rb.linearVelocity = new Vector3(MoveDirection.x * currentSpeed, rb.linearVelocity.y, MoveDirection.z * currentSpeed) * Time.fixedDeltaTime;
 
         if (MoveDirection != Vector3.zero && !GetComponent<Cover>().InCover)
         {

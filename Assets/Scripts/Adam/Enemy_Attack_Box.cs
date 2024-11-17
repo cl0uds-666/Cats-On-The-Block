@@ -64,7 +64,7 @@ public class Enemy_Attack_Box : MonoBehaviour
 
     private IEnumerator Push()
     {
-        Player.GetComponent<Rigidbody>().AddForce(transform.forward * AttackForce);
+        Player.GetComponent<Rigidbody>().AddForce(transform.forward * AttackForce * Time.deltaTime);
         yield return new WaitForSeconds(0.2f);
         PushPlayer = false;
     }
