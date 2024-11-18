@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Missions : MonoBehaviour
 {
-    int Mission = 0;
+    public int Mission = 0;
 
     void Start()
     {
