@@ -768,6 +768,10 @@ PrefabInstance:
       value: 0.144
       objectReference: {fileID: 0}
     - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: TutorialEnemy
+      value: 
+      objectReference: {fileID: 125509032}
+    - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: Waypoints.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -3630,8 +3634,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBox: {fileID: 420478259}
-  Enemy: {fileID: 125509032}
-  CanLoop: 1
 --- !u!1001 &126875507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17508,6 +17510,7 @@ MonoBehaviour:
   PlayerCamera: {fileID: 1067022259}
   Enemy: {fileID: 125509032}
   AttackBox: {fileID: 420478259}
+  Player: {fileID: 1504651753}
 --- !u!1001 &610415849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19243,6 +19246,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 24.19
       objectReference: {fileID: 0}
+    - target: {fileID: 4187690888827165903, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
+      propertyPath: TutorialEnemy
+      value: 
+      objectReference: {fileID: 125509032}
     - target: {fileID: 6183959851937723722, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: Bullet
       value: 
@@ -24049,6 +24056,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.144
       objectReference: {fileID: 0}
+    - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: TutorialEnemy
+      value: 
+      objectReference: {fileID: 125509032}
     - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: Waypoints.Array.size
       value: 3
@@ -30546,6 +30557,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 25.319
       objectReference: {fileID: 0}
+    - target: {fileID: 4187690888827165903, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
+      propertyPath: TutorialEnemy
+      value: 
+      objectReference: {fileID: 125509032}
     - target: {fileID: 6183959851937723722, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: Bullet
       value: 
@@ -36366,6 +36381,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: TutorialEnemy
+      value: 
+      objectReference: {fileID: 125509032}
+    - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: Waypoints.Array.size
       value: 15
       objectReference: {fileID: 0}
@@ -37436,6 +37455,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.144
       objectReference: {fileID: 0}
+    - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: TutorialEnemy
+      value: 
+      objectReference: {fileID: 125509032}
     - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: Waypoints.Array.size
       value: 3
@@ -50414,6 +50437,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.144
       objectReference: {fileID: 0}
+    - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: TutorialEnemy
+      value: 
+      objectReference: {fileID: 125509032}
     - target: {fileID: 617550500251180399, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: Waypoints.Array.size
       value: 0

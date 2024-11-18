@@ -1,4 +1,5 @@
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraTimer : MonoBehaviour
@@ -9,12 +10,17 @@ public class CameraTimer : MonoBehaviour
     public CinemachineCamera PlayerCamera;
     public GameObject Enemy;
     public GameObject AttackBox;
+    public GameObject Player;
+    private float NormalSpeed;
+    private float NormalSprintSpeed;
     private void Start()
     {
         Enemy.GetComponent<EnemyMovement>().enabled = false;
         Enemy.GetComponent<Melee_Enemy>().enabled = false;
         AttackBox.SetActive(false);
         CurrentCameraTimer = MaxCameraTimer;
+        NormalSpeed = Player.GetComponent<Movement>().Speed;
+        NormalSprintSpeed = Player.GetComponent<Movement>().SprintSpeed;
     }
 
     void Update()
@@ -29,6 +35,8 @@ public class CameraTimer : MonoBehaviour
             else
             {
                 PlayerCamera.Prioritize();
+                Player.GetComponent<Movement>().Speed = NormalSpeed;
+                Player.GetComponent<Movement>().SprintSpeed = NormalSprintSpeed;
             }
 
             if (CurrentCameraTimer <= MaxCameraTimer - 1f && CurrentCameraTimer > 0f)
