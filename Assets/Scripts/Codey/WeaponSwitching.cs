@@ -62,18 +62,18 @@ public class WeaponSwitching : MonoBehaviour
             SelectWeapon(currentWeaponIndex);
         }
 
-        // Optional: D-pad support to cycle through weapons
-        float dPadHorizontal = Input.GetAxis("DPad_Horizontal");
-        if (dPadHorizontal > 0f) // D-pad right
-        {
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
-            SelectWeapon(currentWeaponIndex);
-        }
-        else if (dPadHorizontal < 0f) // D-pad left
-        {
-            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
-            SelectWeapon(currentWeaponIndex);
-        }
+        //// Optional: D-pad support to cycle through weapons
+        //float dPadHorizontal = Input.GetAxis("DPad_Horizontal");
+        //if (dPadHorizontal > 0f) // D-pad right
+        //{
+        //    currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+        //    SelectWeapon(currentWeaponIndex);
+        //}
+        //else if (dPadHorizontal < 0f) // D-pad left
+        //{
+        //    currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+        //    SelectWeapon(currentWeaponIndex);
+        //}
     }
 
     void SelectWeapon(int index)
