@@ -5,41 +5,59 @@ public class WaterBar : MonoBehaviour
 {
     public Image waterFillImage;                // Reference to the water fill image
 
-    private PlayerCombat playerCombat;
+    private PlayerCombat currentPlayerCombat;
+    private WeaponSwitching weaponSwitching;
 
     void Start()
     {
-        // Find the active weapon's PlayerCombat component
-        WeaponSwitching weaponSwitching = FindObjectOfType<WeaponSwitching>();
+        // Find the WeaponSwitching script
+        weaponSwitching = FindObjectOfType<WeaponSwitching>();
 
         if (weaponSwitching != null)
         {
-            // Get the active weapon's PlayerProjectileShooting component
-            PlayerProjectileShooting activeWeapon = weaponSwitching.GetActiveWeapon();
-
-            if (activeWeapon != null)
-            {
-                playerCombat = activeWeapon.GetComponent<PlayerCombat>();
-
-                if (playerCombat != null)
-                {
-                    // Subscribe to the OnAmmoChanged event
-                    playerCombat.OnAmmoChanged += UpdateWaterBar;
-                    Debug.Log("WaterBar subscribed to PlayerCombat's OnAmmoChanged event.");
-                }
-                else
-                {
-                    Debug.LogError("PlayerCombat script not found on the active weapon!");
-                }
-            }
-            else
-            {
-                Debug.LogError("No active weapon found in WeaponSwitching!");
-            }
+            UpdateCurrentWeapon(); // Initialize with the current weapon
         }
         else
         {
             Debug.LogError("WeaponSwitching script not found!");
+        }
+    }
+
+    void Update()
+    {
+        // Update the active weapon each frame in case of weapon switching
+        UpdateCurrentWeapon();
+    }
+
+    private void UpdateCurrentWeapon()
+    {
+        // Get the active weapon's PlayerCombat component
+        PlayerProjectileShooting activeWeapon = weaponSwitching.GetActiveWeapon();
+
+        if (activeWeapon != null)
+        {
+            PlayerCombat newPlayerCombat = activeWeapon.GetComponent<PlayerCombat>();
+
+            // Check if we've switched to a new weapon
+            if (newPlayerCombat != currentPlayerCombat)
+            {
+                // Unsubscribe from the old weapon
+                if (currentPlayerCombat != null)
+                {
+                    currentPlayerCombat.OnAmmoChanged -= UpdateWaterBar;
+                }
+
+                // Subscribe to the new weapon
+                if (newPlayerCombat != null)
+                {
+                    currentPlayerCombat = newPlayerCombat;
+                    currentPlayerCombat.OnAmmoChanged += UpdateWaterBar;
+
+                    // Update the water bar immediately
+                    float ammoPercentage = (float)currentPlayerCombat.currentAmmo / currentPlayerCombat.maxAmmo;
+                    UpdateWaterBar(ammoPercentage);
+                }
+            }
         }
     }
 
@@ -48,6 +66,12 @@ public class WaterBar : MonoBehaviour
         if (waterFillImage != null)
         {
             waterFillImage.fillAmount = ammoPercentage;
+
+            // Make the fill image visible when updating
+            if (!waterFillImage.enabled)
+            {
+                waterFillImage.enabled = true;
+            }
         }
         else
         {
