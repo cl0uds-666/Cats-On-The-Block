@@ -13,13 +13,13 @@ public class Vaulting : MonoBehaviour
          
         if (Cam == null)
         {
-            Cam = transform.Find("FreeLook Camera");  
+            Cam = transform.Find("Main Camera");  
         }
 
          
         if (Cam == null)
         {
-            Debug.LogError("Camera not found! Make sure the Camera GameObject is a child of the player or assigned properly.");
+            Debug.LogError("Camera not found!");
         }
 
          
