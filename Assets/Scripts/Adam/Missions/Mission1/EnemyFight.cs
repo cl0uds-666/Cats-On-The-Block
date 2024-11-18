@@ -1,9 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UIElements;
-using System;
-using System.Collections;
 
 public class EnemyFight : MonoBehaviour
 {
