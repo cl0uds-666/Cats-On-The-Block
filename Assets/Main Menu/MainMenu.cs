@@ -18,4 +18,24 @@ public class MainMenu : MonoBehaviour
    {
     Application.Quit();
    }
+
+    public void OnAccessibilityButton()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void OnSoundButton()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    public void OnControlButton()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void OnBackButton()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

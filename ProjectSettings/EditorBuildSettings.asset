@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Main Menu/Options Menu.unity
     guid: 34d15c7049c39924abfbc3ef20b7f095
   - enabled: 1
+    path: Assets/Main Menu/Accessability Menu.unity
+    guid: 53cf98adff39922478b0dfd421b240ce
+  - enabled: 1
+    path: Assets/Main Menu/Sound Menu.unity
+    guid: d0cbeaf6aabc1ea4484843d9a1d92fc9
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
