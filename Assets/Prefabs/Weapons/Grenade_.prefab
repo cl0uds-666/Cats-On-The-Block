@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3979462219881998230
+--- !u!1001 &4086854980819615826
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,23 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7462032
+      value: 0.25722975
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.05470419
+      value: 0.09840326
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.9535556
+      value: -6.1803584
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalRotation.y
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -48,11 +48,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8150306795921017450, guid: 24c02dd169552be47984245b69f42f57, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: e3fc76646488b0b44840e7f30a1be5ee, type: 2}
-    - target: {fileID: -4716467150064823922, guid: 24c02dd169552be47984245b69f42f57, type: 3}
+    - target: {fileID: -7511558181221131132, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7c34971598feef842bef1f0d8b487918, type: 2}
