@@ -48,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
             Index++;
         }
 
-        if (Index == Waypoints.Length)
+        if (Index == Waypoints.Length && GetComponent<EnemyFight>().CanLoop)
         {
             Index = 0;
         }

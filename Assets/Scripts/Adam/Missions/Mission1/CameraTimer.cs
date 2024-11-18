@@ -8,11 +8,12 @@ public class CameraTimer : MonoBehaviour
     private float CurrentCameraTimer;
     public CinemachineCamera PlayerCamera;
     public GameObject Enemy;
-
+    public GameObject AttackBox;
     private void Start()
     {
         Enemy.GetComponent<EnemyMovement>().enabled = false;
         Enemy.GetComponent<Melee_Enemy>().enabled = false;
+        AttackBox.SetActive(false);
         CurrentCameraTimer = MaxCameraTimer;
     }
 
@@ -30,7 +31,7 @@ public class CameraTimer : MonoBehaviour
                 PlayerCamera.Prioritize();
             }
 
-            if (CurrentCameraTimer <= MaxCameraTimer - 1f)
+            if (CurrentCameraTimer <= MaxCameraTimer - 1f && CurrentCameraTimer > 0f)
             {
                 Enemy.GetComponent<EnemyMovement>().enabled = true;
             }
