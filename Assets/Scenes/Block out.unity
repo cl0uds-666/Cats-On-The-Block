@@ -19114,71 +19114,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3642497174465241776, guid: 47abf263060bab3449b805cd42bca591, type: 3}
   m_PrefabInstance: {fileID: 663694505}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &666306104
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 776623821037332355, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_Name
-      value: Water Bullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451210567496842178, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: Damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451210567496842178, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1504651753}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 89.337845
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 27.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 777
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387984322480394725, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
 --- !u!1 &669914384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7780066210683076552, guid: b00a19657e6187445a85dd1644a39df1, type: 3}
@@ -19205,11 +19140,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.812472, y: 4.976342, z: 6.902346}
   m_Center: {x: -0.024131233, y: -0.042420167, z: 3.4511728}
---- !u!1 &675311238 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 776623821037332355, guid: 301ef6b6cd9f0be42811c0d256ffc5aa, type: 3}
-  m_PrefabInstance: {fileID: 666306104}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &677168380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19253,7 +19183,7 @@ PrefabInstance:
     - target: {fileID: 6183959851937723722, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: Bullet
       value: 
-      objectReference: {fileID: 675311238}
+      objectReference: {fileID: 0}
     - target: {fileID: 6183959851937723722, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: Player
       value: 
@@ -30564,7 +30494,7 @@ PrefabInstance:
     - target: {fileID: 6183959851937723722, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: Bullet
       value: 
-      objectReference: {fileID: 675311238}
+      objectReference: {fileID: 0}
     - target: {fileID: 6183959851937723722, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: Player
       value: 
@@ -66397,7 +66327,6 @@ SceneRoots:
   - {fileID: 1328303899}
   - {fileID: 1067022260}
   - {fileID: 400903127}
-  - {fileID: 666306104}
   - {fileID: 2058616480}
   - {fileID: 1280353316}
   - {fileID: 554729030}
