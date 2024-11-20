@@ -5,9 +5,20 @@ public class Enemy_Drop : MonoBehaviour
     public GameObject ItemDrop;
     void Update()
     {
-        if (CompareTag("Enemy") || CompareTag("Melee Enemy"))
+        if (CompareTag("Enemy"))
         {
-            Instantiate(ItemDrop, transform.position, Quaternion.identity);
+            if (GetComponent<EnemyCombat>().Health <= 0)
+            {
+                Instantiate(ItemDrop, transform.position, Quaternion.identity);
+            }
+        }
+
+        else
+        {
+            if (GetComponent<Melee_Enemy>().Health <= 0)
+            {
+                Instantiate(ItemDrop, transform.position, Quaternion.identity);
+            }
         }
     }
 }

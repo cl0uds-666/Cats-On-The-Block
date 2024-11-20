@@ -3,6 +3,8 @@ using UnityEngine;
 public class Missions : MonoBehaviour
 {
     public int Mission = 0;
+    public bool HasPurse = false;
+    public GameObject Mission1NPC;
 
     void Start()
     {
@@ -13,7 +15,7 @@ public class Missions : MonoBehaviour
     {
         if (Mission == 1)
         {
-            if (Input.GetKeyDown(KeyCode.Keypad1))
+            if (HasPurse && Mission1NPC.GetComponent<NPC_Collider>().Mission1Complete)
             {
                 SelectMission();
             }
