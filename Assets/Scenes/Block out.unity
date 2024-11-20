@@ -20357,6 +20357,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.812472, y: 4.976342, z: 6.902346}
   m_Center: {x: -0.024131233, y: -0.042420167, z: 3.4511728}
+--- !u!1 &672056598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9112054711556674265, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
+  m_PrefabInstance: {fileID: 512929229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &677168380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39357,6 +39362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1504651753}
   EnemyCamera: {fileID: 609297972}
+  NPCTextBox: {fileID: 672056598}
 --- !u!1 &1250264827
 GameObject:
   m_ObjectHideFlags: 0
@@ -47275,6 +47281,7 @@ MonoBehaviour:
   Mission: 0
   HasPurse: 0
   Mission1NPC: {fileID: 239939338}
+  NPC1Text: {fileID: 1775280511}
 --- !u!114 &1504651797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55553,6 +55560,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3642497174465241776, guid: 47abf263060bab3449b805cd42bca591, type: 3}
   m_PrefabInstance: {fileID: 1773887469}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1775280511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6482983874050369723, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}
+  m_PrefabInstance: {fileID: 512929229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1783211527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4331108348279137772, guid: 6a32aa3f0e4a64449bbdd922b969cb34, type: 3}

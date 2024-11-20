@@ -6,6 +6,7 @@ public class Mission1trigger : MonoBehaviour
 {
     public GameObject Player;
     public CinemachineCamera EnemyCamera;
+    public GameObject NPCTextBox;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class Mission1trigger : MonoBehaviour
         {
             EnemyCamera.Prioritize();
             EnemyCamera.GetComponent<CameraTimer>().StartTimer = true;
+            NPCTextBox.SetActive(true);
             Player.GetComponent<Movement>().Speed = 0f;
             Player.GetComponent<Movement>().SprintSpeed = 0f;
             Destroy(gameObject);

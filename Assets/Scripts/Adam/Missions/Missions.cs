@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Missions : MonoBehaviour
@@ -5,6 +6,7 @@ public class Missions : MonoBehaviour
     public int Mission = 0;
     public bool HasPurse = false;
     public GameObject Mission1NPC;
+    public TextMeshProUGUI NPC1Text;
 
     void Start()
     {
@@ -17,6 +19,7 @@ public class Missions : MonoBehaviour
         {
             if (HasPurse && Mission1NPC.GetComponent<NPC_Collider>().Mission1Complete)
             {
+                NPC1Text.text = "Thanks for getting purrse back! Follow me to my shop";
                 SelectMission();
             }
         }
