@@ -13,16 +13,12 @@ public class Vaulting : MonoBehaviour
          
         if (Cam == null)
         {
-            Cam = transform.Find("Main Camera");  
-        }
+            Cam = transform.Find("Main Camera");
 
-         
-        if (Cam == null)
-        {
             Debug.LogError("Camera not found!");
         }
 
-         
+ 
         vault_layer = LayerMask.NameToLayer("Vault_Layer");
     }
 

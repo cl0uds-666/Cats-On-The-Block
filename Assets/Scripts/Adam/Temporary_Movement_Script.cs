@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
 
         float currentSpeed = IsSprinting ? SprintSpeed : Speed;
 
-        rb.linearVelocity = new Vector3(MoveDirection.x * currentSpeed, rb.linearVelocity.y, MoveDirection.z * currentSpeed) * Time.fixedDeltaTime;
+        rb.linearVelocity = new Vector3(MoveDirection.x * currentSpeed, rb.linearVelocity.y, MoveDirection.z * currentSpeed);// * Time.fixedDeltaTime;
 
         if (MoveDirection != Vector3.zero && !GetComponent<Cover>().InCover)
         {
