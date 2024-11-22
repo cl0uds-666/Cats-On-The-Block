@@ -6,13 +6,15 @@ public class CameraTimer : MonoBehaviour
 {
     public bool StartTimer = false;
     public float MaxCameraTimer;
-    private float CurrentCameraTimer;
+    public float CurrentCameraTimer;
     public CinemachineCamera PlayerCamera;
     public GameObject Enemy;
     public GameObject AttackBox;
     public GameObject Player;
     private float NormalSpeed;
     private float NormalSprintSpeed;
+    public GameObject NPCTextBox;
+    public GameObject NPC;
     private void Start()
     {
         Enemy.GetComponent<EnemyMovement>().enabled = false;
@@ -30,11 +32,14 @@ public class CameraTimer : MonoBehaviour
             if (CurrentCameraTimer > 0f)
             {
                 CurrentCameraTimer -= Time.deltaTime;
+                NPC.transform.LookAt(new Vector3(Player.transform.position.x, NPC.transform.position.y, Player.transform.position.z));
             }
 
             else
             {
+                StartTimer = false;
                 PlayerCamera.Prioritize();
+                NPCTextBox.SetActive(false);
                 Player.GetComponent<Movement>().Speed = NormalSpeed;
                 Player.GetComponent<Movement>().SprintSpeed = NormalSprintSpeed;
             }

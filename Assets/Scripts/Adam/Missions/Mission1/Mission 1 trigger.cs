@@ -12,9 +12,9 @@ public class Mission1trigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && Player.GetComponent<Missions>().Mission == 1)
         {
+            NPCTextBox.SetActive(true);
             EnemyCamera.Prioritize();
             EnemyCamera.GetComponent<CameraTimer>().StartTimer = true;
-            NPCTextBox.SetActive(true);
             Player.GetComponent<Movement>().Speed = 0f;
             Player.GetComponent<Movement>().SprintSpeed = 0f;
             Destroy(gameObject);

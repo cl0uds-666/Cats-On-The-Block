@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
     public Vector3 TargetDestination;
     private GameObject Player;
     public GameObject AttackBox;
-    public GameObject TutorialEnemy;
     void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -27,6 +26,11 @@ public class EnemyMovement : MonoBehaviour
                 TargetDestination = Waypoints[Index].position;
                 Agent.destination = TargetDestination;
             }
+
+            if (Index == Waypoints.Length)
+            {
+                Index = 0;
+            }
         }
 
         else
@@ -43,15 +47,9 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         
-
         if (Vector3.Distance(TargetDestination, transform.position) < 1f)
         {
             Index++;
-        }
-
-        if (Index == Waypoints.Length && gameObject != TutorialEnemy)
-        {
-            Index = 0;
         }
     }
 }
