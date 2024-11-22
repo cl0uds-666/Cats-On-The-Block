@@ -9051,7 +9051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66944a02eed44f44f9704b2daefea3a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPC1Text: {fileID: 0}
+  NPC1Text: {fileID: 1852663056}
   NPCTextBox: {fileID: 330126330}
   Camera: {fileID: 609297965}
 --- !u!65 &239939355
@@ -21533,7 +21533,7 @@ MonoBehaviour:
   AttackBox: {fileID: 420478259}
   Player: {fileID: 1504651753}
   NPCTextBox: {fileID: 330126330}
-  NPC: {fileID: 0}
+  NPC: {fileID: 239939338}
 --- !u!1001 &610415849
 PrefabInstance:
   m_ObjectHideFlags: 0
