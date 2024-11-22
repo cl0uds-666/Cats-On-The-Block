@@ -1,8 +1,9 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public GameObject[] weapons;                // Array of weapon GameObjects
+    public List<GameObject> weapons;                // Array of weapon GameObjects
     public int currentWeaponIndex = 0;          // Index of the currently selected weapon
     public WaterBar waterBarUI;                 // Reference to the WaterBar UI script (set in Inspector)
     public PlayerProjectileShooting GetActiveWeapon()
@@ -38,12 +39,12 @@ public class WeaponSwitching : MonoBehaviour
         // Optional: Cycle through weapons with scroll wheel
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Count) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
 
@@ -51,14 +52,14 @@ public class WeaponSwitching : MonoBehaviour
         // Left bumper (LB) to switch to previous weapon
         if (Input.GetButtonDown("Xbox_LB"))
         {
-            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Count) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
 
         // Right bumper (RB) to switch to next weapon
         if (Input.GetButtonDown("Xbox_RB"))
         {
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
 
@@ -66,22 +67,22 @@ public class WeaponSwitching : MonoBehaviour
         float dPadHorizontal = Input.GetAxis("DPad_Horizontal");
         if (dPadHorizontal > 0f) // D-pad right
         {
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
         else if (dPadHorizontal < 0f) // D-pad left
         {
-            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Count) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
     }
 
     void SelectWeapon(int index)
     {
-        if (index < 0 || index >= weapons.Length) return;
+        if (index < 0 || index >= weapons.Count) return;
 
         // Disable all weapons first
-        for (int i = 0; i < weapons.Length; i++)
+        for (int i = 0; i < weapons.Count; i++)
         {
             weapons[i].SetActive(i == index);
         }

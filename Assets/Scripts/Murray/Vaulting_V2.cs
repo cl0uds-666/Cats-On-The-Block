@@ -15,7 +15,7 @@ public class Vaulting_V2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (touching = true)
+        if (touching == true)
         {
             Vector3 Current_Position = Player.transform.position;
             Vector3 New_Position = new Vector3(Current_Position.x, Current_Position.y, Current_Position.z + 2);
@@ -31,18 +31,34 @@ public class Vaulting_V2 : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Trigger")
+    //    {
+    //        touching = true;
+    //    }
+
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if(other.tag == "Trigger")
+    //    {
+    //        touching = false;
+    //    }
+    //}
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Trigger")
+        if (collision.gameObject.tag == "Cover")
         {
             touching = true;
         }
-
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
-        if(other.tag == "Trigger")
+        if (collision.gameObject.tag == "Cover")
         {
             touching = false;
         }

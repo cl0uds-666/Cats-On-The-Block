@@ -19,7 +19,7 @@ public class Scratch : MonoBehaviour
     {
         if (Input.GetAxis("Xbox_RT") > 0 && CanScratch)
         {
-            if (GetComponent<WeaponSwitching>().currentWeaponIndex == 2 && CurrentMeleeTimer <= 0f)
+            if (GetComponent<WeaponSwitching>().currentWeaponIndex == 0 && CurrentMeleeTimer <= 0f)
             {
                 AttackBox.GetComponent<Player_melee>().Scratch = true;
                 CurrentMeleeTimer = MaxMeleeTimer;

@@ -5,6 +5,7 @@ public class Missions : MonoBehaviour
 {
     public int Mission = 0;
     public bool HasPurse = false;
+    public GameObject Mission2Enemy;
 
     void Start()
     {
@@ -23,10 +24,10 @@ public class Missions : MonoBehaviour
         switch (Mission)
         {
             case 1:
-                print("Mission 1: Press 1");
+
                 break;
             case 2:
-                print("Mission 2: Press 2");
+                Mission2Enemy.SetActive(true);
                 break;
             case 3:
                 print("Mission 3: Press 3");

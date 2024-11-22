@@ -39,7 +39,17 @@ public class NPC_Collider : MonoBehaviour
 
                 Camera.GetComponent<CinemachineCamera>().Prioritize();
                 Camera.GetComponent<CameraTimer>().StartTimer = true;
-                NPC1Text.text = "Thanks for getting my purrrse back! Follow me to the pharmacist";
+
+                if (Player.GetComponent<Missions>().Mission == 1)
+                {
+                    NPC1Text.text = "Thanks for getting my purrrse back! Follow me to the pharmacist";
+                }
+
+                else
+                {
+                    NPC1Text.text = "I got word of someone armed with a gun scaring people in the area, go find and stop them";
+                }
+                
                 NPCTextBox.SetActive(true);
                 GetComponent<BoxCollider>().enabled = false;
             }
