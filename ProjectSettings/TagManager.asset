@@ -12,6 +12,8 @@ TagManager:
   - Melee Enemy
   - Player Bullet
   - Trigger
+  - Pistol
+  - Rifle
   layers:
   - Default
   - TransparentFX

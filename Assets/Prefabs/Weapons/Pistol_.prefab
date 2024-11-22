@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0093893
+      value: 0.91695017
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,19 +18,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.206127
+      value: -6.1769385
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8191879
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000008146034
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.57352537
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalRotation.z
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -650.007
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -55,6 +55,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
       propertyPath: m_Name
       value: Pistol_
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: acd10572e80a7c2468b2c236656c6c53, type: 3}
+      propertyPath: m_TagString
+      value: Pistol
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
