@@ -30,7 +30,7 @@ public class Vaulting_V2 : MonoBehaviour
             }
         }
     }
-    // Temporarily disables the player's collider, moves them to the target position, waits briefly, and then re-enables the collider.
+    // Temporarily disables the player's collider  moves them to the target position  waits and then re-enables the collider.
     System.Collections.IEnumerator MovePlayerAndEnableCollider(Vector3 targetPosition)
     {
         isMoving = true;
@@ -51,8 +51,7 @@ public class Vaulting_V2 : MonoBehaviour
 
         isMoving = false;
     }
-    // Detects when the Player collides with a "Cover" object, enabling interaction and storing references, 
-    // and clears those references when the collision ends.
+    // setting vairables and object when the player enter and exits the collison box
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Cover")
