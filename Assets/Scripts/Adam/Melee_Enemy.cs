@@ -43,7 +43,7 @@ public class Melee_Enemy : MonoBehaviour
             }
         }
 
-        if (Health <=0)
+        if (Health <= 0)
         {
             Destroy(gameObject);
         }
