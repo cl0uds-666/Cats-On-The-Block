@@ -5,12 +5,14 @@ public class WeaponSwitching : MonoBehaviour
     public GameObject[] weapons;                // Array of weapon GameObjects
     public int currentWeaponIndex = 0;          // Index of the currently selected weapon
     public WaterBar waterBarUI;                 // Reference to the WaterBar UI script (set in Inspector)
+
+    private PlayerProjectileShooting currentShootingScript;
+    private GrenadeThrower currentGrenadeThrower;
+
     public PlayerProjectileShooting GetActiveWeapon()
     {
         return weapons[currentWeaponIndex].GetComponent<PlayerProjectileShooting>();
     }
-
-    private PlayerProjectileShooting currentShootingScript;
 
     void Start()
     {
@@ -34,6 +36,10 @@ public class WeaponSwitching : MonoBehaviour
         {
             SelectWeapon(1);  // Switch to weapon at index 1 (e.g., Tommy Gun)
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SelectWeapon(2);  // Switch to weapon at index 2 (e.g., Grenade)
+        }
 
         // Optional: Cycle through weapons with scroll wheel
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
@@ -48,32 +54,17 @@ public class WeaponSwitching : MonoBehaviour
         }
 
         // Xbox Controller support for weapon switching:
-        // Left bumper (LB) to switch to previous weapon
         if (Input.GetButtonDown("Xbox_LB"))
         {
             currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
             SelectWeapon(currentWeaponIndex);
         }
 
-        // Right bumper (RB) to switch to next weapon
         if (Input.GetButtonDown("Xbox_RB"))
         {
             currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
             SelectWeapon(currentWeaponIndex);
         }
-
-        //// Optional: D-pad support to cycle through weapons
-        //float dPadHorizontal = Input.GetAxis("DPad_Horizontal");
-        //if (dPadHorizontal > 0f) // D-pad right
-        //{
-        //    currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
-        //    SelectWeapon(currentWeaponIndex);
-        //}
-        //else if (dPadHorizontal < 0f) // D-pad left
-        //{
-        //    currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
-        //    SelectWeapon(currentWeaponIndex);
-        //}
     }
 
     void SelectWeapon(int index)
@@ -89,22 +80,33 @@ public class WeaponSwitching : MonoBehaviour
         // Set the new weapon index
         currentWeaponIndex = index;
 
-        // Get the shooting script for the currently selected weapon
+        // Check if the new weapon is a projectile weapon
         currentShootingScript = weapons[currentWeaponIndex].GetComponent<PlayerProjectileShooting>();
-
-        if (currentShootingScript == null)
-        {
-            Debug.LogError("PlayerProjectileShooting component not found on weapon: " + weapons[currentWeaponIndex].name);
-            return;
-        }
-
-        // Unsubscribe the previous weapon from the OnAmmoChanged event and subscribe the new weapon
         if (currentShootingScript != null)
         {
-            currentShootingScript.OnAmmoChanged -= waterBarUI.UpdateWaterBar;
+            if (waterBarUI != null)
+            {
+                // Unsubscribe the previous weapon from the OnAmmoChanged event
+                currentShootingScript.OnAmmoChanged -= waterBarUI.UpdateWaterBar;
+
+                // Subscribe the new weapon to the OnAmmoChanged event
+                currentShootingScript.OnAmmoChanged += waterBarUI.UpdateWaterBar;
+
+                // Update the ammo UI immediately
+                currentShootingScript.UpdateAmmoUI();
+            }
+            Debug.Log($"Selected projectile weapon: {weapons[currentWeaponIndex].name}");
+        }
+        else
+        {
+            Debug.Log($"No projectile script found on weapon: {weapons[currentWeaponIndex].name}");
         }
 
-        currentShootingScript.OnAmmoChanged += waterBarUI.UpdateWaterBar;
-        currentShootingScript.UpdateAmmoUI();    // Update UI immediately with the new weapon's ammo
+        // Check if the new weapon is a grenade
+        currentGrenadeThrower = weapons[currentWeaponIndex].GetComponent<GrenadeThrower>();
+        if (currentGrenadeThrower != null)
+        {
+            Debug.Log($"Selected grenade: {weapons[currentWeaponIndex].name}");
+        }
     }
 }
