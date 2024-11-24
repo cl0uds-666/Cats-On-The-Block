@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class WaterSource : MonoBehaviour
 {
-    private bool playerInRange = false;           // Tracks if the player is in range of the water source
-    public int refillAmount = 100;                // Amount of ammo to refill
+    private bool playerInRange = false;          // Tracks if the player is in range of the water source
+    public int refillAmount = 100;               // Amount of ammo to refill
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,15 +36,37 @@ public class WaterSource : MonoBehaviour
 
     private void ReloadWeapon()
     {
-        // Find the currently active weapon's PlayerProjectileShooting component
-        PlayerProjectileShooting currentWeapon = FindObjectOfType<WeaponSwitching>().GetActiveWeapon();
+        // Find the currently active weapon's PlayerCombat component
+        WeaponSwitching weaponSwitching = FindObjectOfType<WeaponSwitching>();
 
-        if (currentWeapon != null)
+        if (weaponSwitching != null)
         {
-            // Refill the weapon's ammo to its maximum
-            currentWeapon.currentAmmo = currentWeapon.maxAmmo;
-            currentWeapon.UpdateAmmoUI();
-            Debug.Log("Weapon reloaded at water source.");
+            PlayerProjectileShooting activeWeapon = weaponSwitching.GetActiveWeapon();
+
+            if (activeWeapon != null)
+            {
+                // Get the PlayerCombat component from the active weapon
+                PlayerCombat playerCombat = activeWeapon.GetComponent<PlayerCombat>();
+
+                if (playerCombat != null)
+                {
+                    // Refill ammo using the ReloadAmmo method
+                    playerCombat.ReloadAmmo(refillAmount);
+                    Debug.Log($"Weapon reloaded with {refillAmount} ammo at water source.");
+                }
+                else
+                {
+                    Debug.LogError("PlayerCombat script not found on the active weapon!");
+                }
+            }
+            else
+            {
+                Debug.LogError("No active weapon found in WeaponSwitching!");
+            }
+        }
+        else
+        {
+            Debug.LogError("WeaponSwitching script not found in the scene!");
         }
     }
 }
