@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49907684
+      value: 37.681396
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0674236
+      value: -0.23804437
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.03036499
+      value: 54.7446
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e3fc76646488b0b44840e7f30a1be5ee, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 24c02dd169552be47984245b69f42f57, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c34971598feef842bef1f0d8b487918, type: 2}
     - target: {fileID: -4716467150064823922, guid: 24c02dd169552be47984245b69f42f57, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -250,12 +254,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grenadePrefab: {fileID: 4321355712122477255}
+  explosionPrefab: {fileID: 0}
   throwPoint: {fileID: 0}
   throwForce: 15
   upwardForce: 5
+  grenadeLifetime: 5
+  throwCooldown: 5
   trajectoryLine: {fileID: 2121290660585382132}
   resolution: 30
   timeStep: 0.1
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 0
