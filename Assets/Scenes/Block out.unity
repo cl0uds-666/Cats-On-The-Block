@@ -30277,7 +30277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 123.56374
+      value: 126.19259
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30285,7 +30285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.8449345
+      value: -44.31716
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54606,9 +54606,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1195322816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d6fa9af928c9f14ea26a2fb1bd8dc6e, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ebc27c7f28798478c8b71a40290053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scratch: 0
+  Damage: 1
+  AttackTimer: 0
+  AttackForce: 5
+  Player: {fileID: 1504651753}
 --- !u!65 &1195322819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62645,7 +62650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 123.32
+      value: 125.948845
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -62653,7 +62658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.83
+      value: -42.332092
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68011,6 +68016,7 @@ PrefabInstance:
     - {fileID: 5348324984576605110, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
     - {fileID: 8760636856242088750, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
     - {fileID: 811777372260494107, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
+    - {fileID: 6153358324064622683, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4976592130631200738, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
       insertIndex: 0
@@ -68079,7 +68085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd74bd53c49b3f9488ce3d409966dc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackBox: {fileID: 1195322816}
+  AttackBox: {fileID: 0}
   CanScratch: 1
   MaxMeleeTimer: 2
 --- !u!114 &1504651812
@@ -89930,7 +89936,7 @@ PrefabInstance:
       objectReference: {fileID: 1504651753}
     - target: {fileID: 8448728350272096094, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 118.47115
+      value: 121.1
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -89938,7 +89944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.662094
+      value: -24.5
       objectReference: {fileID: 0}
     - target: {fileID: 8448728350272096094, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: m_LocalRotation.w
