@@ -15,7 +15,7 @@ public class Player_Stats : MonoBehaviour
     {
         if (Health <= 0)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene(" ");
         }
     }
 }
