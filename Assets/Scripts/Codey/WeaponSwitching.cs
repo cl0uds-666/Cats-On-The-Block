@@ -1,8 +1,9 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public GameObject[] weapons;                // Array of weapon GameObjects
+    public List<GameObject> weapons;                // Array of weapon GameObjects
     public int currentWeaponIndex = 0;          // Index of the currently selected weapon
     public WaterBar waterBarUI;                 // Reference to the WaterBar UI script (set in Inspector)
 
@@ -44,35 +45,35 @@ public class WeaponSwitching : MonoBehaviour
         // Optional: Cycle through weapons with scroll wheel
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Count) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
 
         // Xbox Controller support for weapon switching:
         if (Input.GetButtonDown("Xbox_LB"))
         {
-            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Count) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
 
         if (Input.GetButtonDown("Xbox_RB"))
         {
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Count;
             SelectWeapon(currentWeaponIndex);
         }
     }
 
     void SelectWeapon(int index)
     {
-        if (index < 0 || index >= weapons.Length) return;
+        if (index < 0 || index >= weapons.Count) return;
 
         // Disable all weapons first
-        for (int i = 0; i < weapons.Length; i++)
+        for (int i = 0; i < weapons.Count; i++)
         {
             weapons[i].SetActive(i == index);
         }

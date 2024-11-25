@@ -12,17 +12,28 @@ public class Enemy_Drop : MonoBehaviour
 
     void Update()
     {
+        print(Player.GetComponent<Missions>().Mission3ParkEnemies.Count);
         if (CompareTag("Enemy"))
         {
             if (GetComponent<EnemyCombat>().Health <= 0 && !Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject))
             {
                 Instantiate(ItemDrop, transform.position, Quaternion.identity);
+                Destroy(gameObject);
             }
 
-            else if (GetComponent<EnemyCombat>().Health <= 0 && Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject) && Player.GetComponent<Missions>().Mission3ParkEnemies.Count == 3)
+            else if (GetComponent<EnemyCombat>().Health <= 0)
             {
-                print("Spawn");
-                Instantiate(ItemDrop, transform.position, Quaternion.identity);
+                
+                if (Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject))
+                {
+                    if (Player.GetComponent<Missions>().Mission3ParkEnemies.Count == 1)
+                    {
+                        Instantiate(ItemDrop, transform.position, Quaternion.identity);
+                    }
+                    Player.GetComponent<Missions>().Mission3ParkEnemies.Remove(gameObject);
+                }
+                
+                Destroy(gameObject);
             }
         }
 
@@ -31,12 +42,24 @@ public class Enemy_Drop : MonoBehaviour
             if (GetComponent<Melee_Enemy>().Health <= 0 && !Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject))
             {
                 Instantiate(ItemDrop, transform.position, Quaternion.identity);
+                Destroy(gameObject);
             }
 
-            else if (GetComponent<Melee_Enemy>().Health <= 0 && Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject) && Player.GetComponent<Missions>().Mission3ParkEnemies.Count == 3)
+            else if (GetComponent<Melee_Enemy>().Health <= 0)
             {
-                print("Spawn");
-                Instantiate(ItemDrop, transform.position, Quaternion.identity);
+
+                if (Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject))
+                {
+                    if (Player.GetComponent<Missions>().Mission3ParkEnemies.Count == 1)
+                    {
+                        Instantiate(ItemDrop, transform.position, Quaternion.identity);
+                    }
+                    Player.GetComponent<Missions>().Mission3ParkEnemies.Remove(gameObject);
+
+                    
+                }
+
+                Destroy(gameObject);
             }
         }
     }

@@ -8,7 +8,7 @@ public class Scratch : MonoBehaviour
     public GameObject AttackBox;
     public bool CanScratch = true;
     public float MaxMeleeTimer;
-    private float CurrentMeleeTimer;
+    public float CurrentMeleeTimer;
 
     private void Start()
     {
@@ -23,6 +23,7 @@ public class Scratch : MonoBehaviour
             {
                 AttackBox.GetComponent<Player_melee>().Scratch = true;
                 CurrentMeleeTimer = MaxMeleeTimer;
+                AttackBox.GetComponent<Player_melee>().Scratch = false;
             }
         }
 

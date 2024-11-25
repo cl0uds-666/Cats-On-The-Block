@@ -57,20 +57,16 @@ public class Movement : MonoBehaviour
 
         if (IsGrounded && rb.linearVelocity.x > 0 || IsGrounded && rb.linearVelocity.z > 0)
         {
-            print("anything");
             if (!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Walking"))
             {
-                print("SecondBracket");
                 GetComponent<Animator>().SetInteger("MainState", 1);
             }
         }
 
         else if (IsGrounded && rb.linearVelocity == Vector3.zero)
         {
-            print("anything");
             if (!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
-                print("SecondBracket");
                 GetComponent<Animator>().SetInteger("MainState", 0);
             }
         }
