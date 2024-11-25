@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -53,6 +54,26 @@ public class Movement : MonoBehaviour
     {
         MoveX = Input.GetAxis("Horizontal");
         MoveZ = Input.GetAxis("Vertical");
+
+        if (IsGrounded && rb.linearVelocity.x > 0 || IsGrounded && rb.linearVelocity.z > 0)
+        {
+            print("anything");
+            if (!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Walking"))
+            {
+                print("SecondBracket");
+                GetComponent<Animator>().SetInteger("MainState", 1);
+            }
+        }
+
+        else if (IsGrounded && rb.linearVelocity == Vector3.zero)
+        {
+            print("anything");
+            if (!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                print("SecondBracket");
+                GetComponent<Animator>().SetInteger("MainState", 0);
+            }
+        }
 
         Vector3 CamX = Cam.forward;
         Vector3 CamZ = Cam.right;
