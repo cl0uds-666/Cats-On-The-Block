@@ -30492,6 +30492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee enemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2442945801175348378, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2627791618846056690, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.28
@@ -30527,6 +30531,10 @@ PrefabInstance:
     - target: {fileID: 4679740446207543748, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679740446207543748, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4747000102796975051, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_Speed
@@ -63443,6 +63451,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4679740446207543748, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4747000102796975051, guid: 6c4fce961cac0334da10f01218aba87e, type: 3}
       propertyPath: m_Speed
       value: 4
@@ -91119,6 +91131,10 @@ PrefabInstance:
     - target: {fileID: 4187690888827165903, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: 'Waypoints.Array.data[3]'
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679740446207543748, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6183959851937723722, guid: 8c9d60ce36e0b3c438e2b56fe3502aed, type: 3}
       propertyPath: Bullet

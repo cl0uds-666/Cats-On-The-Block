@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Vaulting_V2 : MonoBehaviour
 {
