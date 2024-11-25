@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Vaulting_V2 : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class Vaulting_V2 : MonoBehaviour
     {
         if (Player != null)
         {
-            playerCollider = Player.GetComponent<Collider>();
+            playerCollider = Player.GetComponent<CapsuleCollider>();
         }
     }
     // Update is called once per frame
@@ -31,7 +30,7 @@ public class Vaulting_V2 : MonoBehaviour
         }
     }
     // Temporarily disables the player's collider  moves them to the target position  waits and then re-enables the collider.
-    System.Collections.IEnumerator MovePlayerAndEnableCollider(Vector3 targetPosition)
+    System.Collections.IEnumerator MovePlayerAndEnableCollider(Vector3 New_Position)
     {
         isMoving = true;
 
@@ -40,7 +39,7 @@ public class Vaulting_V2 : MonoBehaviour
             playerCollider.enabled = false;
         }
 
-        Player.transform.position = targetPosition;
+        Player.transform.position = New_Position;
 
         yield return new WaitForSeconds(0.1f);
 
@@ -57,7 +56,7 @@ public class Vaulting_V2 : MonoBehaviour
         if (collision.gameObject.tag == "Cover")
         {
             Player = collision.gameObject;
-            playerCollider = Player.GetComponent<Collider>();
+            playerCollider = Player.GetComponent<CapsuleCollider>();
             touching = true;
              
         }

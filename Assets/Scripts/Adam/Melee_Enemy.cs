@@ -12,7 +12,13 @@ public class Melee_Enemy : MonoBehaviour
     public LayerMask PlayerLayer;
     public Vector3 BoxSize;
     public int Health;
-    
+    private GameObject Player;
+
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
+    }
+
     void Update()
     {
         if (!IsAttacking)
@@ -45,7 +51,10 @@ public class Melee_Enemy : MonoBehaviour
 
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            if (Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject))
+            {
+                
+            }
         }
     }
 

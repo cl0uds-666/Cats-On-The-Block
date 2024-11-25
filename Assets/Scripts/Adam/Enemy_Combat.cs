@@ -44,37 +44,31 @@ public class EnemyCombat : MonoBehaviour
 
             else if (Physics.BoxCast(transform.position, BoxSize * 0.5f, transform.forward, out Hit, transform.rotation, Distance, PlayerLayer))
             {
-                print("see player");
                 CanSeePlayer = true;
             }
 
             else if (Physics.BoxCast(LineOfSightPosition.transform.position, BoxSize * 0.5f, LineOfSightPosition.transform.forward, out Hit, LineOfSightPosition.transform.rotation, Distance, PlayerLayer))
             {
-                print("see player");
                 CanSeePlayer = true;
             }
 
             else if (Physics.BoxCast(LineOfSightPosition2.transform.position, BoxSize * 0.5f, LineOfSightPosition2.transform.forward, out Hit, LineOfSightPosition2.transform.rotation, Distance, PlayerLayer))
             {
-                print("see player");
                 CanSeePlayer = true;
             }
 
             else if (Physics.BoxCast(LineOfSightPosition3.transform.position, BoxSize * 0.5f, LineOfSightPosition3.transform.forward, out Hit, LineOfSightPosition3.transform.rotation, Distance, PlayerLayer))
             {
-                print("see player");
                 CanSeePlayer = true;
             }
 
             else if (Physics.BoxCast(LineOfSightPosition4.transform.position, BoxSize * 0.5f, LineOfSightPosition4.transform.forward, out Hit, LineOfSightPosition4.transform.rotation, Distance, PlayerLayer))
             {
-                print("see player");
                 CanSeePlayer = true;
             }
 
             else
             {
-                print("no see");
                 CanSeePlayer = false;
             }
         }
@@ -95,7 +89,10 @@ public class EnemyCombat : MonoBehaviour
 
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            if (Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject))
+            {
+                
+            }
         }
 
         if (CanSeePlayer)

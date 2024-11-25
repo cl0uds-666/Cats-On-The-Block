@@ -1,4 +1,3 @@
-using Unity.Cinemachine;
 using UnityEngine;
 
 public class TextBoxLookAt : MonoBehaviour
