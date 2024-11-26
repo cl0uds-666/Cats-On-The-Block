@@ -48,14 +48,6 @@ public class Melee_Enemy : MonoBehaviour
                 IsAttacking = true;
             }
         }
-
-        if (Health <= 0)
-        {
-            if (Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject))
-            {
-                
-            }
-        }
     }
 
     private void OnDrawGizmos()

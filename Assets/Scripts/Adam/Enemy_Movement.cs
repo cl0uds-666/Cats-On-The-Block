@@ -4,10 +4,11 @@ public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent Agent;
     public Transform[] Waypoints;
-    private int Index;
+    public int Index;
     public Vector3 TargetDestination;
     private GameObject Player;
     public GameObject AttackBox;
+    public GameObject TutorialEnemy;
     void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -21,20 +22,25 @@ public class EnemyMovement : MonoBehaviour
     {
         if (gameObject.CompareTag("Enemy"))
         {
+            if (Index == Waypoints.Length)
+            {
+                Index = 0;
+            }
+
             if (!GetComponent<EnemyCombat>().IsAttacking)
             {
                 TargetDestination = Waypoints[Index].position;
                 Agent.destination = TargetDestination;
             }
-
-            if (Index == Waypoints.Length)
-            {
-                Index = 0;
-            }
         }
 
         else
         {
+            if (Index == Waypoints.Length && gameObject != TutorialEnemy)
+            {
+                Index = 0;
+            }
+
             if (!GetComponent<Melee_Enemy>().IsAttacking)
             {
                 TargetDestination = Waypoints[Index].position;

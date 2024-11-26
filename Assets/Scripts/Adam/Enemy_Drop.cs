@@ -17,6 +17,7 @@ public class Enemy_Drop : MonoBehaviour
             if (GetComponent<EnemyCombat>().Health <= 0 && !Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject) && !Player.GetComponent<Missions>().Mission4ConstructionEnemies.Contains(gameObject))
             {
                 Instantiate(ItemDrop, transform.position, Quaternion.identity);
+                print("Skibidi");
                 Destroy(gameObject);
             }
 
