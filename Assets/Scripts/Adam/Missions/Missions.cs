@@ -7,6 +7,7 @@ public class Missions : MonoBehaviour
     public bool HasPurse = false;
     public GameObject Mission2Enemy;
     public List<GameObject> Mission3ParkEnemies;
+    public List<GameObject> Mission4ConstructionEnemies;
 
     void Start()
     {
@@ -36,6 +37,10 @@ public class Missions : MonoBehaviour
                 }
                 break;
             case 4:
+                foreach (GameObject Enemy in Mission4ConstructionEnemies)
+                {
+                    Enemy.SetActive(true);
+                }
                 break;
         }
     }

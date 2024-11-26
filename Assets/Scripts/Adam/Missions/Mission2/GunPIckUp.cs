@@ -15,7 +15,7 @@ public class GunPIckUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (CompareTag("Pistol") && Player.GetComponent<Missions>().Mission == 2 || CompareTag("Rifle") && Player.GetComponent<Missions>().Mission == 3)
+            if (CompareTag("Pistol") && Player.GetComponent<Missions>().Mission == 2 || CompareTag("Rifle") && Player.GetComponent<Missions>().Mission == 3 || CompareTag("Grenade") && Player.GetComponent<Missions>().Mission == 4)
             {
                 Player.GetComponent<WeaponSwitching>().weapons.Add(gameObject);
                 transform.parent = Player.transform;
