@@ -43,7 +43,7 @@ public class CameraTimer : MonoBehaviour
                 Player.GetComponent<Movement>().SprintSpeed = NormalSprintSpeed;
             }
 
-            if (CurrentCameraTimer <= MaxCameraTimer - 1f && CurrentCameraTimer > 0f)
+            if (CurrentCameraTimer <= MaxCameraTimer - 1f && CurrentCameraTimer > 0f && Enemy != null)
             {
                 Enemy.GetComponent<EnemyMovement>().enabled = true;
             }

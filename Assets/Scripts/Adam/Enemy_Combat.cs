@@ -28,6 +28,7 @@ public class EnemyCombat : MonoBehaviour
     public GameObject Bullet;
     public GameObject BulletSpawnPoint;
     private float ShootDelay;
+    public float AttackDistance;
     private void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -87,14 +88,6 @@ public class EnemyCombat : MonoBehaviour
             }
         }
 
-        if (Health <= 0)
-        {
-            if (Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject))
-            {
-                
-            }
-        }
-
         if (CanSeePlayer)
         {
             IsAttacking = true;
@@ -109,7 +102,7 @@ public class EnemyCombat : MonoBehaviour
         {
             foreach (Collider Enemy in Player.GetComponent<Enemy_Detection>().AllEnemies)
             {
-                if (Vector3.Distance(Enemy.transform.position, Player.transform.position) < 100)
+                if (Vector3.Distance(Enemy.transform.position, Player.transform.position) < AttackDistance)
                 {
                     Enemy.gameObject.GetComponent<EnemyCombat>().IsAttacking = true;
                 }

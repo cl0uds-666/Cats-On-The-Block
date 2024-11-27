@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
                 Index = 0;
             }
 
-            if (!GetComponent<Melee_Enemy>().IsAttacking)
+            if (!GetComponent<Melee_Enemy>().IsAttacking && Index < Waypoints.Length)
             {
                 TargetDestination = Waypoints[Index].position;
                 Agent.destination = TargetDestination;

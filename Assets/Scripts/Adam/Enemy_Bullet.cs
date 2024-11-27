@@ -3,16 +3,21 @@ using UnityEngine;
 public class Enemy_Bullet : MonoBehaviour
 {
     public float Speed;
-    public GameObject Player;
+    private GameObject Player;
     public bool Move;
     public float DeathTimer;
     public int Damage;
+
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
+    }
 
     void Update()
     {
         if (Move)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, Speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.GetComponent<Renderer>().bounds.center, Speed * Time.deltaTime);
         }
 
         if (DeathTimer <= 0)
