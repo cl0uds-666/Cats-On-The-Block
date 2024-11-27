@@ -1,3 +1,4 @@
+using Unity.AI.Navigation;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;

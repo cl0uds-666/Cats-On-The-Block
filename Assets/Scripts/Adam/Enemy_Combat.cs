@@ -38,7 +38,7 @@ public class EnemyCombat : MonoBehaviour
     {
         if (!IsAttacking)
         {
-            if (Physics.Raycast(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position), out RaycastHit hit) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Cover"))
+            if (Physics.Raycast(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position), out Hit) && Hit.transform.gameObject.layer == LayerMask.NameToLayer("Cover") || Physics.Raycast(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position), out Hit) && Hit.transform.gameObject.layer == LayerMask.NameToLayer("Default"))
             {
                 CanSeePlayer = false;
             }
@@ -76,7 +76,7 @@ public class EnemyCombat : MonoBehaviour
         
         else
         {
-            if (Physics.Raycast(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position), out RaycastHit hit) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Cover"))
+            if (Physics.Raycast(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position), out Hit) && Hit.transform.gameObject.layer == LayerMask.NameToLayer("Cover") || Physics.Raycast(EyeLevel + transform.position, (Player.transform.position + PlayerEyeLevel) - (EyeLevel + transform.position), out Hit) && Hit.transform.gameObject.layer == LayerMask.NameToLayer("Default"))
             {
                 CanSeePlayer = false;
                 GetComponent<Cover_Selector>().FindCover = true;

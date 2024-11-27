@@ -79,55 +79,55 @@ public class Cover_Selector : MonoBehaviour
 
         foreach (Collider Cover in DetectedCover)
         {
-            if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point1.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
+            if (Cover.GetComponent<Cover_Points>().Point1 != null && Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point1.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal1");
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point1);
             }
 
             
-            if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point2.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
+            if (Cover.GetComponent<Cover_Points>().Point2 != null && Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point2.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal2");
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point2);
             }
 
             
-            if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point3.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
+            if (Cover.GetComponent<Cover_Points>().Point3 != null && Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point3.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal3");
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point3);
             }
 
             
-            if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point4.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
+            if (Cover.GetComponent<Cover_Points>().Point4 != null && Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point4.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal4");
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point4);
             }
 
-            
-            if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point5.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
+
+            if (Cover.GetComponent<Cover_Points>().Point5 != null && Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point5.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal5");
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point5);
             }
 
             
-            if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point6.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
+            if (Cover.GetComponent<Cover_Points>().Point6 != null && Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point6.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal6");
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point6);
             }
 
             
-            if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point7.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
+            if (Cover.GetComponent<Cover_Points>().Point7 != null && Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point7.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal7");
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point7);
             }
 
-            if (Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point8.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
+            if (Cover.GetComponent<Cover_Points>().Point8 != null && Physics.Raycast(Player.transform.position, Cover.GetComponent<Cover_Points>().Point8.transform.position - Player.transform.position, out Hit, 500f, CoverMask))
             {
                 print("Optimal8");
                 OptimalCover.Add(Cover.GetComponent<Cover_Points>().Point8);
