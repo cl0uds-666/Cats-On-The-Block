@@ -19,7 +19,10 @@ public class Scratch : MonoBehaviour
             {
                 AttackBox.GetComponent<Player_melee>().Scratch = true;
                 CurrentMeleeTimer = MaxMeleeTimer;
-                //AttackBox.GetComponent<Player_melee>().Scratch = false;
+                if (!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Punch"))
+                {
+                    GetComponent<Animator>().SetInteger("MainState", 2);
+                }
             }
         }
 
