@@ -102,16 +102,19 @@ public class EnemyCombat : MonoBehaviour
         {
             foreach (Collider Enemy in Player.GetComponent<Enemy_Detection>().AllEnemies)
             {
-                if (Vector3.Distance(Enemy.transform.position, Player.transform.position) < AttackDistance)
+                if (Enemy != null && Vector3.Distance(Enemy.transform.position, Player.transform.position) < AttackDistance)
                 {
                     Enemy.gameObject.GetComponent<EnemyCombat>().IsAttacking = true;
                 }
 
                 else
                 {
-                    Enemy.gameObject.GetComponent<EnemyCombat>().IsAttacking = false;
-                    Enemy.gameObject.GetComponent<Cover_Selector>().InCover = false;
-                    Enemy.gameObject.GetComponent<Cover_Selector>().FindCover = false;
+                    if (Enemy != null)
+                    {
+                        Enemy.gameObject.GetComponent<EnemyCombat>().IsAttacking = false;
+                        Enemy.gameObject.GetComponent<Cover_Selector>().InCover = false;
+                        Enemy.gameObject.GetComponent<Cover_Selector>().FindCover = false;
+                    }
                 }
                 
             }

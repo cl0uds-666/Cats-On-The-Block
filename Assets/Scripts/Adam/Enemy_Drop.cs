@@ -17,7 +17,6 @@ public class Enemy_Drop : MonoBehaviour
             if (GetComponent<EnemyCombat>().Health <= 0 && !Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject) && !Player.GetComponent<Missions>().Mission4ConstructionEnemies.Contains(gameObject))
             {
                 Instantiate(ItemDrop, transform.position, Quaternion.identity);
-                print("Skibidi");
                 Destroy(gameObject);
             }
 
@@ -49,7 +48,28 @@ public class Enemy_Drop : MonoBehaviour
         {
             if (GetComponent<Melee_Enemy>().Health <= 0 && !Player.GetComponent<Missions>().Mission3ParkEnemies.Contains(gameObject) && !Player.GetComponent<Missions>().Mission4ConstructionEnemies.Contains(gameObject))
             {
-                Instantiate(ItemDrop, transform.position, Quaternion.identity);
+                GameObject Item = Instantiate(ItemDrop, transform.position, Quaternion.identity);
+
+                if (Item.gameObject.name == "Purse")
+                {
+                    Player.GetComponent<Missions>().PurseObject = Item;
+                }
+
+                else if (Item.gameObject.name == "Pistol_")
+                {
+                    Player.GetComponent<Missions>().Pistol = Item;
+                }
+
+                else if (Item.gameObject.name == "Tommy_Gun_(Clone)")
+                {
+                    Player.GetComponent<Missions>().Rifle = Item;
+                }
+
+                else if (Item.gameObject.name == "Grenade_(Clone)")
+                {
+                    Player.GetComponent<Missions>().Grenade = Item;
+                }
+
                 Destroy(gameObject);
             }
 
