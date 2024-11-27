@@ -189,7 +189,6 @@ public class Cover : MonoBehaviour
             //go into cover if u press B and the raycast detects cover
             if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer) || Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer))
             {
-                print("yes");
                 CoverHit = hit.transform.gameObject;
                 EdgeDetection = CoverHit.transform.Find("Edge_Detection");
                 ToggleCover();
