@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Cover : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Cover : MonoBehaviour
     public float HighCast;
     public float LowCast;
     public LayerMask CoverLayer;
+    public GameObject Panel;
     private void Update()
     {
         if (InCover)
@@ -66,7 +68,7 @@ public class Cover : MonoBehaviour
                 if (transform.position.x <= EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x + transform.localScale.x / 2)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(0, GetComponent<Rigidbody>().linearVelocity.y, GetComponent<Rigidbody>().linearVelocity.z);
-                    
+
                     if (PreviousHit.normal.z == -1)
                     {
                         //sets the position of the player to the edge detection objects position + half of the covers scale, with the players scale added on so they do not peak too far
@@ -180,6 +182,27 @@ public class Cover : MonoBehaviour
         }
     }
 
+    void OnPause(InputValue value)
+    {
+        print("Pause");
+
+        if (Panel.activeSelf)
+        {
+
+            Panel.SetActive(false);
+            Time.timeScale = 1.0f;
+        }
+
+        else
+        {
+            Panel.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
+
+
+    }
+
     //the button mapping for both cover and dash
     void OnCoverDash(InputValue Value)
     {
@@ -201,4 +224,6 @@ public class Cover : MonoBehaviour
             ToggleCover();
         }
     }
+
+    
 }
