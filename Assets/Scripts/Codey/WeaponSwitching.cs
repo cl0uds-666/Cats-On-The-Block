@@ -33,18 +33,18 @@ public class WeaponSwitching : MonoBehaviour
         // Number keys to switch weapons
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SelectWeapon(0);  // Switch to weapon at index 0 (e.g., Pistol)
+            SelectWeapon(0);  // Switch to weapon at index 0 (Pistol)
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SelectWeapon(1);  // Switch to weapon at index 1 (e.g., Tommy Gun)
+            SelectWeapon(1);  // Switch to weapon at index 1 (Tommy Gun)
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SelectWeapon(2);  // Switch to weapon at index 2 (e.g., Grenade)
+            SelectWeapon(2);  // Switch to weapon at index 2 (Grenade)
         }
 
-        // Optional: Cycle through weapons with scroll wheel
+        // Cycle through weapons with scroll wheel
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Count;
