@@ -20,6 +20,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Distance(TargetDestination, transform.position) < 1f)
+        {
+            Index++;
+        }
+
         if (gameObject.CompareTag("Enemy"))
         {
             if (Index == Waypoints.Length)
@@ -53,9 +58,6 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         
-        if (Vector3.Distance(TargetDestination, transform.position) < 1f)
-        {
-            Index++;
-        }
+        
     }
 }
