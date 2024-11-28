@@ -16,22 +16,22 @@ public class Vaulting_V2 : MonoBehaviour
         {
             //playerCollider = Player.GetComponent<CapsuleCollider>();
             rb = Player.GetComponent<Rigidbody>();
-            
+
         }
     }
     // Update is called once per frame
     void Update()
     {
-        
+
         if (touching && Player != null && !isMoving)
         {
-            
+
             print("working");
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 Vector3 Current_Position = Player.transform.position;
-                Vector3 New_Position = new Vector3(Current_Position.x , Current_Position.y , Current_Position.z + 3);
-                
+                Vector3 New_Position = new Vector3(Current_Position.x, Current_Position.y, Current_Position.z + 3);
+
                 StartCoroutine(MovePlayerAndEnableCollider(New_Position));
             }
         }
@@ -69,9 +69,9 @@ public class Vaulting_V2 : MonoBehaviour
         {
             Player = collision.gameObject;
             playerCollider = Player.GetComponent<CapsuleCollider>();
-            
+
             touching = true;
-             
+
         }
     }
 
