@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded || Input.GetKeyDown(KeyCode.Joystick1Button0) && IsGrounded)
         {
             rb.AddForce(Vector3.up * JumpForce * Time.deltaTime, ForceMode.Impulse);
+            Debug.Log("Sprinting activated");
         }
 
         // Start dash if grounded, moving, and not already dashing
