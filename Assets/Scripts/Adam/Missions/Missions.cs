@@ -31,7 +31,7 @@ public class Missions : MonoBehaviour
             {
                 if (Mission1Enemy != null)
                 {
-                    
+                    MissionIcon.transform.position = new Vector3(Mission1Enemy.transform.position.x, MissionIcon.transform.position.y, Mission1Enemy.transform.position.z);
                 }
             }
             
@@ -114,7 +114,6 @@ public class Missions : MonoBehaviour
         switch (Mission)
         {
             case 1:
-                MissionIcon.transform.position = new Vector3(Mission1Enemy.transform.position.x, MissionIcon.transform.position.y, Mission1Enemy.transform.position.z);
                 break;
             case 2:
                 Mission2Enemy.SetActive(true);
