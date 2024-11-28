@@ -4,7 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   public void OnPlayButton () 
+    private void Start()
+    {
+        
+    }
+    public void OnPlayButton () 
    {
 	SceneManager.LoadScene("Block out");
    }
