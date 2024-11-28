@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231912899}
   - component: {fileID: 231912900}
+  - component: {fileID: 231912901}
   m_Layer: 0
   m_Name: IntroVideo
   m_TagString: Untagged
@@ -264,6 +265,18 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &231912901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231912898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd62356ebbe23d47b2f8e4d6d1ff85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &266611608
 GameObject:
   m_ObjectHideFlags: 0
