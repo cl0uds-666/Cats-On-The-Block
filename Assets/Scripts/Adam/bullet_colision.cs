@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class bullet_colision : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int Damage;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyCombat>().Health -= GetComponent<Bullet>().damage;
+            collision.gameObject.GetComponent<EnemyCombat>().Health -= Damage;
+            Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Melee Enemy"))
         {
-            collision.gameObject.GetComponent<Melee_Enemy>().Health -= GetComponent<Bullet>().damage;
+            collision.gameObject.GetComponent<Melee_Enemy>().Health -= Damage;
+            Destroy(gameObject);
         }
     }
 }
