@@ -25,27 +25,27 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // Jump if grounded
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded || Input.GetKeyDown(KeyCode.Joystick1Button0) && IsGrounded)
         {
             rb.AddForce(Vector3.up * JumpForce * Time.deltaTime, ForceMode.Impulse);
         }
 
         // Start dash if grounded, moving, and not already dashing
-        if (Input.GetKeyDown(KeyCode.C) && IsGrounded && !IsDashing && (rb.linearVelocity.x != 0 || rb.linearVelocity.z != 0))
+        if ((Input.GetKeyDown(KeyCode.C) && IsGrounded && !IsDashing && (rb.linearVelocity.x != 0 || rb.linearVelocity.z != 0)) || Input.GetKeyDown(KeyCode.Joystick1Button1) && IsGrounded && !IsDashing && (rb.linearVelocity.x != 0 || rb.linearVelocity.z != 0))
         {
             StartCoroutine(Dash());
         }
 
         // Toggle sprinting based on Left Control key
-        if (Input.GetKey(KeyCode.LeftControl))
+        void OnSprinting()
         {
             IsSprinting = true;
             Debug.Log("Sprinting activated");
         }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        void OnSprintingRealease()
         {
             IsSprinting = false;
-            Debug.Log("Sprinting deactivated");
+            Debug.Log("Sprinting Deactivated");
         }
     }
 
