@@ -26,14 +26,14 @@ public class SetActionMap : MonoBehaviour
             Map.Disable();
         }
 
-        if (Current.name != "Block out")
+        if (Current.name == "Block out")
         {
             GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
         }
-        
-        //else
-        //{
-        //    GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
-        //}
+
+        else
+        {
+            GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
+        }
     }
 }
