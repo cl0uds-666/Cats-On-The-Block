@@ -61,12 +61,8 @@ public class Missions : MonoBehaviour
 
             else
             {
-                if (Pistol != null)
-                {
-                    MissionIcon.transform.position = new Vector3(Pistol.transform.position.x, MissionIcon.transform.position.y, Pistol.transform.position.z);
-                }
+                SelectMission();
             }
-            
         }
 
         else if (Mission == 3)
@@ -78,10 +74,7 @@ public class Missions : MonoBehaviour
 
             else
             {
-                if (Rifle != null)
-                {
-                    MissionIcon.transform.position = new Vector3(Rifle.transform.position.x, MissionIcon.transform.position.y, Rifle.transform.position.z);
-                }
+                SelectMission();
             }
         }
 
@@ -94,10 +87,7 @@ public class Missions : MonoBehaviour
 
             else
             {
-                if (Grenade != null)
-                {
-                    MissionIcon.transform.position = new Vector3(Grenade.transform.position.x, MissionIcon.transform.position.y, Grenade.transform.position.z);
-                }
+                SelectMission();
             }
         }
 
