@@ -13,7 +13,7 @@ public class Scratch : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis("Xbox_RT") > 0 && CanScratch)
+        if (Input.GetAxis("Xbox_RT") > 0 && CanScratch || Input.GetKeyDown(KeyCode.Mouse0) && CanScratch)
         {
             if (GetComponent<WeaponSwitching>().currentWeaponIndex == 0 && CurrentMeleeTimer <= 0f)
             {
