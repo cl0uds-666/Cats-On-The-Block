@@ -1,14 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class WeaponSwitching : MonoBehaviour
 {
     public List<GameObject> weapons;                // Array of weapon GameObjects
     public int currentWeaponIndex = 0;          // Index of the currently selected weapon
     public WaterBar waterBarUI;                 // Reference to the WaterBar UI script (set in Inspector)
-
+    public GameObject WheelImage;
     private PlayerProjectileShooting currentShootingScript;
     private GrenadeThrower currentGrenadeThrower;
+    public float WheelTime;
 
     public PlayerProjectileShooting GetActiveWeapon()
     {
@@ -70,6 +72,8 @@ public class WeaponSwitching : MonoBehaviour
 
     void SelectWeapon(int index)
     {
+        StartCoroutine(Wheel());
+
         if (index < 0 || index >= weapons.Count) return;
 
         // Disable all weapons first
@@ -109,5 +113,12 @@ public class WeaponSwitching : MonoBehaviour
         {
             Debug.Log($"Selected grenade: {weapons[currentWeaponIndex].name}");
         }
+    }
+
+    private IEnumerator Wheel()
+    {
+        WheelImage.SetActive(true);
+        yield return new WaitForSeconds(WheelTime);
+        WheelImage.SetActive(false);
     }
 }
