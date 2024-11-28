@@ -8,7 +8,7 @@ public class ButtonAppearance : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        StartCoroutine(HideAndShow(0.4f) );
+        StartCoroutine(HideAndShow(0.3f) );
     }
 
     // Update is called once per frame
