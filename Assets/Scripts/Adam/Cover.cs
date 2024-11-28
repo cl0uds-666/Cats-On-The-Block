@@ -198,9 +198,6 @@ public class Cover : MonoBehaviour
             Panel.SetActive(true);
             Time.timeScale = 0f;
         }
-
-
-
     }
 
     //the button mapping for both cover and dash
