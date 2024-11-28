@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem.XInput;
-using UnityEngine.InputSystem;
 
 public class Open_Pause : MonoBehaviour
 {

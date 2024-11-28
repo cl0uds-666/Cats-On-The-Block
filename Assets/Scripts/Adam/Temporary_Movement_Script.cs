@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
