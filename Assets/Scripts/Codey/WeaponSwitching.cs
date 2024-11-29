@@ -84,6 +84,8 @@ public class WeaponSwitching : MonoBehaviour
 
         // Set the new weapon index
         currentWeaponIndex = index;
+        FindObjectOfType<WeaponWheelDisplay>()?.UpdateWeaponImage();
+
 
         // Check if the new weapon is a projectile weapon
         currentShootingScript = weapons[currentWeaponIndex].GetComponent<PlayerProjectileShooting>();
