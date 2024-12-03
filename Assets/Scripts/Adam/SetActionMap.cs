@@ -12,12 +12,6 @@ public class SetActionMap : MonoBehaviour
         Current = SceneManager.GetActiveScene();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(0.5f);
