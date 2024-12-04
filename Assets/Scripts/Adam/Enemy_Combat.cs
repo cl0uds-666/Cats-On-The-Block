@@ -29,6 +29,7 @@ public class EnemyCombat : MonoBehaviour
     public GameObject BulletSpawnPoint;
     private float ShootDelay;
     public float AttackDistance;
+    public GameObject NPCTextBox;
     private void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -43,27 +44,27 @@ public class EnemyCombat : MonoBehaviour
                 CanSeePlayer = false;
             }
 
-            else if (Physics.BoxCast(transform.position, BoxSize * 0.5f, transform.forward, out Hit, transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(transform.position, BoxSize * 0.5f, transform.forward, out Hit, transform.rotation, Distance, PlayerLayer) && !NPCTextBox.activeSelf)
             {
                 CanSeePlayer = true;
             }
 
-            else if (Physics.BoxCast(LineOfSightPosition.transform.position, BoxSize * 0.5f, LineOfSightPosition.transform.forward, out Hit, LineOfSightPosition.transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(LineOfSightPosition.transform.position, BoxSize * 0.5f, LineOfSightPosition.transform.forward, out Hit, LineOfSightPosition.transform.rotation, Distance, PlayerLayer) && !NPCTextBox.activeSelf)
             {
                 CanSeePlayer = true;
             }
 
-            else if (Physics.BoxCast(LineOfSightPosition2.transform.position, BoxSize * 0.5f, LineOfSightPosition2.transform.forward, out Hit, LineOfSightPosition2.transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(LineOfSightPosition2.transform.position, BoxSize * 0.5f, LineOfSightPosition2.transform.forward, out Hit, LineOfSightPosition2.transform.rotation, Distance, PlayerLayer) && !NPCTextBox.activeSelf)
             {
                 CanSeePlayer = true;
             }
 
-            else if (Physics.BoxCast(LineOfSightPosition3.transform.position, BoxSize * 0.5f, LineOfSightPosition3.transform.forward, out Hit, LineOfSightPosition3.transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(LineOfSightPosition3.transform.position, BoxSize * 0.5f, LineOfSightPosition3.transform.forward, out Hit, LineOfSightPosition3.transform.rotation, Distance, PlayerLayer) && !NPCTextBox.activeSelf)
             {
                 CanSeePlayer = true;
             }
 
-            else if (Physics.BoxCast(LineOfSightPosition4.transform.position, BoxSize * 0.5f, LineOfSightPosition4.transform.forward, out Hit, LineOfSightPosition4.transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(LineOfSightPosition4.transform.position, BoxSize * 0.5f, LineOfSightPosition4.transform.forward, out Hit, LineOfSightPosition4.transform.rotation, Distance, PlayerLayer) && !NPCTextBox.activeSelf)
             {
                 CanSeePlayer = true;
             }
@@ -88,9 +89,14 @@ public class EnemyCombat : MonoBehaviour
             }
         }
 
-        if (CanSeePlayer)
+        if (CanSeePlayer && !NPCTextBox.activeSelf)
         {
             IsAttacking = true;
+        }
+
+        if (NPCTextBox.activeSelf)
+        {
+            IsAttacking = false;
         }
 
         if (GetComponent<Cover_Selector>().InCover && !PeakFunctionRunning)

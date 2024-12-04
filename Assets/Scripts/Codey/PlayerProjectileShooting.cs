@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class PlayerProjectileShooting : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerProjectileShooting : MonoBehaviour
 
     public delegate void AmmoChanged(float ammoPercentage); // Delegate for ammo bar update
     public event AmmoChanged OnAmmoChanged;
+    public GameObject NPCText;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class PlayerProjectileShooting : MonoBehaviour
     void Update()
     {
         // Check for shooting input and cooldown
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && currentAmmo > 0)
+        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && currentAmmo > 0 && !NPCText.activeSelf)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;

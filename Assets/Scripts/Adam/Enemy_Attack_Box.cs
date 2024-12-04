@@ -37,12 +37,17 @@ public class Enemy_Attack_Box : MonoBehaviour
             {
                 StartCoroutine(AttackDelay());
             }
+
+            if (!GetComponentInParent<Melee_Enemy>().IsAttacking)
+            {
+                PlayerCollision = false;
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && GetComponentInParent<Melee_Enemy>().IsAttacking)
         {
             PlayerCollision = true;   
         }

@@ -13,6 +13,7 @@ public class Melee_Enemy : MonoBehaviour
     public Vector3 BoxSize;
     public int Health;
     private GameObject Player;
+    public GameObject NPCText;
 
     private void Start()
     {
@@ -23,30 +24,38 @@ public class Melee_Enemy : MonoBehaviour
     {
         if (!IsAttacking)
         {
-            if (Physics.BoxCast(transform.position, BoxSize * 0.5f, transform.forward, out Hit, transform.rotation, Distance, PlayerLayer))
+            if (Physics.BoxCast(transform.position, BoxSize * 0.5f, transform.forward, out Hit, transform.rotation, Distance, PlayerLayer) && !NPCText.activeSelf)
             {
                 IsAttacking = true;
             }
 
-            else if (Physics.BoxCast(LineOfSightPosition.transform.position, BoxSize * 0.5f, LineOfSightPosition.transform.forward, out Hit, LineOfSightPosition.transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(LineOfSightPosition.transform.position, BoxSize * 0.5f, LineOfSightPosition.transform.forward, out Hit, LineOfSightPosition.transform.rotation, Distance, PlayerLayer) && !NPCText.activeSelf)
             {
                 IsAttacking = true;
             }
 
-            else if (Physics.BoxCast(LineOfSightPosition2.transform.position, BoxSize * 0.5f, LineOfSightPosition2.transform.forward, out Hit, LineOfSightPosition2.transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(LineOfSightPosition2.transform.position, BoxSize * 0.5f, LineOfSightPosition2.transform.forward, out Hit, LineOfSightPosition2.transform.rotation, Distance, PlayerLayer) && !NPCText.activeSelf)
             {
                 IsAttacking = true;
             }
 
-            else if (Physics.BoxCast(LineOfSightPosition3.transform.position, BoxSize * 0.5f, LineOfSightPosition3.transform.forward, out Hit, LineOfSightPosition3.transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(LineOfSightPosition3.transform.position, BoxSize * 0.5f, LineOfSightPosition3.transform.forward, out Hit, LineOfSightPosition3.transform.rotation, Distance, PlayerLayer) && !NPCText.activeSelf)
             {
                 IsAttacking = true;
             }
 
-            else if (Physics.BoxCast(LineOfSightPosition4.transform.position, BoxSize * 0.5f, LineOfSightPosition4.transform.forward, out Hit, LineOfSightPosition4.transform.rotation, Distance, PlayerLayer))
+            else if (Physics.BoxCast(LineOfSightPosition4.transform.position, BoxSize * 0.5f, LineOfSightPosition4.transform.forward, out Hit, LineOfSightPosition4.transform.rotation, Distance, PlayerLayer) && !NPCText.activeSelf)
             {
                 IsAttacking = true;
             }
+        }
+
+        else
+        {
+            if (NPCText.activeSelf)
+            {
+                IsAttacking = false;
+            }    
         }
     }
 
