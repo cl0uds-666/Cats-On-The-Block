@@ -25,7 +25,7 @@ public class PlayerProjectileShooting : MonoBehaviour
     void Update()
     {
         // Check for shooting input and cooldown
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && currentAmmo > 0 && !NPCText.activeSelf)
+        if (Input.GetAxis("Xbox_RT") > 0 && Time.time >= nextFireTime && currentAmmo > 0 && !NPCText.activeSelf || Input.GetKey(KeyCode.Mouse0) && Time.time >= nextFireTime && currentAmmo > 0 && !NPCText.activeSelf)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;

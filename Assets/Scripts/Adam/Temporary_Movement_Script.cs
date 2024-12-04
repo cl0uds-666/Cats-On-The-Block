@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
         // Jump if grounded
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded || Input.GetKeyDown(KeyCode.Joystick1Button0) && IsGrounded)
         {
-            rb.AddForce(Vector3.up * JumpForce * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * JumpForce);
             Debug.Log("Sprinting activated");
         }
  
