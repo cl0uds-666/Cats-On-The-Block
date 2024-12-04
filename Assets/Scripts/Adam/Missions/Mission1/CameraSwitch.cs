@@ -30,7 +30,7 @@ public class CameraSwitch : MonoBehaviour
             SkipButton.SetActive(true);
             NPC.transform.LookAt(new Vector3(Player.transform.position.x, NPC.transform.position.y, Player.transform.position.z));
 
-            if (XInputController.current.bButton.isPressed)
+            if (XInputController.current.bButton.isPressed || Input.GetKeyDown(KeyCode.E))
             {
                 SwitchCamera = false;
                 SkipButton.SetActive(false);
