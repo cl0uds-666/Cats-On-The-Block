@@ -41,7 +41,8 @@ public class NPC_Collider : MonoBehaviour
 
                 if (Player.GetComponent<Missions>().Mission == 1)
                 {
-                    NPC1Text.text = "Thanks for getting my purrrse back! Follow me to the pharmacist";
+                    NPC1Text.text = "Thanks for getting my purrrse back! Follow me to the fashion shop";
+                    Player.GetComponent<Missions>().ObjectiveText.text = "Follow the cat to the fashion shop";
                 }
 
                 else

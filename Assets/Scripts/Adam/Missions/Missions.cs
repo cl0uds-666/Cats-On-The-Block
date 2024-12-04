@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class Missions : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Missions : MonoBehaviour
     public GameObject Pistol;
     public GameObject Rifle;
     public GameObject Grenade;
+    public TextMeshProUGUI ObjectiveText;
 
     void Start()
     {
@@ -104,17 +106,21 @@ public class Missions : MonoBehaviour
         switch (Mission)
         {
             case 1:
+                ObjectiveText.text = "Knock out the thief and give the purse back";
                 break;
             case 2:
+                ObjectiveText.text = "Find and Knock out the armed cat";
                 Mission2Enemy.SetActive(true);
                 break;
             case 3:
-                foreach(GameObject Enemy in Mission3ParkEnemies)
+                ObjectiveText.text = "Eliminate all enemy cats in the park";
+                foreach (GameObject Enemy in Mission3ParkEnemies)
                 {
                     Enemy.SetActive(true);
                 }
                 break;
             case 4:
+                ObjectiveText.text = "Eliminate all enemy cats in the construction site";
                 foreach (GameObject Enemy in Mission4ConstructionEnemies)
                 {
                     Enemy.SetActive(true);
