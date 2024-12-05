@@ -47,6 +47,7 @@ public class NPC_Collider : MonoBehaviour
                 
                 NPCTextBox.SetActive(true);
                 GetComponent<BoxCollider>().enabled = false;
+                Player.GetComponent<Movement>().CanDash = false;
             }
         } 
     }
@@ -57,6 +58,7 @@ public class NPC_Collider : MonoBehaviour
         {
             GetComponent<NavMeshAgent>().enabled = true;
             GetComponent<NPC_Roam_AI>().enabled = true;
+            Player.GetComponent<Movement>().CanDash = true;
         }
         
         if (Vector3.Distance(transform.position, GetComponent<NPC_Roam_AI>().WayPoints[GetComponent<NPC_Roam_AI>().WayPoints.Length - 1].gameObject.transform.position) < 1f && Player.GetComponent<Missions>().Mission == 1)

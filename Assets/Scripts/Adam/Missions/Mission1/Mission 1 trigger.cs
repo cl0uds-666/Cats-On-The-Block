@@ -16,6 +16,7 @@ public class Mission1trigger : MonoBehaviour
             EnemyCamera.GetComponent<CameraSwitch>().SwitchCamera = true;
             Player.GetComponent<Movement>().Speed = 0f;
             Player.GetComponent<Movement>().SprintSpeed = 0f;
+            Player.GetComponent<Movement>().CanDash = false;
             Destroy(gameObject);
         }
     }

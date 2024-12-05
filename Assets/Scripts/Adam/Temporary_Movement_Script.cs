@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -8,12 +9,14 @@ public class Movement : MonoBehaviour
     public float JumpForce = 5f;
     public float DashTime = 0.2f;
     public Transform Cam;
-
+    public float DashForce;
     private float MoveX;
     private float MoveZ;
     public bool IsSprinting = false;  // Changed from private to public
     public bool IsGrounded;
     public bool IsDashing = false;
+    public bool CanDash = true;
+    public float DashCoolDown;
 
     void Start()
     {
@@ -35,13 +38,10 @@ public class Movement : MonoBehaviour
         {
             IsGrounded = false;
         }
-
-
     }
 
     void Update()
     {
-        
         // Jump if grounded
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded || Input.GetKeyDown(KeyCode.Joystick1Button0) && IsGrounded)
         {
@@ -59,7 +59,6 @@ public class Movement : MonoBehaviour
         {
             IsSprinting = false;
         }
-       
     }
 
     private void FixedUpdate()
@@ -108,6 +107,11 @@ public class Movement : MonoBehaviour
                 transform.forward += MoveDirection * 2;
             }
         }
+
+        if (IsDashing)
+        {
+            GetComponent<Rigidbody>().AddForce(transform.forward * DashForce);
+        }    
     }
 
     private void OnCollisionStay(Collision collision)
@@ -125,5 +129,19 @@ public class Movement : MonoBehaviour
             IsGrounded = false;
         }
     }
- 
+
+    public IEnumerator DashTimer()
+    {
+        IsDashing = true;
+        CanDash = false;
+        yield return new WaitForSeconds(DashTime);
+        IsDashing = false;
+        StartCoroutine(DashCoolDownTime());
+    }
+
+    private IEnumerator DashCoolDownTime()
+    {
+        yield return new WaitForSeconds(DashCoolDown);
+        CanDash = true;
+    }
 }

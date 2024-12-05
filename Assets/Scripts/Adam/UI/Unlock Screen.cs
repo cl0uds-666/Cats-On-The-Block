@@ -14,7 +14,8 @@ public class UnlockScreen : MonoBehaviour
         Time.timeScale = 0f;
         BSkip.SetActive(true);
         Player = GameObject.Find("Player");
-        
+        Player.GetComponent<Movement>().CanDash = false;
+
         if (Player.GetComponent<Missions>().Mission == 2)
         {
             CurrentWeaponImage.sprite = PistolImage.sprite;
@@ -39,9 +40,10 @@ public class UnlockScreen : MonoBehaviour
     {
         if (XInputController.current.bButton.isPressed || Input.GetKeyDown(KeyCode.E))
         {
-            BSkip.SetActive(false);
-            gameObject.SetActive(false);
             Time.timeScale = 1.0f;
+            BSkip.SetActive(false);
+            Player.GetComponent<Movement>().CanDash = true;
+            gameObject.SetActive(false);
         }
     }
 }

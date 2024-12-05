@@ -38,6 +38,7 @@ public class CameraSwitch : MonoBehaviour
                 NPCTextBox.SetActive(false);
                 Player.GetComponent<Movement>().Speed = NormalSpeed;
                 Player.GetComponent<Movement>().SprintSpeed = NormalSprintSpeed;
+                Player.GetComponent<Movement>().CanDash = true;
 
                 if (Enemy != null)
                 {

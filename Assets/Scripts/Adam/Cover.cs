@@ -202,7 +202,10 @@ public class Cover : MonoBehaviour
         {
             ToggleCover();
         }
-    }
 
-    
+        if (GetComponent<Movement>().CanDash)
+        {
+            StartCoroutine(GetComponent<Movement>().DashTimer());
+        }
+    }
 }
