@@ -101,11 +101,11 @@ public class Movement : MonoBehaviour
 
         if (MoveDirection != Vector3.zero && !GetComponent<Cover>().InCover)
         {
-            transform.forward = MoveDirection;
+            transform.forward += MoveDirection;
             if(IsSprinting == true)
             {
                  
-                transform.forward = MoveDirection * 2;
+                transform.forward += MoveDirection * 2;
             }
         }
     }
