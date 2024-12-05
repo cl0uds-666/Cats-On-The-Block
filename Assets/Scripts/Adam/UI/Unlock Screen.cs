@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class UnlockScreen : MonoBehaviour
 {
     private GameObject Player;
-    public GameObject Pistol, Rifle, Grenade, Bullet;
+    public GameObject Pistol, Rifle, Grenade, Bullet, BSkip;
     public Image CurrentWeaponImage, PistolImage, RifleImage, GrenadeImage;
     public TextMeshProUGUI Description;
     private void OnEnable()
     {
         Time.timeScale = 0f;
+        BSkip.SetActive(true);
         Player = GameObject.Find("Player");
         
         if (Player.GetComponent<Missions>().Mission == 2)
@@ -38,8 +39,9 @@ public class UnlockScreen : MonoBehaviour
     {
         if (XInputController.current.bButton.isPressed || Input.GetKeyDown(KeyCode.E))
         {
-            Time.timeScale = 1.0f;
+            BSkip.SetActive(false);
             gameObject.SetActive(false);
+            Time.timeScale = 1.0f;
         }
     }
 }

@@ -719,7 +719,7 @@
                 {
                     "name": "Pause",
                     "type": "Button",
-                    "id": "b6d1cf73-cbb3-4ce1-b62d-bc7f8179a56c",
+                    "id": "d616820b-e427-4ed6-a8a8-f471ff4aa65d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -1074,7 +1074,7 @@
                 },
                 {
                     "name": "",
-                    "id": "7ef25b9d-c65f-481c-a986-6e056b3e213f",
+                    "id": "29e39ade-19e7-405e-89ad-eb2791ae9a3b",
                     "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
@@ -1085,7 +1085,7 @@
                 },
                 {
                     "name": "",
-                    "id": "9acc652c-8988-4d0f-b9be-ff8732ae2107",
+                    "id": "388dd5ab-04e1-476d-b146-ca81687e5381",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
