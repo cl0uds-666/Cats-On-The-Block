@@ -2,7 +2,25 @@ using UnityEngine;
 
 public class bullet_colision : MonoBehaviour
 {
-    public int Damage;
+    private int Damage;
+    public int PistolDamage, RifleDamage;
+    private GameObject Player;
+
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
+
+        if (Player.GetComponent<WeaponSwitching>().currentWeaponIndex == 1)
+        {
+            Damage = PistolDamage;
+        }
+
+        else
+        {
+            Damage = RifleDamage;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))

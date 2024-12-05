@@ -17,7 +17,7 @@ public class Missions : MonoBehaviour
     public GameObject PurseObject;
     public GameObject Pistol;
     public GameObject Rifle;
-    public GameObject Grenade;
+    public GameObject Grenade, UnlockScreen;
     public TextMeshProUGUI ObjectiveText;
 
     void Start()
@@ -63,6 +63,7 @@ public class Missions : MonoBehaviour
 
             else
             {
+                UnlockScreen.SetActive(true);
                 SelectMission();
             }
         }
@@ -76,6 +77,7 @@ public class Missions : MonoBehaviour
 
             else
             {
+                UnlockScreen.SetActive(true);
                 SelectMission();
             }
         }
@@ -89,6 +91,7 @@ public class Missions : MonoBehaviour
 
             else
             {
+                UnlockScreen.SetActive(true);
                 SelectMission();
             }
         }
@@ -113,6 +116,7 @@ public class Missions : MonoBehaviour
                 Mission2Enemy.SetActive(true);
                 break;
             case 3:
+                GetComponent<WeaponSwitching>().weapons.Add(Pistol);
                 ObjectiveText.text = "Eliminate all enemy cats in the park";
                 foreach (GameObject Enemy in Mission3ParkEnemies)
                 {
@@ -120,11 +124,15 @@ public class Missions : MonoBehaviour
                 }
                 break;
             case 4:
+                GetComponent<WeaponSwitching>().weapons.Add(Rifle);
                 ObjectiveText.text = "Eliminate all enemy cats in the construction site";
                 foreach (GameObject Enemy in Mission4ConstructionEnemies)
                 {
                     Enemy.SetActive(true);
                 }
+                break;
+            case 5:
+                GetComponent<WeaponSwitching>().weapons.Add(Grenade);
                 break;
         }
     }

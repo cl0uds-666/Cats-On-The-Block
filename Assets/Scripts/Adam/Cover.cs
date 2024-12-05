@@ -13,8 +13,6 @@ public class Cover : MonoBehaviour
     public float HighCast;
     public float LowCast;
     public LayerMask CoverLayer;
-    public GameObject Panel;
-    public GameObject MiniMap;
     private void Update()
     {
         if (InCover)
@@ -182,26 +180,7 @@ public class Cover : MonoBehaviour
         }
     }
 
-    void OnPause(InputValue value)
-    {
-        print("Pause");
-
-        if (Panel.activeSelf)
-        {
-            GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
-            Panel.SetActive(false);
-            MiniMap.SetActive(true);
-            Time.timeScale = 1.0f;
-        }
-
-        else
-        {
-            GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
-            Panel.SetActive(true);
-            MiniMap.SetActive(false);
-            Time.timeScale = 0f;
-        }
-    }
+    
 
     //the button mapping for both cover and dash
     void OnCoverDash(InputValue Value)
