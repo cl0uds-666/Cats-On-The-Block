@@ -138,8 +138,8 @@ Material:
     - _lightingcutoff: 0.285
     - _shadow_brightness: 0.098
     m_Colors:
-    - _BaseColor: {r: 0.44705883, g: 0.6440757, b: 0.65882355, a: 1}
-    - _Color: {r: 0.4470588, g: 0.6440757, b: 0.65882355, a: 1}
+    - _BaseColor: {r: 0.29803917, g: 0.6509804, b: 1, a: 1}
+    - _Color: {r: 0.29803914, g: 0.6509804, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _colour: {r: 0.43787825, g: 0.66325843, b: 0.754717, a: 0}
