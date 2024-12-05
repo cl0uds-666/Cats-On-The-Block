@@ -141,6 +141,7 @@ public class Cover : MonoBehaviour
         // if only the bottom raycast hits cover then it is low cover
         if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer) && Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer))
         {
+            GetComponent<Movement>().IsDashing = false;
             print("Low Cover");
         }
 
@@ -148,6 +149,7 @@ public class Cover : MonoBehaviour
         //if both raycasts hit cover then its high cover
         else if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer) && Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer))
         {
+            GetComponent<Movement>().IsDashing = false;
             print("High Cover");
         }
     }

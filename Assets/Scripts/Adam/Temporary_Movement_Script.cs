@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     public bool IsDashing = false;
     public bool CanDash = true;
     public float DashCoolDown;
+    public float TurnSpeed;
 
     void Start()
     {
@@ -98,14 +99,9 @@ public class Movement : MonoBehaviour
 
         rb.linearVelocity = new Vector3(MoveDirection.x * currentSpeed, rb.linearVelocity.y, MoveDirection.z * currentSpeed);// * Time.fixedDeltaTime;
 
-        if (MoveDirection != Vector3.zero && !GetComponent<Cover>().InCover)
+        if (!GetComponent<Cover>().InCover)
         {
-            transform.forward += MoveDirection;
-            if(IsSprinting == true)
-            {
-                 
-                transform.forward += MoveDirection * 2;
-            }
+            transform.forward += MoveDirection * TurnSpeed;
         }
 
         if (IsDashing)
