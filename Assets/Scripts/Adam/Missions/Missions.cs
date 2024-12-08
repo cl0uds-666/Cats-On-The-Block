@@ -19,14 +19,18 @@ public class Missions : MonoBehaviour
     public GameObject Rifle;
     public GameObject Grenade, UnlockScreen;
     public TextMeshProUGUI ObjectiveText;
+    public Vector3 CheckpointPosition;
+    public GameObject Player;
 
     void Start()
     {
         SelectMission();
+        CheckpointPosition = Player.transform.position;
     }
 
     void Update()
     {
+        
         if (Mission == 1)
         {
             if (!HasPurse)
@@ -106,6 +110,8 @@ public class Missions : MonoBehaviour
     {
         Mission++;
 
+        CheckpointPosition = Player.transform.position;
+
         switch (Mission)
         {
             case 1:
@@ -135,5 +141,23 @@ public class Missions : MonoBehaviour
                 GetComponent<WeaponSwitching>().weapons.Add(Grenade);
                 break;
         }
+    }
+
+    public void Respawn()
+    {
+        // reset vinny to the checkpoint made when the current mission started.
+        Player.transform.position = CheckpointPosition;
+
+        var playerStats = Player.GetComponent<Player_Stats>();
+        if (playerStats != null)
+        {
+            playerStats.ResetHealth();
+        }
+        if(Mission == 1 && Mission1Enemy != null)
+        {
+            Mission1Enemy.SetActive(true);
+            HasPurse = false;
+        }
+
     }
 }

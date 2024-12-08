@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 public class Player_Stats : MonoBehaviour
 {
     public int Health;
+    public int MaxHealth;
     public CinemachineCamera Camera;
     void Start()
     {
         Camera.Prioritize();
+        Health = MaxHealth;
     }
 
     void Update()
@@ -17,5 +19,11 @@ public class Player_Stats : MonoBehaviour
         {
             SceneManager.LoadScene("GameoverScreen");
         }
+
+    }
+
+    public void ResetHealth()
+    {
+        Health = MaxHealth;
     }
 }
