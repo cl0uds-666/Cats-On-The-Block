@@ -7,6 +7,10 @@ public class Player_Stats : MonoBehaviour
     public int Health;
     public int MaxHealth;
     public CinemachineCamera Camera;
+
+    private int Deathcount = 0;
+    private int MaxDeath = 0;
+
     void Start()
     {
         Camera.Prioritize();
@@ -17,7 +21,7 @@ public class Player_Stats : MonoBehaviour
     {
         if (Health <= 0)
         {
-            SceneManager.LoadScene("GameoverScreen");
+            Death();
         }
 
     }
@@ -25,5 +29,30 @@ public class Player_Stats : MonoBehaviour
     public void ResetHealth()
     {
         Health = MaxHealth;
+    }
+
+    private void Death()
+    {
+        Deathcount++;
+
+        if (Deathcount >= MaxDeath)
+        {
+            SceneManager.LoadScene("GameoverScreen");
+
+        }
+        else
+        {
+            var missions = FindAnyObjectByType<Missions>();
+            if (missions != null)
+            {
+                missions.Respawn();
+            }
+            else
+            {
+                SceneManager.LoadScene("GameoverScreen");// back up so it doesn't scrash if script doesn't work
+
+            }
+        }
+
     }
 }

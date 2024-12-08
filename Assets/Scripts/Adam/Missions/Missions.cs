@@ -153,10 +153,29 @@ public class Missions : MonoBehaviour
         {
             playerStats.ResetHealth();
         }
+
         if(Mission == 1 && Mission1Enemy != null)
         {
             Mission1Enemy.SetActive(true);
             HasPurse = false;
+        }
+        else if (Mission == 2 && Mission2Enemy != null)
+        {
+            Mission2Enemy.SetActive(true);
+        }
+        else if (Mission == 3 )
+        {
+            foreach(GameObject Enemy in Mission3ParkEnemies)
+            {
+            if (Enemy != null)Enemy.SetActive(true);
+            }
+        }
+        else if(Mission == 4 ) 
+        {
+            foreach (GameObject Enemy in Mission4ConstructionEnemies)
+            {
+                if (Enemy != null) Enemy.SetActive(true);
+            }
         }
 
     }
