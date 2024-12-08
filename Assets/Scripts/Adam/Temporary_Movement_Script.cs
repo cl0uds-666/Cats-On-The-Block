@@ -30,12 +30,13 @@ public class Movement : MonoBehaviour
         if(Collision.gameObject.tag == "ground" && !IsGrounded )
         {
             IsGrounded = true;
+ 
         }
     }
 
     private void OnTriggerExit(Collider Collision)
     {
-        if(Collision.gameObject.tag == "ground" && IsGrounded == true)
+        if (Collision.gameObject.tag == "ground" && IsGrounded == true)
         {
             IsGrounded = false;
         }
@@ -47,19 +48,19 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded || Input.GetKeyDown(KeyCode.Joystick1Button0) && IsGrounded)
         {
             rb.AddForce(Vector3.up * JumpForce);
-            Debug.Log("Sprinting activated");
+             
         }
  
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded || Input.GetKeyDown(KeyCode.Joystick1Button8) && IsGrounded) 
+        if(Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded || Input.GetKey(KeyCode.Joystick1Button8) && IsGrounded) 
         {
-            IsSprinting = true;
+            IsSprinting = !IsSprinting;
+             
+
+
         }
 
-        if(Input.GetKeyUp(KeyCode.LeftShift) && IsGrounded || Input.GetKeyUp(KeyCode.Joystick1Button8) && IsGrounded)
-        {
-            IsSprinting = false;
-        }
+         
     }
 
     private void FixedUpdate()
