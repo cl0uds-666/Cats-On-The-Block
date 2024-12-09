@@ -30,21 +30,34 @@ public class CameraSwitch : MonoBehaviour
             SkipButton.SetActive(true);
             NPC.transform.LookAt(new Vector3(Player.transform.position.x, NPC.transform.position.y, Player.transform.position.z));
 
-            if (XInputController.current.bButton.isPressed || Input.GetKeyDown(KeyCode.Q))
+            if (XInputController.current != null)
             {
-                SwitchCamera = false;
-                SkipButton.SetActive(false);
-                PlayerCamera.Prioritize();
-                NPCTextBox.SetActive(false);
-                Player.GetComponent<Movement>().Speed = NormalSpeed;
-                Player.GetComponent<Movement>().SprintSpeed = NormalSprintSpeed;
-                Player.GetComponent<Movement>().CanDash = true;
-
-                if (Enemy != null)
+                if (XInputController.current.bButton.isPressed)
                 {
-                    Enemy.GetComponent<EnemyMovement>().enabled = true;
+                    Skip();
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Skip();
+            }
+        }
+    }
+
+    private void Skip()
+    {
+        SwitchCamera = false;
+        SkipButton.SetActive(false);
+        PlayerCamera.Prioritize();
+        NPCTextBox.SetActive(false);
+        Player.GetComponent<Movement>().Speed = NormalSpeed;
+        Player.GetComponent<Movement>().SprintSpeed = NormalSprintSpeed;
+        Player.GetComponent<Movement>().CanDash = true;
+
+        if (Enemy != null)
+        {
+            Enemy.GetComponent<EnemyMovement>().enabled = true;
         }
     }
 }
