@@ -123,10 +123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 30
-  Player: {fileID: 0}
   Move: 0
   DeathTimer: 6
-  Damage: 0
+  Damage: 1
 --- !u!54 &5686991325159080078
 Rigidbody:
   m_ObjectHideFlags: 0

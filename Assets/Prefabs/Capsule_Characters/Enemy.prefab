@@ -324,7 +324,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -354,8 +354,10 @@ MonoBehaviour:
   - {fileID: 1407289749132756704}
   - {fileID: 6500938855587809426}
   - {fileID: 1616819310749130460}
+  Index: 0
   TargetDestination: {x: 0, y: 0, z: 0}
   AttackBox: {fileID: 0}
+  TutorialEnemy: {fileID: 0}
 --- !u!114 &6183959851937723722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +397,7 @@ MonoBehaviour:
   CoverWaitTime: 5
   Bullet: {fileID: 0}
   BulletSpawnPoint: {fileID: 1047469696743303121}
+  AttackDistance: 0
 --- !u!114 &8135963464956649690
 MonoBehaviour:
   m_ObjectHideFlags: 0

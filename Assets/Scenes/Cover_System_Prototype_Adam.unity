@@ -2792,6 +2792,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalMoney: 0
+--- !u!114 &1037880238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037880207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff6bbada78cfc4b9c425c56eeb8fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1037880207}
 --- !u!1 &1073706365
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,6 +3185,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1525421523988915452, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1037880220}
+    - targetCorrespondingSourceObject: {fileID: 1525421523988915452, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1037880238}
     - targetCorrespondingSourceObject: {fileID: 1525421523988915452, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1037880221}
@@ -4384,6 +4400,7 @@ GameObject:
   - component: {fileID: 1511241537}
   - component: {fileID: 1511241536}
   - component: {fileID: 1511241535}
+  - component: {fileID: 1511241539}
   m_Layer: 0
   m_Name: half Cover
   m_TagString: Untagged
@@ -4481,6 +4498,19 @@ Transform:
   - {fileID: 226432257}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511241539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511241534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff6bbada78cfc4b9c425c56eeb8fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1037880207}
 --- !u!1 &1519955128
 GameObject:
   m_ObjectHideFlags: 0

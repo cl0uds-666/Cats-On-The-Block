@@ -23,13 +23,9 @@ public class Enemy_Attack_Box : MonoBehaviour
         {
             StartCoroutine(Push());
         }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        if (PlayerCollision)
         {
-            PlayerCollision = true;
             if (Scratch)
             {
                 Player.GetComponent<Player_Stats>().Health -= Damage;
@@ -41,6 +37,19 @@ public class Enemy_Attack_Box : MonoBehaviour
             {
                 StartCoroutine(AttackDelay());
             }
+
+            if (!GetComponentInParent<Melee_Enemy>().IsAttacking)
+            {
+                PlayerCollision = false;
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && GetComponentInParent<Melee_Enemy>().IsAttacking)
+        {
+            PlayerCollision = true;   
         }
     }
 

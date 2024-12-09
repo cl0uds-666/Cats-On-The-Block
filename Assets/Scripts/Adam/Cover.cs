@@ -66,7 +66,7 @@ public class Cover : MonoBehaviour
                 if (transform.position.x <= EdgeDetection.transform.position.x - 0.5f * CoverHit.transform.localScale.x + transform.localScale.x / 2)
                 {
                     GetComponent<Rigidbody>().linearVelocity = new Vector3(0, GetComponent<Rigidbody>().linearVelocity.y, GetComponent<Rigidbody>().linearVelocity.z);
-                    
+
                     if (PreviousHit.normal.z == -1)
                     {
                         //sets the position of the player to the edge detection objects position + half of the covers scale, with the players scale added on so they do not peak too far
@@ -141,6 +141,7 @@ public class Cover : MonoBehaviour
         // if only the bottom raycast hits cover then it is low cover
         if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer) && Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer))
         {
+            GetComponent<Movement>().IsDashing = false;
             print("Low Cover");
         }
 
@@ -148,6 +149,7 @@ public class Cover : MonoBehaviour
         //if both raycasts hit cover then its high cover
         else if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer) && Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer))
         {
+            GetComponent<Movement>().IsDashing = false;
             print("High Cover");
         }
     }
@@ -180,6 +182,8 @@ public class Cover : MonoBehaviour
         }
     }
 
+    
+
     //the button mapping for both cover and dash
     void OnCoverDash(InputValue Value)
     {
@@ -189,7 +193,6 @@ public class Cover : MonoBehaviour
             //go into cover if u press B and the raycast detects cover
             if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + HighCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer) || Physics.Raycast(new Vector3(transform.position.x, transform.position.y + LowCast, transform.position.z), transform.forward, out hit, Distance, CoverLayer))
             {
-                print("yes");
                 CoverHit = hit.transform.gameObject;
                 EdgeDetection = CoverHit.transform.Find("Edge_Detection");
                 ToggleCover();
@@ -200,6 +203,11 @@ public class Cover : MonoBehaviour
         else if (InCover && GetComponent<Movement>().IsGrounded)
         {
             ToggleCover();
+        }
+
+        if (GetComponent<Movement>().CanDash)
+        {
+            StartCoroutine(GetComponent<Movement>().DashTimer());
         }
     }
 }

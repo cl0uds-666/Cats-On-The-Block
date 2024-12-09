@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -10,43 +9,58 @@ public class Movement : MonoBehaviour
     public float JumpForce = 5f;
     public float DashTime = 0.2f;
     public Transform Cam;
-
+    public float DashForce;
     private float MoveX;
     private float MoveZ;
     public bool IsSprinting = false;  // Changed from private to public
     public bool IsGrounded;
     public bool IsDashing = false;
+    public bool CanDash = true;
+    public float DashCoolDown;
+    public float TurnSpeed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+
+    }
+    private void OnTriggerEnter(Collider Collision)
+    {
+        if(Collision.gameObject.tag == "ground" && !IsGrounded )
+        {
+            IsGrounded = true;
+ 
+        }
+    }
+
+    private void OnTriggerExit(Collider Collision)
+    {
+        if (Collision.gameObject.tag == "ground" && IsGrounded == true)
+        {
+            IsGrounded = false;
+        }
     }
 
     void Update()
     {
         // Jump if grounded
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded || Input.GetKeyDown(KeyCode.Joystick1Button0) && IsGrounded)
         {
-            rb.AddForce(Vector3.up * JumpForce * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * JumpForce);
+             
+        }
+ 
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded || Input.GetKey(KeyCode.Joystick1Button8) && IsGrounded) 
+        {
+            IsSprinting = !IsSprinting;
+             
+
+
         }
 
-        // Start dash if grounded, moving, and not already dashing
-        if (Input.GetKeyDown(KeyCode.C) && IsGrounded && !IsDashing && (rb.linearVelocity.x != 0 || rb.linearVelocity.z != 0))
-        {
-            StartCoroutine(Dash());
-        }
-
-        // Toggle sprinting based on Left Control key
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            IsSprinting = true;
-            Debug.Log("Sprinting activated");
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            IsSprinting = false;
-            Debug.Log("Sprinting deactivated");
-        }
+         
     }
 
     private void FixedUpdate()
@@ -86,10 +100,15 @@ public class Movement : MonoBehaviour
 
         rb.linearVelocity = new Vector3(MoveDirection.x * currentSpeed, rb.linearVelocity.y, MoveDirection.z * currentSpeed);// * Time.fixedDeltaTime;
 
-        if (MoveDirection != Vector3.zero && !GetComponent<Cover>().InCover)
+        if (!GetComponent<Cover>().InCover)
         {
-            transform.forward = MoveDirection;
+            transform.forward += MoveDirection * TurnSpeed;
         }
+
+        if (IsDashing)
+        {
+            GetComponent<Rigidbody>().AddForce(transform.forward * DashForce);
+        }    
     }
 
     private void OnCollisionStay(Collision collision)
@@ -108,19 +127,18 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private IEnumerator Dash()
+    public IEnumerator DashTimer()
     {
         IsDashing = true;
+        CanDash = false;
         yield return new WaitForSeconds(DashTime);
         IsDashing = false;
+        StartCoroutine(DashCoolDownTime());
     }
 
-    void OnCoverDash(InputValue Value)
+    private IEnumerator DashCoolDownTime()
     {
-        Debug.Log("Cover Dash activated");
-        if (IsGrounded && !IsDashing && (rb.linearVelocity.x != 0 || rb.linearVelocity.z != 0))
-        {
-            StartCoroutine(Dash());
-        }
+        yield return new WaitForSeconds(DashCoolDown);
+        CanDash = true;
     }
 }

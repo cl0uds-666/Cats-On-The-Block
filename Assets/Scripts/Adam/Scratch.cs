@@ -13,13 +13,16 @@ public class Scratch : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis("Xbox_RT") > 0 && CanScratch)
+        if (Input.GetAxis("Xbox_RT") > 0 && CanScratch || Input.GetKeyDown(KeyCode.Mouse0) && CanScratch)
         {
             if (GetComponent<WeaponSwitching>().currentWeaponIndex == 0 && CurrentMeleeTimer <= 0f)
             {
                 AttackBox.GetComponent<Player_melee>().Scratch = true;
                 CurrentMeleeTimer = MaxMeleeTimer;
-                AttackBox.GetComponent<Player_melee>().Scratch = false;
+                if (!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Punch"))
+                {
+                    GetComponent<Animator>().SetInteger("MainState", 2);
+                }
             }
         }
 

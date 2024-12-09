@@ -1,21 +1,30 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Open_Pause : MonoBehaviour
 {
-    public GameObject Panel;
-    void OnPause()
+    public GameObject Panel, UnlockScreen, MiniMap;
+    void OnPause(InputValue value)
     {
-        if (Panel.activeSelf)
-        {
-            Panel.SetActive(false);
-            Time.timeScale = 1.0f;
-        }
+        print("Pause");
 
-        else
+        if (!UnlockScreen.activeSelf)
         {
-            Panel.SetActive(true);
-            Time.timeScale = 0f;
+            if (Panel.activeSelf)
+            {
+                GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
+                Panel.SetActive(false);
+                MiniMap.SetActive(true);
+                Time.timeScale = 1.0f;
+            }
+
+            else
+            {
+                GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
+                Panel.SetActive(true);
+                MiniMap.SetActive(false);
+                Time.timeScale = 0f;
+            }
         }
-       
     }
 }

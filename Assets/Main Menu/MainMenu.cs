@@ -3,14 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   public void OnPlayButton () 
+    private void Start()
+    {
+        
+    }
+    public void OnPlayButton () 
    {
-	SceneManager.LoadScene(1);
+	SceneManager.LoadScene("Block out");
    }
 
    public void OnOptionButton () 
    {
-	SceneManager.LoadScene(2);
+	SceneManager.LoadScene("Options Menu");
    }
 
         
@@ -21,21 +25,21 @@ public class MainMenu : MonoBehaviour
 
     public void OnAccessibilityButton()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Accessability Menu");
     }
 
     public void OnSoundButton()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Sound Menu");
     }
 
     public void OnControlButton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Options Menu");
     }
 
     public void OnBackButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Menu");
     }
 }

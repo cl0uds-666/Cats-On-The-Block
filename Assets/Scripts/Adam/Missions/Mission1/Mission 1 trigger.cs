@@ -13,9 +13,10 @@ public class Mission1trigger : MonoBehaviour
         {
             NPCTextBox.SetActive(true);
             EnemyCamera.Prioritize();
-            EnemyCamera.GetComponent<CameraTimer>().StartTimer = true;
+            EnemyCamera.GetComponent<CameraSwitch>().SwitchCamera = true;
             Player.GetComponent<Movement>().Speed = 0f;
             Player.GetComponent<Movement>().SprintSpeed = 0f;
+            Player.GetComponent<Movement>().CanDash = false;
             Destroy(gameObject);
         }
     }
