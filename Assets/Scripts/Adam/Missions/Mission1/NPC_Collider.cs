@@ -1,5 +1,6 @@
 using TMPro;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.XInput;
@@ -54,17 +55,30 @@ public class NPC_Collider : MonoBehaviour
 
     private void Update()
     {
-        if (Player.GetComponent<Missions>().HasPurse && Camera.GetComponent<CameraSwitch>().SwitchCamera && XInputController.current.bButton.isPressed)
+        if (XInputController.current != null && XInputController.current.bButton.isPressed)
         {
-            GetComponent<NavMeshAgent>().enabled = true;
-            GetComponent<NPC_Roam_AI>().enabled = true;
-            Player.GetComponent<Movement>().CanDash = true;
+            Skip();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Skip();
         }
         
         if (Vector3.Distance(transform.position, GetComponent<NPC_Roam_AI>().WayPoints[GetComponent<NPC_Roam_AI>().WayPoints.Length - 1].gameObject.transform.position) < 1f && Player.GetComponent<Missions>().Mission == 1)
         {
             Camera = GameObject.Find("Mission 2 NPC Camera");
             GetComponent<BoxCollider>().enabled = true;
+        }
+    }
+
+    private void Skip()
+    {
+        if (Player.GetComponent<Missions>().HasPurse && Camera.GetComponent<CameraSwitch>().SwitchCamera)
+        {
+            GetComponent<NavMeshAgent>().enabled = true;
+            GetComponent<NPC_Roam_AI>().enabled = true;
+            Player.GetComponent<Movement>().CanDash = true;
         }
     }
 }
