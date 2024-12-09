@@ -18,11 +18,11 @@ public class Missions : MonoBehaviour
     public GameObject PurseObject;
     public GameObject Pistol;
     public GameObject Rifle;
-    public GameObject Grenade, UnlockScreen, StickPrompts;
+    public GameObject Grenade, UnlockScreen, StickPrompts, LeftPrompts, RightPrompts;
     public TextMeshProUGUI ObjectiveText;
     public Vector3 CheckpointPosition;
     public GameObject Player;
-    public float PromptTime;
+    public float PromptTime, DistanceFromEnemy;
 
     void Start()
     {
@@ -41,22 +41,23 @@ public class Missions : MonoBehaviour
                 {
                     MissionIcon.transform.position = new Vector3(Mission1Enemy.transform.position.x, MissionIcon.transform.position.y, Mission1Enemy.transform.position.z);
                 }
+
+                if (Vector3.Distance(transform.position, Mission1Enemy.transform.position) < DistanceFromEnemy)
+                {
+                    RightPrompts.SetActive(true);
+                }
             }
             
             else
             {
-                if (!HasPurse)
+                LeftPrompts.SetActive(false);
+                RightPrompts.SetActive(false);
+                if (PurseObject != null)
                 {
-                    if (PurseObject != null)
-                    {
-                        MissionIcon.transform.position = new Vector3(PurseObject.transform.position.x, MissionIcon.transform.position.y, PurseObject.transform.position.z);
-                    }
+                    MissionIcon.transform.position = new Vector3(PurseObject.transform.position.x, MissionIcon.transform.position.y, PurseObject.transform.position.z);
                 }
 
-                else
-                {
-                    MissionIcon.transform.position = new Vector3(MissionNPC.transform.position.x, MissionIcon.transform.position.y, MissionNPC.transform.position.z);
-                }
+                MissionIcon.transform.position = new Vector3(MissionNPC.transform.position.x, MissionIcon.transform.position.y, MissionNPC.transform.position.z);
             }
         }
 

@@ -13,7 +13,7 @@ public class CameraSwitch : MonoBehaviour
     private float NormalSprintSpeed;
     public GameObject NPCTextBox;
     public GameObject NPC;
-    public GameObject SkipButton;
+    public GameObject SkipButton, LeftPrompts, RightPrompts;
     private void Start()
     {
         Enemy.GetComponent<EnemyMovement>().enabled = false;
@@ -59,5 +59,6 @@ public class CameraSwitch : MonoBehaviour
         {
             Enemy.GetComponent<EnemyMovement>().enabled = true;
         }
+        LeftPrompts.SetActive(true);
     }
 }
