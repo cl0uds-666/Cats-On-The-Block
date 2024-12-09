@@ -38,12 +38,25 @@ public class UnlockScreen : MonoBehaviour
 
     private void Update()
     {
-        if (XInputController.current.bButton.isPressed || Input.GetKeyDown(KeyCode.E))
+        if (XInputController.current != null)
         {
-            Time.timeScale = 1.0f;
-            BSkip.SetActive(false);
-            Player.GetComponent<Movement>().CanDash = true;
-            gameObject.SetActive(false);
+            if (XInputController.current.bButton.isPressed)
+            {
+                Skip();
+            }
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Skip();
+        }
+    }
+
+    private void Skip()
+    {
+        Time.timeScale = 1.0f;
+        BSkip.SetActive(false);
+        Player.GetComponent<Movement>().CanDash = true;
+        gameObject.SetActive(false);
     }
 }
