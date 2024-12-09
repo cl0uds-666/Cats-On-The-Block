@@ -38,13 +38,14 @@ public class Player_Stats : MonoBehaviour
         if (Deathcount >= MaxDeath)
         {
             SceneManager.LoadScene("GameoverScreen");
-
+            print("Reapwnn");
         }
         else
         {
             var missions = FindAnyObjectByType<Missions>();
             if (missions != null)
             {
+                
                 missions.Respawn();
             }
             else
