@@ -19,7 +19,7 @@ public class Missions : MonoBehaviour
     public GameObject Pistol;
     public GameObject Rifle;
     public GameObject Grenade, UnlockScreen, StickPrompts, LeftPrompts, RightPrompts;
-    public TextMeshProUGUI ObjectiveText;
+    public TextMeshProUGUI ObjectiveText, RightPromptText, LeftPromptText;
     public Vector3 CheckpointPosition;
     public GameObject Player;
     public float PromptTime, DistanceFromEnemy;
@@ -71,6 +71,10 @@ public class Missions : MonoBehaviour
             else
             {
                 UnlockScreen.SetActive(true);
+                LeftPromptText.text = "Swap Weapon";
+                RightPromptText.text = "Shoot";
+                RightPrompts.SetActive(true);
+                LeftPrompts.SetActive(true);
                 SelectMission();
             }
         }
