@@ -118,7 +118,7 @@ public class Missions : MonoBehaviour
         {
             case 1:
                 ObjectiveText.text = "Knock out the thief and give the purse back";
-                StartCoroutine(PromptTimer());
+                StickPrompts.SetActive(true);
                 break;
             case 2:
                 ObjectiveText.text = "Find and Knock out the armed cat";
@@ -181,12 +181,5 @@ public class Missions : MonoBehaviour
             }
         }
 
-    }
-
-    private IEnumerator PromptTimer()
-    {
-        StickPrompts.SetActive(true);
-        yield return new WaitForSeconds(PromptTime);
-        StickPrompts.SetActive(false);
     }
 }
