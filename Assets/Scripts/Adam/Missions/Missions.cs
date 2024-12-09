@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using System.Collections;
 
 public class Missions : MonoBehaviour
 {
@@ -17,10 +18,11 @@ public class Missions : MonoBehaviour
     public GameObject PurseObject;
     public GameObject Pistol;
     public GameObject Rifle;
-    public GameObject Grenade, UnlockScreen;
+    public GameObject Grenade, UnlockScreen, StickPrompts;
     public TextMeshProUGUI ObjectiveText;
     public Vector3 CheckpointPosition;
     public GameObject Player;
+    public float PromptTime;
 
     void Start()
     {
@@ -116,6 +118,7 @@ public class Missions : MonoBehaviour
         {
             case 1:
                 ObjectiveText.text = "Knock out the thief and give the purse back";
+                StartCoroutine(PromptTimer());
                 break;
             case 2:
                 ObjectiveText.text = "Find and Knock out the armed cat";
@@ -178,5 +181,12 @@ public class Missions : MonoBehaviour
             }
         }
 
+    }
+
+    private IEnumerator PromptTimer()
+    {
+        StickPrompts.SetActive(true);
+        yield return new WaitForSeconds(PromptTime);
+        StickPrompts.SetActive(false);
     }
 }
