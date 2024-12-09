@@ -44,6 +44,7 @@ public class Missions : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, Mission1Enemy.transform.position) < DistanceFromEnemy)
                 {
+                    RightPromptText.gameObject.SetActive(true);
                     RightPrompts.SetActive(true);
                 }
             }

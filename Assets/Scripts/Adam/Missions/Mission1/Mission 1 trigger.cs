@@ -5,13 +5,16 @@ public class Mission1trigger : MonoBehaviour
 {
     public GameObject Player;
     public CinemachineCamera EnemyCamera;
-    public GameObject NPCTextBox, StickPrompts;
+    public GameObject NPCTextBox, StickPrompts,DashText, JumpText, ScratchText, RightPrompts;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && Player.GetComponent<Missions>().Mission == 1)
         {
             StickPrompts.SetActive(false);
+            RightPrompts.SetActive(false);
+            DashText.SetActive(false);
+            JumpText.SetActive(false);
             NPCTextBox.SetActive(true);
             EnemyCamera.Prioritize();
             EnemyCamera.GetComponent<CameraSwitch>().SwitchCamera = true;
