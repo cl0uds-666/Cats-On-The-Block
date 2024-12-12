@@ -14,7 +14,8 @@ TagManager:
   - Trigger
   - Pistol
   - Rifle
-  - Grenade
+  - Music
+  - Master
   layers:
   - Default
   - TransparentFX

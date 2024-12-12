@@ -9,7 +9,7 @@ public class Missions : MonoBehaviour
     public int Mission = 0;
     public bool HasPurse = false;
     public GameObject Mission1Enemy;
-    public GameObject Mission2Enemy;
+    public GameObject Mission2Enemy, LineRenderer;
     public List<GameObject> Mission3ParkEnemies;
     public List<GameObject> Mission4ConstructionEnemies;
     public GameObject MissionIcon, A;
@@ -25,6 +25,7 @@ public class Missions : MonoBehaviour
     public GameObject Player;
     public float PromptTime, DistanceFromEnemy;
     public Image LT, RT, LB, RB, Pause;
+    public Transform[] Mission1Points, Mission2Points, Mission3Points, Mission4Points;
 
     void Start()
     {
@@ -129,14 +130,17 @@ public class Missions : MonoBehaviour
         switch (Mission)
         {
             case 1:
+                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission1Points);
                 ObjectiveText.text = "Knock out the thief and give the purse back";
                 StickPrompts.SetActive(true);
                 break;
             case 2:
+                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission2Points);
                 ObjectiveText.text = "Find and Knock out the armed cat";
                 Mission2Enemy.SetActive(true);
                 break;
             case 3:
+                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission3Points);
                 GetComponent<WeaponSwitching>().weapons.Add(Pistol);
                 ObjectiveText.text = "Eliminate all enemy cats in the park";
                 foreach (GameObject Enemy in Mission3ParkEnemies)
@@ -145,6 +149,7 @@ public class Missions : MonoBehaviour
                 }
                 break;
             case 4:
+                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission4Points);
                 GetComponent<WeaponSwitching>().weapons.Add(Rifle);
                 ObjectiveText.text = "Eliminate all enemy cats in the construction site";
                 foreach (GameObject Enemy in Mission4ConstructionEnemies)
