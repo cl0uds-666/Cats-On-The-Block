@@ -23,13 +23,9 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Main Menu/Main Menu.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Block out.unity
-  - m_enabled: 1
     m_path: Assets/Main Menu/Options Menu.unity
   - m_enabled: 1
     m_path: Assets/Main Menu/Accessability Menu.unity
-  - m_enabled: 1
-    m_path: Assets/Main Menu/Sound Menu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/SampleScene.unity
   - m_enabled: 1
