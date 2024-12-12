@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Missions : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Missions : MonoBehaviour
     public GameObject Mission2Enemy;
     public List<GameObject> Mission3ParkEnemies;
     public List<GameObject> Mission4ConstructionEnemies;
-    public GameObject MissionIcon;
+    public GameObject MissionIcon, A;
     public GameObject MissionNPC;
     public GameObject ParkIconSpawn;
     public GameObject ConstructionIconSpawn;
@@ -23,6 +24,7 @@ public class Missions : MonoBehaviour
     public Vector3 CheckpointPosition;
     public GameObject Player;
     public float PromptTime, DistanceFromEnemy;
+    public Image LT, RT, LB, RB, Pause;
 
     void Start()
     {
@@ -32,7 +34,6 @@ public class Missions : MonoBehaviour
 
     void Update()
     {
-        
         if (Mission == 1)
         {
             if (!HasPurse)
@@ -42,8 +43,10 @@ public class Missions : MonoBehaviour
                     MissionIcon.transform.position = new Vector3(Mission1Enemy.transform.position.x, MissionIcon.transform.position.y, Mission1Enemy.transform.position.z);
                 }
 
-                if (Vector3.Distance(transform.position, Mission1Enemy.transform.position) < DistanceFromEnemy)
+                if (Mission1Enemy != null && Vector3.Distance(transform.position, Mission1Enemy.transform.position) < DistanceFromEnemy)
                 {
+                    RightPrompts.GetComponent<Image>().sprite = RT.sprite;
+                    A.SetActive(false);
                     RightPromptText.gameObject.SetActive(true);
                     RightPrompts.SetActive(true);
                 }
@@ -71,9 +74,12 @@ public class Missions : MonoBehaviour
 
             else
             {
+                A.SetActive(false);
                 UnlockScreen.SetActive(true);
                 LeftPromptText.text = "Swap Weapon";
                 RightPromptText.text = "Shoot";
+                RightPrompts.GetComponent<Image>().sprite = RT.sprite;
+                LeftPrompts.GetComponent<Image>().sprite = RB.sprite;
                 RightPrompts.SetActive(true);
                 LeftPrompts.SetActive(true);
                 SelectMission();
