@@ -42,14 +42,15 @@ public class Missions : MonoBehaviour
                 if (Mission1Enemy != null)
                 {
                     MissionIcon.transform.position = new Vector3(Mission1Enemy.transform.position.x, MissionIcon.transform.position.y, Mission1Enemy.transform.position.z);
-                }
+                    LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission1Points);
 
-                if (Mission1Enemy != null && Vector3.Distance(transform.position, Mission1Enemy.transform.position) < DistanceFromEnemy)
-                {
-                    RightPrompts.GetComponent<Image>().sprite = RT.sprite;
-                    A.SetActive(false);
-                    RightPromptText.gameObject.SetActive(true);
-                    RightPrompts.SetActive(true);
+                    if (Vector3.Distance(transform.position, Mission1Enemy.transform.position) < DistanceFromEnemy)
+                    {
+                        RightPrompts.GetComponent<Image>().sprite = RT.sprite;
+                        A.SetActive(false);
+                        RightPromptText.gameObject.SetActive(true);
+                        RightPrompts.SetActive(true);
+                    }
                 }
             }
             
@@ -130,7 +131,6 @@ public class Missions : MonoBehaviour
         switch (Mission)
         {
             case 1:
-                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission1Points);
                 ObjectiveText.text = "Knock out the thief and give the purse back";
                 StickPrompts.SetActive(true);
                 break;
