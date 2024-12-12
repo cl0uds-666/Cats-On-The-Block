@@ -1,0 +1,3343 @@
+; FBX 7.7.0 project file
+; ----------------------------------------------------
+
+FBXHeaderExtension:  {
+	FBXHeaderVersion: 1004
+	FBXVersion: 7700
+	CreationTimeStamp:  {
+		Version: 1000
+		Year: 2024
+		Month: 12
+		Day: 12
+		Hour: 13
+		Minute: 24
+		Second: 2
+		Millisecond: 607
+	}
+	Creator: "FBX SDK/FBX Plugins version 2020.3.4"
+	OtherFlags:  {
+		TCDefinition: 127
+	}
+	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
+		Type: "UserData"
+		Version: 100
+		MetaData:  {
+			Version: 100
+			Title: "Created by FBX Exporter from Unity Technologies"
+			Subject: ""
+			Author: "Unity Technologies"
+			Keywords: "Nodes Meshes Materials Textures Cameras Lights Skins Animation"
+			Revision: "1.0"
+			Comment: ""
+		}
+		Properties70:  {
+			P: "Original", "Compound", "", ""
+			P: "Original|ApplicationVendor", "KString", "", "", ""
+			P: "Original|ApplicationName", "KString", "", "", "Unity FBX Exporter"
+			P: "Original|ApplicationVersion", "KString", "", "", "5.1.2"
+			P: "Original|DateTime_GMT", "DateTime", "", "", ""
+			P: "Original|FileName", "KString", "", "", ""
+			P: "LastSaved", "Compound", "", ""
+			P: "LastSaved|ApplicationVendor", "KString", "", "", ""
+			P: "LastSaved|ApplicationName", "KString", "", "", "Unity FBX Exporter"
+			P: "LastSaved|ApplicationVersion", "KString", "", "", "5.1.2"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", ""
+		}
+	}
+}
+GlobalSettings:  {
+	Version: 1000
+	Properties70:  {
+		P: "UpAxis", "int", "Integer", "",1
+		P: "UpAxisSign", "int", "Integer", "",1
+		P: "FrontAxis", "int", "Integer", "",2
+		P: "FrontAxisSign", "int", "Integer", "",1
+		P: "CoordAxis", "int", "Integer", "",0
+		P: "CoordAxisSign", "int", "Integer", "",1
+		P: "OriginalUpAxis", "int", "Integer", "",-1
+		P: "OriginalUpAxisSign", "int", "Integer", "",1
+		P: "UnitScaleFactor", "double", "Number", "",1
+		P: "OriginalUnitScaleFactor", "double", "Number", "",1
+		P: "AmbientColor", "ColorRGB", "Color", "",0,0,0
+		P: "DefaultCamera", "KString", "", "", "Producer Perspective"
+		P: "TimeMode", "enum", "", "",0
+		P: "TimeProtocol", "enum", "", "",2
+		P: "SnapOnFrameMode", "enum", "", "",0
+		P: "TimeSpanStart", "KTime", "Time", "",0
+		P: "TimeSpanStop", "KTime", "Time", "",46186158000
+		P: "CustomFrameRate", "double", "Number", "",-1
+		P: "TimeMarker", "Compound", "", ""
+		P: "CurrentTimeMarker", "int", "Integer", "",-1
+	}
+}
+
+; Documents Description
+;------------------------------------------------------------------
+
+Documents:  {
+	Count: 1
+	Document: 2256848532416, "Scene", "Scene" {
+		Properties70:  {
+			P: "SourceObject", "object", "", ""
+			P: "ActiveAnimStackName", "KString", "", "", ""
+		}
+		RootNode: 0
+	}
+}
+
+; Document References
+;------------------------------------------------------------------
+
+References:  {
+}
+
+; Object definitions
+;------------------------------------------------------------------
+
+Definitions:  {
+	Version: 100
+	Count: 129
+	ObjectType: "GlobalSettings" {
+		Count: 1
+	}
+	ObjectType: "Model" {
+		Count: 118
+		PropertyTemplate: "FbxNode" {
+			Properties70:  {
+				P: "QuaternionInterpolate", "enum", "", "",0
+				P: "RotationOffset", "Vector3D", "Vector", "",0,0,0
+				P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+				P: "ScalingOffset", "Vector3D", "Vector", "",0,0,0
+				P: "ScalingPivot", "Vector3D", "Vector", "",0,0,0
+				P: "TranslationActive", "bool", "", "",0
+				P: "TranslationMin", "Vector3D", "Vector", "",0,0,0
+				P: "TranslationMax", "Vector3D", "Vector", "",0,0,0
+				P: "TranslationMinX", "bool", "", "",0
+				P: "TranslationMinY", "bool", "", "",0
+				P: "TranslationMinZ", "bool", "", "",0
+				P: "TranslationMaxX", "bool", "", "",0
+				P: "TranslationMaxY", "bool", "", "",0
+				P: "TranslationMaxZ", "bool", "", "",0
+				P: "RotationOrder", "enum", "", "",0
+				P: "RotationSpaceForLimitOnly", "bool", "", "",0
+				P: "RotationStiffnessX", "double", "Number", "",0
+				P: "RotationStiffnessY", "double", "Number", "",0
+				P: "RotationStiffnessZ", "double", "Number", "",0
+				P: "AxisLen", "double", "Number", "",10
+				P: "PreRotation", "Vector3D", "Vector", "",0,0,0
+				P: "PostRotation", "Vector3D", "Vector", "",0,0,0
+				P: "RotationActive", "bool", "", "",0
+				P: "RotationMin", "Vector3D", "Vector", "",0,0,0
+				P: "RotationMax", "Vector3D", "Vector", "",0,0,0
+				P: "RotationMinX", "bool", "", "",0
+				P: "RotationMinY", "bool", "", "",0
+				P: "RotationMinZ", "bool", "", "",0
+				P: "RotationMaxX", "bool", "", "",0
+				P: "RotationMaxY", "bool", "", "",0
+				P: "RotationMaxZ", "bool", "", "",0
+				P: "InheritType", "enum", "", "",0
+				P: "ScalingActive", "bool", "", "",0
+				P: "ScalingMin", "Vector3D", "Vector", "",0,0,0
+				P: "ScalingMax", "Vector3D", "Vector", "",1,1,1
+				P: "ScalingMinX", "bool", "", "",0
+				P: "ScalingMinY", "bool", "", "",0
+				P: "ScalingMinZ", "bool", "", "",0
+				P: "ScalingMaxX", "bool", "", "",0
+				P: "ScalingMaxY", "bool", "", "",0
+				P: "ScalingMaxZ", "bool", "", "",0
+				P: "GeometricTranslation", "Vector3D", "Vector", "",0,0,0
+				P: "GeometricRotation", "Vector3D", "Vector", "",0,0,0
+				P: "GeometricScaling", "Vector3D", "Vector", "",1,1,1
+				P: "MinDampRangeX", "double", "Number", "",0
+				P: "MinDampRangeY", "double", "Number", "",0
+				P: "MinDampRangeZ", "double", "Number", "",0
+				P: "MaxDampRangeX", "double", "Number", "",0
+				P: "MaxDampRangeY", "double", "Number", "",0
+				P: "MaxDampRangeZ", "double", "Number", "",0
+				P: "MinDampStrengthX", "double", "Number", "",0
+				P: "MinDampStrengthY", "double", "Number", "",0
+				P: "MinDampStrengthZ", "double", "Number", "",0
+				P: "MaxDampStrengthX", "double", "Number", "",0
+				P: "MaxDampStrengthY", "double", "Number", "",0
+				P: "MaxDampStrengthZ", "double", "Number", "",0
+				P: "PreferedAngleX", "double", "Number", "",0
+				P: "PreferedAngleY", "double", "Number", "",0
+				P: "PreferedAngleZ", "double", "Number", "",0
+				P: "LookAtProperty", "object", "", ""
+				P: "UpVectorProperty", "object", "", ""
+				P: "Show", "bool", "", "",1
+				P: "NegativePercentShapeSupport", "bool", "", "",1
+				P: "DefaultAttributeIndex", "int", "Integer", "",-1
+				P: "Freeze", "bool", "", "",0
+				P: "LODBox", "bool", "", "",0
+				P: "Lcl Translation", "Lcl Translation", "", "A",0,0,0
+				P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+				P: "Lcl Scaling", "Lcl Scaling", "", "A",1,1,1
+				P: "Visibility", "Visibility", "", "A",1
+				P: "Visibility Inheritance", "Visibility Inheritance", "", "",1
+			}
+		}
+	}
+	ObjectType: "Geometry" {
+		Count: 1
+		PropertyTemplate: "FbxMesh" {
+			Properties70:  {
+				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
+				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
+				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
+				P: "Primary Visibility", "bool", "", "",1
+				P: "Casts Shadows", "bool", "", "",1
+				P: "Receive Shadows", "bool", "", "",1
+			}
+		}
+	}
+	ObjectType: "Material" {
+		Count: 3
+		PropertyTemplate: "FbxSurfaceLambert" {
+			Properties70:  {
+				P: "ShadingModel", "KString", "", "", "Lambert"
+				P: "MultiLayer", "bool", "", "",0
+				P: "EmissiveColor", "Color", "", "A",0,0,0
+				P: "EmissiveFactor", "Number", "", "A",1
+				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
+				P: "AmbientFactor", "Number", "", "A",1
+				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
+				P: "DiffuseFactor", "Number", "", "A",1
+				P: "Bump", "Vector3D", "Vector", "",0,0,0
+				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
+				P: "BumpFactor", "double", "Number", "",1
+				P: "TransparentColor", "Color", "", "A",0,0,0
+				P: "TransparencyFactor", "Number", "", "A",0
+				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "DisplacementFactor", "double", "Number", "",1
+				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "VectorDisplacementFactor", "double", "Number", "",1
+			}
+		}
+	}
+	ObjectType: "Texture" {
+		Count: 3
+		PropertyTemplate: "FbxFileTexture" {
+			Properties70:  {
+				P: "TextureTypeUse", "enum", "", "",0
+				P: "Texture alpha", "Number", "", "A",1
+				P: "CurrentMappingType", "enum", "", "",0
+				P: "WrapModeU", "enum", "", "",0
+				P: "WrapModeV", "enum", "", "",0
+				P: "UVSwap", "bool", "", "",0
+				P: "PremultiplyAlpha", "bool", "", "",1
+				P: "Translation", "Vector", "", "A",0,0,0
+				P: "Rotation", "Vector", "", "A",0,0,0
+				P: "Scaling", "Vector", "", "A",1,1,1
+				P: "TextureRotationPivot", "Vector3D", "Vector", "",0,0,0
+				P: "TextureScalingPivot", "Vector3D", "Vector", "",0,0,0
+				P: "CurrentTextureBlendMode", "enum", "", "",1
+				P: "UVSet", "KString", "", "", "default"
+				P: "UseMaterial", "bool", "", "",0
+				P: "UseMipMap", "bool", "", "",0
+			}
+		}
+	}
+	ObjectType: "Video" {
+		Count: 3
+		PropertyTemplate: "FbxVideo" {
+			Properties70:  {
+				P: "Path", "KString", "XRefUrl", "", ""
+				P: "RelPath", "KString", "XRefUrl", "", ""
+				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
+				P: "ClipIn", "KTime", "Time", "",0
+				P: "ClipOut", "KTime", "Time", "",0
+				P: "Offset", "KTime", "Time", "",0
+				P: "PlaySpeed", "double", "Number", "",0
+				P: "FreeRunning", "bool", "", "",0
+				P: "Loop", "bool", "", "",0
+				P: "Mute", "bool", "", "",0
+				P: "AccessMode", "enum", "", "",0
+				P: "ImageSequence", "bool", "", "",0
+				P: "ImageSequenceOffset", "int", "Integer", "",0
+				P: "FrameRate", "double", "Number", "",0
+				P: "LastFrame", "int", "Integer", "",0
+				P: "Width", "int", "Integer", "",0
+				P: "Height", "int", "Integer", "",0
+				P: "StartFrame", "int", "Integer", "",0
+				P: "StopFrame", "int", "Integer", "",0
+				P: "InterlaceMode", "enum", "", "",0
+			}
+		}
+	}
+}
+
+; Object properties
+;------------------------------------------------------------------
+
+Objects:  {
+	Geometry: 2256857093280, "Geometry::Scene", "Mesh" {
+		Vertices: *12 {
+			a: -250,-250,20.0000002980232,-250,250,20.0000002980232,250,250,20.0000002980232,250,-250,20.0000002980232
+		} 
+		PolygonVertexIndex: *6 {
+			a: 0,2,-2,0,3,-3
+		} 
+		GeometryVersion: 124
+		LayerElementNormal: 0 {
+			Version: 102
+			Name: "Normals"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			Normals: *18 {
+				a: -0,0,1,-0,0,1,-0,0,1,-0,0,1,-0,0,1,-0,0,1
+			} 
+			NormalsW: *6 {
+				a: 1,1,1,1,1,1
+			} 
+		}
+		LayerElementBinormal: 0 {
+			Version: 102
+			Name: "Binormals"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			Binormals: *18 {
+				a: 0,1,-0,0,1,-0,0,1,-0,0,1,-0,0,1,-0,0,1,-0
+			} 
+			BinormalsW: *6 {
+				a: 1,1,1,1,1,1
+			} 
+
+		}
+		LayerElementTangent: 0 {
+			Version: 102
+			Name: "Tangents"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			Tangents: *18 {
+				a: 1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0
+			} 
+			TangentsW: *6 {
+				a: 1,1,1,1,1,1
+			} 
+		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: "UVSet0"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "IndexToDirect"
+			UV: *8 {
+				a: 0,0,0,1,1,1,1,0
+			} 
+			UVIndex: *6 {
+				a: 0,2,1,0,3,2
+			} 
+		}
+		LayerElementMaterial: 0 {
+			Version: 101
+			Name: "Material"
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			Materials: *1 {
+				a: 0
+			} 
+		}
+		Layer: 0 {
+			Version: 100
+			LayerElement:  {
+				Type: "LayerElementNormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementBinormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementTangent"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementMaterial"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+		}
+	}
+	Model: 2256114665216, "Model::Road___11_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8579.0397644043,-16.2263780832291,5357.86361694336
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2251055534144, "Model::Road___62_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8579.0397644043,-17.1263754367828,4459.16366577148
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2251055536144, "Model::Road___58_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8579.0397644043,-16.2262588739395,6357.86361694336
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2251055556144, "Model::Road___118_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-669.039535522461,-113.226366043091,6681.1637878418
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",13.2655429840088,13.2655467987061,6.63277339935303
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2251055538144, "Model::Road___60_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7579.0397644043,-16.2262588739395,6224.16381835938
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2251055544144, "Model::Road___59_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8579.0397644043,-16.22613966465,7357.86361694336
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2251055546144, "Model::Road___61_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7579.0397644043,-16.22613966465,7224.16381835938
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2251055558144, "Model::Road___2_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,1314.5637512207
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2249829801696, "Model::Road___3_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,570.663833618164
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2249829805696, "Model::Road___5_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,-914.436149597168
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2249829789696, "Model::Road___4_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,-170.536231994629
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2249829811696, "Model::Road___7_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,-1664.63623046875
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2249829815696, "Model::Road___6_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,-2408.53652954102
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2242475687936, "Model::Road___9_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,-3868.33648681641
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2242475675936, "Model::Road___10_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,-4589.33639526367
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2253139726624, "Model::Road___54_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,-5336.5364074707
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2253139738624, "Model::Road___8_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,-3124.5361328125
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2240826201392, "Model::Road___1_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.276575922966,2047.86376953125
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867296944, "Model::Road___72_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.2263768911362,2798.16379547119
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.50502049922943,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867286944, "Model::Road___73_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-8443.03970336914,-11.2263768911362,3571.16394042969
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.50502002239227,1.59651219844818,0.752510249614716
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867282944, "Model::Road___12_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7822.03903198242,-8.22637677192688,3694.16389465332
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.07369542121887,1.03488707542419,0.517443537712097
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867294944, "Model::Road___57_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-5945.03936767578,-8.22637677192688,3694.16389465332
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.07369542121887,1.03488707542419,0.517443537712097
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867290944, "Model::Road___13_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7306.1393737793,-8.22637677192688,3694.16389465332
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.07369542121887,1.03488707542419,0.517443537712097
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867298944, "Model::Road___63_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-5429.1389465332,-8.22637677192688,3694.16389465332
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.07369542121887,1.03488707542419,0.517443537712097
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867300944, "Model::Road___16_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7716.03927612305,-11.2263768911362,-556.836128234863
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.42581391334534,0.712906956672668
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867308944, "Model::Road___19_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7743.03970336914,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867292944, "Model::Road___22_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3924.43885803223,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867302944, "Model::Road___24_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3238.03939819336,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867304944, "Model::Road___29_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-103.039169311523,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867288944, "Model::Road___32_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2478.36112976074,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867306944, "Model::Road___34_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",3164.76097106934,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867278944, "Model::Road___35_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",3852.96058654785,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867310944, "Model::Road___37_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",5071.96083068848,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867280944, "Model::Road___47_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",6294.96040344238,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867312944, "Model::Road___55_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",7517.96035766602,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867314944, "Model::Road___112_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",8734.77249145508,-11.2264066934586,-3362.99362182617
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-180
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706649303436,1.3770660161972,0.688533008098602
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867284944, "Model::Road___113_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",8734.05990600586,-10.7263773679733,-2754.83627319336
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-180
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706649303436,1.06450009346008,0.688533008098602
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867330944, "Model::Road___114_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",8734.77249145508,-11.2263768911362,-4584.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-180
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706649303436,1.3770660161972,0.688533008098602
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867316944, "Model::Road___115_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",8734.05990600586,-10.7263475656509,-3976.67922973633
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-180
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706649303436,1.06450009346008,0.688533008098602
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867322944, "Model::Road___111_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",8126.29013061523,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.0644998550415,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867328944, "Model::Road___48_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",6903.28979492188,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.0644998550415,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867320944, "Model::Road___45_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",5680.2906036377,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.0644998550415,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867334944, "Model::Road___36_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",4461.29035949707,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.0644998550415,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867332944, "Model::Road___30_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",583.360290527344,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867336944, "Model::Road___31_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",1271.56028747559,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867318944, "Model::Road___33_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",1879.8900604248,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.0644998550415,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867324944, "Model::Road___25_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-2549.83940124512,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867338944, "Model::Road___26_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-1328.09906005859,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.38918399810791,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867326944, "Model::Road___27_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-1941.5096282959,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.0644998550415,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867340944, "Model::Road___28_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-714.439010620117,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.07386744022369,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867485248, "Model::Road___50_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7770.03936767578,-9.22637581825256,-5159.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969348430634,1.27969348430634,0.639846742153168
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867467248, "Model::Road___56_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3579.03938293457,-11.2263768911362,-5456.83670043945
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867469248, "Model::Road___76_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-4182.03926086426,-11.2263768911362,-5252.83660888672
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867487248, "Model::Road___110_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-4382.03926086426,-12.2263759374619,-5166.83654785156
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-89.6139984130859
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969336509705,1.27969336509705,0.639846742153168
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867477248, "Model::Road___78_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-2367.3656463623,-11.2263768911362,-5866.13311767578
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867481248, "Model::Road___80_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-1156.29386901855,-11.2263768911362,-6275.62408447266
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867483248, "Model::Road___82_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",657.139587402344,-11.2263768911362,-6888.27819824219
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867461248, "Model::Road___85_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-2729.36553955078,-32.2263777256012,-3706.34536743164
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867459248, "Model::Road___86_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-1522.03941345215,-12.1261775493622,-4129.33654785156
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867471248, "Model::Road___91_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-2733.0394744873,-12.1261775493622,-3719.83642578125
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867489248, "Model::Road___100_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3338.7393951416,-12.1259778738022,-3515.33660888672
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867473248, "Model::Road___101_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3942.03948974609,-32.2263777256012,-3296.83609008789
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867491248, "Model::Road___92_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-1518.29395294189,-32.2263777256012,-4115.83633422852
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867475248, "Model::Road___93_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",291.460418701172,-12.1265769004822,-4742.03643798828
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867479248, "Model::Road___94_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-2123.4733581543,-32.2263777256012,-3910.39428710938
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867493248, "Model::Road___95_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-310.039520263672,-32.2263777256012,-4523.04840087891
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867463248, "Model::Road___96_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-912.40119934082,-32.2263777256012,-4319.88525390625
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867495248, "Model::Road___87_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",295.139694213867,-32.2263777256012,-4728.49044799805
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867465248, "Model::Road___88_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-2127.13947296143,-12.1261775493622,-3923.93646240234
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867501248, "Model::Road___89_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-313.739395141602,-12.1263772249222,-4536.5364074707
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867503248, "Model::Road___97_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",1498.46038818359,-12.1265769004822,-5149.73602294922
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867505248, "Model::Road___116_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",1648.16055297852,-12.2263759374619,-4706.23550415039
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867509248, "Model::Road___99_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2079.25987243652,-12.1267765760422,-5346.33636474609
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867507248, "Model::Road___98_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",893.26057434082,-12.1265769004822,-4944.33670043945
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867519248, "Model::Road___117_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",1042.96073913574,-13.2263779640198,-4500.83618164062
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867511248, "Model::Road___90_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-916.139602661133,-12.1263772249222,-4333.43658447266
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23827600479126,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867497248, "Model::Road___77_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-2973.14682006836,-11.2263768911362,-5660.88485717773
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867513248, "Model::Road___79_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-1761.47346496582,-11.2263768911362,-6070.18203735352
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867515248, "Model::Road___83_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",51.9603729248047,-11.2263768911362,-6682.83615112305
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867517248, "Model::Road___81_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-550.401306152344,-11.2263768911362,-6479.67300415039
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867521248, "Model::Road___84_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",1263.03253173828,-11.2263768911362,-7092.32711791992
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256867499248, "Model::Road___106_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",1854.96025085449,-11.2263768911362,-7291.83578491211
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865685920, "Model::Road___107_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2450.96092224121,-11.2263768911362,-7493.8362121582
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-71.3202667236328
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969360351562,1.27969372272491,0.639846861362457
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865687920, "Model::Road___17_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7005.33981323242,-11.2263768911362,-556.836128234863
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.42581391334534,0.712906956672668
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865689920, "Model::Road___20_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7056.63986206055,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865691920, "Model::Road___51_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-7132.13882446289,-9.22637581825256,-5159.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969348430634,1.27969348430634,0.639846742153168
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865693920, "Model::Road___18_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-6292.83981323242,-11.2263768911362,-556.836128234863
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.42581391334534,0.712906956672668
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865701920, "Model::Road___21_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-6368.43948364258,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.37706577777863,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865699920, "Model::Road___52_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-6492.63916015625,-9.22637581825256,-5159.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969348430634,1.27969348430634,0.639846742153168
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865671920, "Model::Road___66_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-5027.90946960449,-11.2263768911362,-556.836128234863
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.43836116790771,0.712906956672668
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865697920, "Model::Road___102_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3879.03938293457,-11.726376414299,-556.836128234863
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.43836140632629,0.712907075881958
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865703920, "Model::Road___104_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3879.03938293457,-11.726376414299,-1992.83599853516
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.43836140632629,0.712907075881958
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865673920, "Model::Road___105_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3879.03938293457,-11.726376414299,-2709.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.43836140632629,0.712907075881958
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865675920, "Model::Road___103_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3879.03938293457,-11.726376414299,-1273.83651733398
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.43836140632629,0.712907075881958
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865695920, "Model::Road___23_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-5146.69952392578,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.38918399810791,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865705920, "Model::Road___53_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-5357.27920532227,-9.22637581825256,-5159.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969348430634,1.29095482826233,0.639846742153168
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865707920, "Model::Road___64_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-5663.03939819336,-11.2263768911362,-556.836128234863
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.10218322277069,0.712906956672668
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865677920, "Model::Road___68_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-5760.10971069336,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.0644998550415,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865709920, "Model::Road___70_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-5927.33917236328,-9.22637581825256,-5159.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969348430634,0.989229083061218,0.639846742153168
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865679920, "Model::Road___67_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-4392.54951477051,-11.2263768911362,-556.836128234863
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.42581391334534,1.11188232898712,0.712906956672668
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865711920, "Model::Road___69_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-4533.0394744873,-11.2263768911362,-3064.83612060547
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.37706577777863,1.07386744022369,0.688532888889313
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865681920, "Model::Road___71_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-4787.00714111328,-9.22637581825256,-5159.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.27969348430634,0.997934281826019,0.639846742153168
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865713920, "Model::Road___38_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2348.96049499512,-18.2263761758804,-5576.83639526367
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865683920, "Model::Road___41_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2348.96049499512,-18.2263761758804,-6576.83639526367
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865745920, "Model::Road___49_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2348.96049499512,-18.2263761758804,-7552.83584594727
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865741920, "Model::Road___65_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2348.96049499512,-18.2263761758804,-8547.83630371094
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865729920, "Model::Road___108_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2149.96070861816,-21.2263762950897,-8421.83609008789
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,19.5919189453125
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2,1
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865735920, "Model::Road___109_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",1816.9605255127,-21.2263762950897,-9358.83636474609
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,19.5919189453125
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2,1
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865731920, "Model::Road___39_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2348.96049499512,-18.2263761758804,-4596.83609008789
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865733920, "Model::Road___40_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2348.96049499512,-18.2263761758804,-3613.83666992188
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865737920, "Model::Road___43_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3659.03930664062,-19.2263782024384,-3816.83654785156
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.78915238380432,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865743920, "Model::Road___44_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-3659.03930664062,-19.2263782024384,-4800.83618164062
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.78915238380432,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865739920, "Model::Road___42_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",362.960433959961,-20.226377248764,-3888.83666992188
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,2.00000047683716,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865719920, "Model::Road___46_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",362.960433959961,-20.226377248764,-4559.83657836914
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",2,0.707560122013092,1.00000023841858
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865715920, "Model::Road___14_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-6788.93966674805,-8.22637677192688,3694.16389465332
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.07369542121887,1.03488707542419,0.517443537712097
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865747920, "Model::Road___74_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-4911.93885803223,-8.22637677192688,3694.16389465332
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.07369542121887,1.03488707542419,0.517443537712097
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865717920, "Model::Road___75_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-4397.23892211914,-8.22637677192688,3694.16389465332
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.07369542121887,1.03488707542419,0.517443537712097
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Model: 2256865749920, "Model::Road___15_", "Mesh" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-6364.49966430664,-8.22637528181076,3694.16389465332
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-90,0,-90
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.07369542121887,0.665794610977173,0.517443537712097
+		}
+		Shading: W
+		Culling: "CullingOff"
+	}
+	Material: 2256864269456, "Material::Road_1", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "AmbientColor", "Color", "", "A",0,0,0
+			P: "DiffuseColor", "Color", "", "A",1,1,1
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0,0,0
+			P: "Diffuse", "Vector3D", "Vector", "",1,1,1
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Material: 2256864269856, "Material::Road_2", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "AmbientColor", "Color", "", "A",0,0,0
+			P: "DiffuseColor", "Color", "", "A",1,1,1
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0,0,0
+			P: "Diffuse", "Vector3D", "Vector", "",1,1,1
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Material: 2256864267856, "Material::Road", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties70:  {
+			P: "AmbientColor", "Color", "", "A",0,0,0
+			P: "DiffuseColor", "Color", "", "A",1,1,1
+			P: "Emissive", "Vector3D", "Vector", "",0,0,0
+			P: "Ambient", "Vector3D", "Vector", "",0,0,0
+			P: "Diffuse", "Vector3D", "Vector", "",1,1,1
+			P: "Opacity", "double", "Number", "",1
+		}
+	}
+	Video: 2251293308224, "Video::DiffuseColor_Texture", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\blank_road_photo.png"
+			P: "RelPath", "KString", "XRefUrl", "", "Models\Street\Roads_And_Pavements\blank_road_photo.png"
+		}
+		UseMipMap: 0
+		Filename: "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\blank_road_photo.png"
+		RelativeFilename: "Models\Street\Roads_And_Pavements\blank_road_photo.png"
+	}
+	Video: 2251293301504, "Video::DiffuseColor_Texture_1", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\blank_road_photo.png"
+			P: "RelPath", "KString", "XRefUrl", "", "Models\Street\Roads_And_Pavements\blank_road_photo.png"
+		}
+		UseMipMap: 0
+		Filename: "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\blank_road_photo.png"
+		RelativeFilename: "Models\Street\Roads_And_Pavements\blank_road_photo.png"
+	}
+	Video: 2251293301984, "Video::DiffuseColor_Texture_2", "Clip" {
+		Type: "Clip"
+		Properties70:  {
+			P: "Path", "KString", "XRefUrl", "", "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\road_color.png"
+			P: "RelPath", "KString", "XRefUrl", "", "Models\Street\Roads_And_Pavements\road_color.png"
+		}
+		UseMipMap: 0
+		Filename: "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\road_color.png"
+		RelativeFilename: "Models\Street\Roads_And_Pavements\road_color.png"
+	}
+	Texture: 2251293301024, "Texture::DiffuseColor_Texture", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::DiffuseColor_Texture"
+		Media: "Video::DiffuseColor_Texture"
+		FileName: "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\blank_road_photo.png"
+		RelativeFilename: "Models\Street\Roads_And_Pavements\blank_road_photo.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Texture: 2251293307264, "Texture::DiffuseColor_Texture_1", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::DiffuseColor_Texture_1"
+		Properties70:  {
+			P: "Scaling", "Vector", "", "A",8,8,1
+		}
+		Media: "Video::DiffuseColor_Texture_1"
+		FileName: "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\blank_road_photo.png"
+		RelativeFilename: "Models\Street\Roads_And_Pavements\blank_road_photo.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Texture: 2251293314944, "Texture::DiffuseColor_Texture_2", "" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::DiffuseColor_Texture_2"
+		Media: "Video::DiffuseColor_Texture_2"
+		FileName: "G:\git\Cats-On-The-Block\Assets\Models\Street\Roads_And_Pavements\road_color.png"
+		RelativeFilename: "Models\Street\Roads_And_Pavements\road_color.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+}
+
+; Object connections
+;------------------------------------------------------------------
+
+Connections:  {
+	
+	;Model::Road___11_, Model::RootNode
+	C: "OO",2256114665216,0
+	
+	;Model::Road___62_, Model::RootNode
+	C: "OO",2251055534144,0
+	
+	;Model::Road___58_, Model::RootNode
+	C: "OO",2251055536144,0
+	
+	;Model::Road___118_, Model::RootNode
+	C: "OO",2251055556144,0
+	
+	;Model::Road___60_, Model::RootNode
+	C: "OO",2251055538144,0
+	
+	;Model::Road___59_, Model::RootNode
+	C: "OO",2251055544144,0
+	
+	;Model::Road___61_, Model::RootNode
+	C: "OO",2251055546144,0
+	
+	;Model::Road___2_, Model::RootNode
+	C: "OO",2251055558144,0
+	
+	;Model::Road___3_, Model::RootNode
+	C: "OO",2249829801696,0
+	
+	;Model::Road___5_, Model::RootNode
+	C: "OO",2249829805696,0
+	
+	;Model::Road___4_, Model::RootNode
+	C: "OO",2249829789696,0
+	
+	;Model::Road___7_, Model::RootNode
+	C: "OO",2249829811696,0
+	
+	;Model::Road___6_, Model::RootNode
+	C: "OO",2249829815696,0
+	
+	;Model::Road___9_, Model::RootNode
+	C: "OO",2242475687936,0
+	
+	;Model::Road___10_, Model::RootNode
+	C: "OO",2242475675936,0
+	
+	;Model::Road___54_, Model::RootNode
+	C: "OO",2253139726624,0
+	
+	;Model::Road___8_, Model::RootNode
+	C: "OO",2253139738624,0
+	
+	;Model::Road___1_, Model::RootNode
+	C: "OO",2240826201392,0
+	
+	;Model::Road___72_, Model::RootNode
+	C: "OO",2256867296944,0
+	
+	;Model::Road___73_, Model::RootNode
+	C: "OO",2256867286944,0
+	
+	;Model::Road___12_, Model::RootNode
+	C: "OO",2256867282944,0
+	
+	;Model::Road___57_, Model::RootNode
+	C: "OO",2256867294944,0
+	
+	;Model::Road___13_, Model::RootNode
+	C: "OO",2256867290944,0
+	
+	;Model::Road___63_, Model::RootNode
+	C: "OO",2256867298944,0
+	
+	;Model::Road___16_, Model::RootNode
+	C: "OO",2256867300944,0
+	
+	;Model::Road___19_, Model::RootNode
+	C: "OO",2256867308944,0
+	
+	;Model::Road___22_, Model::RootNode
+	C: "OO",2256867292944,0
+	
+	;Model::Road___24_, Model::RootNode
+	C: "OO",2256867302944,0
+	
+	;Model::Road___29_, Model::RootNode
+	C: "OO",2256867304944,0
+	
+	;Model::Road___32_, Model::RootNode
+	C: "OO",2256867288944,0
+	
+	;Model::Road___34_, Model::RootNode
+	C: "OO",2256867306944,0
+	
+	;Model::Road___35_, Model::RootNode
+	C: "OO",2256867278944,0
+	
+	;Model::Road___37_, Model::RootNode
+	C: "OO",2256867310944,0
+	
+	;Model::Road___47_, Model::RootNode
+	C: "OO",2256867280944,0
+	
+	;Model::Road___55_, Model::RootNode
+	C: "OO",2256867312944,0
+	
+	;Model::Road___112_, Model::RootNode
+	C: "OO",2256867314944,0
+	
+	;Model::Road___113_, Model::RootNode
+	C: "OO",2256867284944,0
+	
+	;Model::Road___114_, Model::RootNode
+	C: "OO",2256867330944,0
+	
+	;Model::Road___115_, Model::RootNode
+	C: "OO",2256867316944,0
+	
+	;Model::Road___111_, Model::RootNode
+	C: "OO",2256867322944,0
+	
+	;Model::Road___48_, Model::RootNode
+	C: "OO",2256867328944,0
+	
+	;Model::Road___45_, Model::RootNode
+	C: "OO",2256867320944,0
+	
+	;Model::Road___36_, Model::RootNode
+	C: "OO",2256867334944,0
+	
+	;Model::Road___30_, Model::RootNode
+	C: "OO",2256867332944,0
+	
+	;Model::Road___31_, Model::RootNode
+	C: "OO",2256867336944,0
+	
+	;Model::Road___33_, Model::RootNode
+	C: "OO",2256867318944,0
+	
+	;Model::Road___25_, Model::RootNode
+	C: "OO",2256867324944,0
+	
+	;Model::Road___26_, Model::RootNode
+	C: "OO",2256867338944,0
+	
+	;Model::Road___27_, Model::RootNode
+	C: "OO",2256867326944,0
+	
+	;Model::Road___28_, Model::RootNode
+	C: "OO",2256867340944,0
+	
+	;Model::Road___50_, Model::RootNode
+	C: "OO",2256867485248,0
+	
+	;Model::Road___56_, Model::RootNode
+	C: "OO",2256867467248,0
+	
+	;Model::Road___76_, Model::RootNode
+	C: "OO",2256867469248,0
+	
+	;Model::Road___110_, Model::RootNode
+	C: "OO",2256867487248,0
+	
+	;Model::Road___78_, Model::RootNode
+	C: "OO",2256867477248,0
+	
+	;Model::Road___80_, Model::RootNode
+	C: "OO",2256867481248,0
+	
+	;Model::Road___82_, Model::RootNode
+	C: "OO",2256867483248,0
+	
+	;Model::Road___85_, Model::RootNode
+	C: "OO",2256867461248,0
+	
+	;Model::Road___86_, Model::RootNode
+	C: "OO",2256867459248,0
+	
+	;Model::Road___91_, Model::RootNode
+	C: "OO",2256867471248,0
+	
+	;Model::Road___100_, Model::RootNode
+	C: "OO",2256867489248,0
+	
+	;Model::Road___101_, Model::RootNode
+	C: "OO",2256867473248,0
+	
+	;Model::Road___92_, Model::RootNode
+	C: "OO",2256867491248,0
+	
+	;Model::Road___93_, Model::RootNode
+	C: "OO",2256867475248,0
+	
+	;Model::Road___94_, Model::RootNode
+	C: "OO",2256867479248,0
+	
+	;Model::Road___95_, Model::RootNode
+	C: "OO",2256867493248,0
+	
+	;Model::Road___96_, Model::RootNode
+	C: "OO",2256867463248,0
+	
+	;Model::Road___87_, Model::RootNode
+	C: "OO",2256867495248,0
+	
+	;Model::Road___88_, Model::RootNode
+	C: "OO",2256867465248,0
+	
+	;Model::Road___89_, Model::RootNode
+	C: "OO",2256867501248,0
+	
+	;Model::Road___97_, Model::RootNode
+	C: "OO",2256867503248,0
+	
+	;Model::Road___116_, Model::RootNode
+	C: "OO",2256867505248,0
+	
+	;Model::Road___99_, Model::RootNode
+	C: "OO",2256867509248,0
+	
+	;Model::Road___98_, Model::RootNode
+	C: "OO",2256867507248,0
+	
+	;Model::Road___117_, Model::RootNode
+	C: "OO",2256867519248,0
+	
+	;Model::Road___90_, Model::RootNode
+	C: "OO",2256867511248,0
+	
+	;Model::Road___77_, Model::RootNode
+	C: "OO",2256867497248,0
+	
+	;Model::Road___79_, Model::RootNode
+	C: "OO",2256867513248,0
+	
+	;Model::Road___83_, Model::RootNode
+	C: "OO",2256867515248,0
+	
+	;Model::Road___81_, Model::RootNode
+	C: "OO",2256867517248,0
+	
+	;Model::Road___84_, Model::RootNode
+	C: "OO",2256867521248,0
+	
+	;Model::Road___106_, Model::RootNode
+	C: "OO",2256867499248,0
+	
+	;Model::Road___107_, Model::RootNode
+	C: "OO",2256865685920,0
+	
+	;Model::Road___17_, Model::RootNode
+	C: "OO",2256865687920,0
+	
+	;Model::Road___20_, Model::RootNode
+	C: "OO",2256865689920,0
+	
+	;Model::Road___51_, Model::RootNode
+	C: "OO",2256865691920,0
+	
+	;Model::Road___18_, Model::RootNode
+	C: "OO",2256865693920,0
+	
+	;Model::Road___21_, Model::RootNode
+	C: "OO",2256865701920,0
+	
+	;Model::Road___52_, Model::RootNode
+	C: "OO",2256865699920,0
+	
+	;Model::Road___66_, Model::RootNode
+	C: "OO",2256865671920,0
+	
+	;Model::Road___102_, Model::RootNode
+	C: "OO",2256865697920,0
+	
+	;Model::Road___104_, Model::RootNode
+	C: "OO",2256865703920,0
+	
+	;Model::Road___105_, Model::RootNode
+	C: "OO",2256865673920,0
+	
+	;Model::Road___103_, Model::RootNode
+	C: "OO",2256865675920,0
+	
+	;Model::Road___23_, Model::RootNode
+	C: "OO",2256865695920,0
+	
+	;Model::Road___53_, Model::RootNode
+	C: "OO",2256865705920,0
+	
+	;Model::Road___64_, Model::RootNode
+	C: "OO",2256865707920,0
+	
+	;Model::Road___68_, Model::RootNode
+	C: "OO",2256865677920,0
+	
+	;Model::Road___70_, Model::RootNode
+	C: "OO",2256865709920,0
+	
+	;Model::Road___67_, Model::RootNode
+	C: "OO",2256865679920,0
+	
+	;Model::Road___69_, Model::RootNode
+	C: "OO",2256865711920,0
+	
+	;Model::Road___71_, Model::RootNode
+	C: "OO",2256865681920,0
+	
+	;Model::Road___38_, Model::RootNode
+	C: "OO",2256865713920,0
+	
+	;Model::Road___41_, Model::RootNode
+	C: "OO",2256865683920,0
+	
+	;Model::Road___49_, Model::RootNode
+	C: "OO",2256865745920,0
+	
+	;Model::Road___65_, Model::RootNode
+	C: "OO",2256865741920,0
+	
+	;Model::Road___108_, Model::RootNode
+	C: "OO",2256865729920,0
+	
+	;Model::Road___109_, Model::RootNode
+	C: "OO",2256865735920,0
+	
+	;Model::Road___39_, Model::RootNode
+	C: "OO",2256865731920,0
+	
+	;Model::Road___40_, Model::RootNode
+	C: "OO",2256865733920,0
+	
+	;Model::Road___43_, Model::RootNode
+	C: "OO",2256865737920,0
+	
+	;Model::Road___44_, Model::RootNode
+	C: "OO",2256865743920,0
+	
+	;Model::Road___42_, Model::RootNode
+	C: "OO",2256865739920,0
+	
+	;Model::Road___46_, Model::RootNode
+	C: "OO",2256865719920,0
+	
+	;Model::Road___14_, Model::RootNode
+	C: "OO",2256865715920,0
+	
+	;Model::Road___74_, Model::RootNode
+	C: "OO",2256865747920,0
+	
+	;Model::Road___75_, Model::RootNode
+	C: "OO",2256865717920,0
+	
+	;Model::Road___15_, Model::RootNode
+	C: "OO",2256865749920,0
+	
+	;Material::Road_1, Model::Road___11_
+	C: "OO",2256864269456,2256114665216
+	
+	;Geometry::Scene, Model::Road___11_
+	C: "OO",2256857093280,2256114665216
+	
+	;Material::Road_1, Model::Road___62_
+	C: "OO",2256864269456,2251055534144
+	
+	;Geometry::Scene, Model::Road___62_
+	C: "OO",2256857093280,2251055534144
+	
+	;Material::Road_1, Model::Road___58_
+	C: "OO",2256864269456,2251055536144
+	
+	;Geometry::Scene, Model::Road___58_
+	C: "OO",2256857093280,2251055536144
+	
+	;Material::Road_2, Model::Road___118_
+	C: "OO",2256864269856,2251055556144
+	
+	;Geometry::Scene, Model::Road___118_
+	C: "OO",2256857093280,2251055556144
+	
+	;Material::Road_1, Model::Road___60_
+	C: "OO",2256864269456,2251055538144
+	
+	;Geometry::Scene, Model::Road___60_
+	C: "OO",2256857093280,2251055538144
+	
+	;Material::Road_1, Model::Road___59_
+	C: "OO",2256864269456,2251055544144
+	
+	;Geometry::Scene, Model::Road___59_
+	C: "OO",2256857093280,2251055544144
+	
+	;Material::Road_1, Model::Road___61_
+	C: "OO",2256864269456,2251055546144
+	
+	;Geometry::Scene, Model::Road___61_
+	C: "OO",2256857093280,2251055546144
+	
+	;Material::Road, Model::Road___2_
+	C: "OO",2256864267856,2251055558144
+	
+	;Geometry::Scene, Model::Road___2_
+	C: "OO",2256857093280,2251055558144
+	
+	;Material::Road, Model::Road___3_
+	C: "OO",2256864267856,2249829801696
+	
+	;Geometry::Scene, Model::Road___3_
+	C: "OO",2256857093280,2249829801696
+	
+	;Material::Road, Model::Road___5_
+	C: "OO",2256864267856,2249829805696
+	
+	;Geometry::Scene, Model::Road___5_
+	C: "OO",2256857093280,2249829805696
+	
+	;Material::Road, Model::Road___4_
+	C: "OO",2256864267856,2249829789696
+	
+	;Geometry::Scene, Model::Road___4_
+	C: "OO",2256857093280,2249829789696
+	
+	;Material::Road, Model::Road___7_
+	C: "OO",2256864267856,2249829811696
+	
+	;Geometry::Scene, Model::Road___7_
+	C: "OO",2256857093280,2249829811696
+	
+	;Material::Road, Model::Road___6_
+	C: "OO",2256864267856,2249829815696
+	
+	;Geometry::Scene, Model::Road___6_
+	C: "OO",2256857093280,2249829815696
+	
+	;Material::Road, Model::Road___9_
+	C: "OO",2256864267856,2242475687936
+	
+	;Geometry::Scene, Model::Road___9_
+	C: "OO",2256857093280,2242475687936
+	
+	;Material::Road, Model::Road___10_
+	C: "OO",2256864267856,2242475675936
+	
+	;Geometry::Scene, Model::Road___10_
+	C: "OO",2256857093280,2242475675936
+	
+	;Material::Road, Model::Road___54_
+	C: "OO",2256864267856,2253139726624
+	
+	;Geometry::Scene, Model::Road___54_
+	C: "OO",2256857093280,2253139726624
+	
+	;Material::Road, Model::Road___8_
+	C: "OO",2256864267856,2253139738624
+	
+	;Geometry::Scene, Model::Road___8_
+	C: "OO",2256857093280,2253139738624
+	
+	;Material::Road, Model::Road___1_
+	C: "OO",2256864267856,2240826201392
+	
+	;Geometry::Scene, Model::Road___1_
+	C: "OO",2256857093280,2240826201392
+	
+	;Material::Road, Model::Road___72_
+	C: "OO",2256864267856,2256867296944
+	
+	;Geometry::Scene, Model::Road___72_
+	C: "OO",2256857093280,2256867296944
+	
+	;Material::Road, Model::Road___73_
+	C: "OO",2256864267856,2256867286944
+	
+	;Geometry::Scene, Model::Road___73_
+	C: "OO",2256857093280,2256867286944
+	
+	;Material::Road, Model::Road___12_
+	C: "OO",2256864267856,2256867282944
+	
+	;Geometry::Scene, Model::Road___12_
+	C: "OO",2256857093280,2256867282944
+	
+	;Material::Road, Model::Road___57_
+	C: "OO",2256864267856,2256867294944
+	
+	;Geometry::Scene, Model::Road___57_
+	C: "OO",2256857093280,2256867294944
+	
+	;Material::Road, Model::Road___13_
+	C: "OO",2256864267856,2256867290944
+	
+	;Geometry::Scene, Model::Road___13_
+	C: "OO",2256857093280,2256867290944
+	
+	;Material::Road, Model::Road___63_
+	C: "OO",2256864267856,2256867298944
+	
+	;Geometry::Scene, Model::Road___63_
+	C: "OO",2256857093280,2256867298944
+	
+	;Material::Road, Model::Road___16_
+	C: "OO",2256864267856,2256867300944
+	
+	;Geometry::Scene, Model::Road___16_
+	C: "OO",2256857093280,2256867300944
+	
+	;Material::Road, Model::Road___19_
+	C: "OO",2256864267856,2256867308944
+	
+	;Geometry::Scene, Model::Road___19_
+	C: "OO",2256857093280,2256867308944
+	
+	;Material::Road, Model::Road___22_
+	C: "OO",2256864267856,2256867292944
+	
+	;Geometry::Scene, Model::Road___22_
+	C: "OO",2256857093280,2256867292944
+	
+	;Material::Road, Model::Road___24_
+	C: "OO",2256864267856,2256867302944
+	
+	;Geometry::Scene, Model::Road___24_
+	C: "OO",2256857093280,2256867302944
+	
+	;Material::Road, Model::Road___29_
+	C: "OO",2256864267856,2256867304944
+	
+	;Geometry::Scene, Model::Road___29_
+	C: "OO",2256857093280,2256867304944
+	
+	;Material::Road, Model::Road___32_
+	C: "OO",2256864267856,2256867288944
+	
+	;Geometry::Scene, Model::Road___32_
+	C: "OO",2256857093280,2256867288944
+	
+	;Material::Road, Model::Road___34_
+	C: "OO",2256864267856,2256867306944
+	
+	;Geometry::Scene, Model::Road___34_
+	C: "OO",2256857093280,2256867306944
+	
+	;Material::Road, Model::Road___35_
+	C: "OO",2256864267856,2256867278944
+	
+	;Geometry::Scene, Model::Road___35_
+	C: "OO",2256857093280,2256867278944
+	
+	;Material::Road, Model::Road___37_
+	C: "OO",2256864267856,2256867310944
+	
+	;Geometry::Scene, Model::Road___37_
+	C: "OO",2256857093280,2256867310944
+	
+	;Material::Road, Model::Road___47_
+	C: "OO",2256864267856,2256867280944
+	
+	;Geometry::Scene, Model::Road___47_
+	C: "OO",2256857093280,2256867280944
+	
+	;Material::Road, Model::Road___55_
+	C: "OO",2256864267856,2256867312944
+	
+	;Geometry::Scene, Model::Road___55_
+	C: "OO",2256857093280,2256867312944
+	
+	;Material::Road, Model::Road___112_
+	C: "OO",2256864267856,2256867314944
+	
+	;Geometry::Scene, Model::Road___112_
+	C: "OO",2256857093280,2256867314944
+	
+	;Material::Road, Model::Road___113_
+	C: "OO",2256864267856,2256867284944
+	
+	;Geometry::Scene, Model::Road___113_
+	C: "OO",2256857093280,2256867284944
+	
+	;Material::Road, Model::Road___114_
+	C: "OO",2256864267856,2256867330944
+	
+	;Geometry::Scene, Model::Road___114_
+	C: "OO",2256857093280,2256867330944
+	
+	;Material::Road, Model::Road___115_
+	C: "OO",2256864267856,2256867316944
+	
+	;Geometry::Scene, Model::Road___115_
+	C: "OO",2256857093280,2256867316944
+	
+	;Material::Road, Model::Road___111_
+	C: "OO",2256864267856,2256867322944
+	
+	;Geometry::Scene, Model::Road___111_
+	C: "OO",2256857093280,2256867322944
+	
+	;Material::Road, Model::Road___48_
+	C: "OO",2256864267856,2256867328944
+	
+	;Geometry::Scene, Model::Road___48_
+	C: "OO",2256857093280,2256867328944
+	
+	;Material::Road, Model::Road___45_
+	C: "OO",2256864267856,2256867320944
+	
+	;Geometry::Scene, Model::Road___45_
+	C: "OO",2256857093280,2256867320944
+	
+	;Material::Road, Model::Road___36_
+	C: "OO",2256864267856,2256867334944
+	
+	;Geometry::Scene, Model::Road___36_
+	C: "OO",2256857093280,2256867334944
+	
+	;Material::Road, Model::Road___30_
+	C: "OO",2256864267856,2256867332944
+	
+	;Geometry::Scene, Model::Road___30_
+	C: "OO",2256857093280,2256867332944
+	
+	;Material::Road, Model::Road___31_
+	C: "OO",2256864267856,2256867336944
+	
+	;Geometry::Scene, Model::Road___31_
+	C: "OO",2256857093280,2256867336944
+	
+	;Material::Road, Model::Road___33_
+	C: "OO",2256864267856,2256867318944
+	
+	;Geometry::Scene, Model::Road___33_
+	C: "OO",2256857093280,2256867318944
+	
+	;Material::Road, Model::Road___25_
+	C: "OO",2256864267856,2256867324944
+	
+	;Geometry::Scene, Model::Road___25_
+	C: "OO",2256857093280,2256867324944
+	
+	;Material::Road, Model::Road___26_
+	C: "OO",2256864267856,2256867338944
+	
+	;Geometry::Scene, Model::Road___26_
+	C: "OO",2256857093280,2256867338944
+	
+	;Material::Road, Model::Road___27_
+	C: "OO",2256864267856,2256867326944
+	
+	;Geometry::Scene, Model::Road___27_
+	C: "OO",2256857093280,2256867326944
+	
+	;Material::Road, Model::Road___28_
+	C: "OO",2256864267856,2256867340944
+	
+	;Geometry::Scene, Model::Road___28_
+	C: "OO",2256857093280,2256867340944
+	
+	;Material::Road, Model::Road___50_
+	C: "OO",2256864267856,2256867485248
+	
+	;Geometry::Scene, Model::Road___50_
+	C: "OO",2256857093280,2256867485248
+	
+	;Material::Road, Model::Road___56_
+	C: "OO",2256864267856,2256867467248
+	
+	;Geometry::Scene, Model::Road___56_
+	C: "OO",2256857093280,2256867467248
+	
+	;Material::Road, Model::Road___76_
+	C: "OO",2256864267856,2256867469248
+	
+	;Geometry::Scene, Model::Road___76_
+	C: "OO",2256857093280,2256867469248
+	
+	;Material::Road, Model::Road___110_
+	C: "OO",2256864267856,2256867487248
+	
+	;Geometry::Scene, Model::Road___110_
+	C: "OO",2256857093280,2256867487248
+	
+	;Material::Road, Model::Road___78_
+	C: "OO",2256864267856,2256867477248
+	
+	;Geometry::Scene, Model::Road___78_
+	C: "OO",2256857093280,2256867477248
+	
+	;Material::Road, Model::Road___80_
+	C: "OO",2256864267856,2256867481248
+	
+	;Geometry::Scene, Model::Road___80_
+	C: "OO",2256857093280,2256867481248
+	
+	;Material::Road, Model::Road___82_
+	C: "OO",2256864267856,2256867483248
+	
+	;Geometry::Scene, Model::Road___82_
+	C: "OO",2256857093280,2256867483248
+	
+	;Material::Road, Model::Road___85_
+	C: "OO",2256864267856,2256867461248
+	
+	;Geometry::Scene, Model::Road___85_
+	C: "OO",2256857093280,2256867461248
+	
+	;Material::Road, Model::Road___86_
+	C: "OO",2256864267856,2256867459248
+	
+	;Geometry::Scene, Model::Road___86_
+	C: "OO",2256857093280,2256867459248
+	
+	;Material::Road, Model::Road___91_
+	C: "OO",2256864267856,2256867471248
+	
+	;Geometry::Scene, Model::Road___91_
+	C: "OO",2256857093280,2256867471248
+	
+	;Material::Road, Model::Road___100_
+	C: "OO",2256864267856,2256867489248
+	
+	;Geometry::Scene, Model::Road___100_
+	C: "OO",2256857093280,2256867489248
+	
+	;Material::Road, Model::Road___101_
+	C: "OO",2256864267856,2256867473248
+	
+	;Geometry::Scene, Model::Road___101_
+	C: "OO",2256857093280,2256867473248
+	
+	;Material::Road, Model::Road___92_
+	C: "OO",2256864267856,2256867491248
+	
+	;Geometry::Scene, Model::Road___92_
+	C: "OO",2256857093280,2256867491248
+	
+	;Material::Road, Model::Road___93_
+	C: "OO",2256864267856,2256867475248
+	
+	;Geometry::Scene, Model::Road___93_
+	C: "OO",2256857093280,2256867475248
+	
+	;Material::Road, Model::Road___94_
+	C: "OO",2256864267856,2256867479248
+	
+	;Geometry::Scene, Model::Road___94_
+	C: "OO",2256857093280,2256867479248
+	
+	;Material::Road, Model::Road___95_
+	C: "OO",2256864267856,2256867493248
+	
+	;Geometry::Scene, Model::Road___95_
+	C: "OO",2256857093280,2256867493248
+	
+	;Material::Road, Model::Road___96_
+	C: "OO",2256864267856,2256867463248
+	
+	;Geometry::Scene, Model::Road___96_
+	C: "OO",2256857093280,2256867463248
+	
+	;Material::Road, Model::Road___87_
+	C: "OO",2256864267856,2256867495248
+	
+	;Geometry::Scene, Model::Road___87_
+	C: "OO",2256857093280,2256867495248
+	
+	;Material::Road, Model::Road___88_
+	C: "OO",2256864267856,2256867465248
+	
+	;Geometry::Scene, Model::Road___88_
+	C: "OO",2256857093280,2256867465248
+	
+	;Material::Road, Model::Road___89_
+	C: "OO",2256864267856,2256867501248
+	
+	;Geometry::Scene, Model::Road___89_
+	C: "OO",2256857093280,2256867501248
+	
+	;Material::Road, Model::Road___97_
+	C: "OO",2256864267856,2256867503248
+	
+	;Geometry::Scene, Model::Road___97_
+	C: "OO",2256857093280,2256867503248
+	
+	;Material::Road, Model::Road___116_
+	C: "OO",2256864267856,2256867505248
+	
+	;Geometry::Scene, Model::Road___116_
+	C: "OO",2256857093280,2256867505248
+	
+	;Material::Road, Model::Road___99_
+	C: "OO",2256864267856,2256867509248
+	
+	;Geometry::Scene, Model::Road___99_
+	C: "OO",2256857093280,2256867509248
+	
+	;Material::Road, Model::Road___98_
+	C: "OO",2256864267856,2256867507248
+	
+	;Geometry::Scene, Model::Road___98_
+	C: "OO",2256857093280,2256867507248
+	
+	;Material::Road, Model::Road___117_
+	C: "OO",2256864267856,2256867519248
+	
+	;Geometry::Scene, Model::Road___117_
+	C: "OO",2256857093280,2256867519248
+	
+	;Material::Road, Model::Road___90_
+	C: "OO",2256864267856,2256867511248
+	
+	;Geometry::Scene, Model::Road___90_
+	C: "OO",2256857093280,2256867511248
+	
+	;Material::Road, Model::Road___77_
+	C: "OO",2256864267856,2256867497248
+	
+	;Geometry::Scene, Model::Road___77_
+	C: "OO",2256857093280,2256867497248
+	
+	;Material::Road, Model::Road___79_
+	C: "OO",2256864267856,2256867513248
+	
+	;Geometry::Scene, Model::Road___79_
+	C: "OO",2256857093280,2256867513248
+	
+	;Material::Road, Model::Road___83_
+	C: "OO",2256864267856,2256867515248
+	
+	;Geometry::Scene, Model::Road___83_
+	C: "OO",2256857093280,2256867515248
+	
+	;Material::Road, Model::Road___81_
+	C: "OO",2256864267856,2256867517248
+	
+	;Geometry::Scene, Model::Road___81_
+	C: "OO",2256857093280,2256867517248
+	
+	;Material::Road, Model::Road___84_
+	C: "OO",2256864267856,2256867521248
+	
+	;Geometry::Scene, Model::Road___84_
+	C: "OO",2256857093280,2256867521248
+	
+	;Material::Road, Model::Road___106_
+	C: "OO",2256864267856,2256867499248
+	
+	;Geometry::Scene, Model::Road___106_
+	C: "OO",2256857093280,2256867499248
+	
+	;Material::Road, Model::Road___107_
+	C: "OO",2256864267856,2256865685920
+	
+	;Geometry::Scene, Model::Road___107_
+	C: "OO",2256857093280,2256865685920
+	
+	;Material::Road, Model::Road___17_
+	C: "OO",2256864267856,2256865687920
+	
+	;Geometry::Scene, Model::Road___17_
+	C: "OO",2256857093280,2256865687920
+	
+	;Material::Road, Model::Road___20_
+	C: "OO",2256864267856,2256865689920
+	
+	;Geometry::Scene, Model::Road___20_
+	C: "OO",2256857093280,2256865689920
+	
+	;Material::Road, Model::Road___51_
+	C: "OO",2256864267856,2256865691920
+	
+	;Geometry::Scene, Model::Road___51_
+	C: "OO",2256857093280,2256865691920
+	
+	;Material::Road, Model::Road___18_
+	C: "OO",2256864267856,2256865693920
+	
+	;Geometry::Scene, Model::Road___18_
+	C: "OO",2256857093280,2256865693920
+	
+	;Material::Road, Model::Road___21_
+	C: "OO",2256864267856,2256865701920
+	
+	;Geometry::Scene, Model::Road___21_
+	C: "OO",2256857093280,2256865701920
+	
+	;Material::Road, Model::Road___52_
+	C: "OO",2256864267856,2256865699920
+	
+	;Geometry::Scene, Model::Road___52_
+	C: "OO",2256857093280,2256865699920
+	
+	;Material::Road, Model::Road___66_
+	C: "OO",2256864267856,2256865671920
+	
+	;Geometry::Scene, Model::Road___66_
+	C: "OO",2256857093280,2256865671920
+	
+	;Material::Road, Model::Road___102_
+	C: "OO",2256864267856,2256865697920
+	
+	;Geometry::Scene, Model::Road___102_
+	C: "OO",2256857093280,2256865697920
+	
+	;Material::Road, Model::Road___104_
+	C: "OO",2256864267856,2256865703920
+	
+	;Geometry::Scene, Model::Road___104_
+	C: "OO",2256857093280,2256865703920
+	
+	;Material::Road, Model::Road___105_
+	C: "OO",2256864267856,2256865673920
+	
+	;Geometry::Scene, Model::Road___105_
+	C: "OO",2256857093280,2256865673920
+	
+	;Material::Road, Model::Road___103_
+	C: "OO",2256864267856,2256865675920
+	
+	;Geometry::Scene, Model::Road___103_
+	C: "OO",2256857093280,2256865675920
+	
+	;Material::Road, Model::Road___23_
+	C: "OO",2256864267856,2256865695920
+	
+	;Geometry::Scene, Model::Road___23_
+	C: "OO",2256857093280,2256865695920
+	
+	;Material::Road, Model::Road___53_
+	C: "OO",2256864267856,2256865705920
+	
+	;Geometry::Scene, Model::Road___53_
+	C: "OO",2256857093280,2256865705920
+	
+	;Material::Road, Model::Road___64_
+	C: "OO",2256864267856,2256865707920
+	
+	;Geometry::Scene, Model::Road___64_
+	C: "OO",2256857093280,2256865707920
+	
+	;Material::Road, Model::Road___68_
+	C: "OO",2256864267856,2256865677920
+	
+	;Geometry::Scene, Model::Road___68_
+	C: "OO",2256857093280,2256865677920
+	
+	;Material::Road, Model::Road___70_
+	C: "OO",2256864267856,2256865709920
+	
+	;Geometry::Scene, Model::Road___70_
+	C: "OO",2256857093280,2256865709920
+	
+	;Material::Road, Model::Road___67_
+	C: "OO",2256864267856,2256865679920
+	
+	;Geometry::Scene, Model::Road___67_
+	C: "OO",2256857093280,2256865679920
+	
+	;Material::Road, Model::Road___69_
+	C: "OO",2256864267856,2256865711920
+	
+	;Geometry::Scene, Model::Road___69_
+	C: "OO",2256857093280,2256865711920
+	
+	;Material::Road, Model::Road___71_
+	C: "OO",2256864267856,2256865681920
+	
+	;Geometry::Scene, Model::Road___71_
+	C: "OO",2256857093280,2256865681920
+	
+	;Material::Road, Model::Road___38_
+	C: "OO",2256864267856,2256865713920
+	
+	;Geometry::Scene, Model::Road___38_
+	C: "OO",2256857093280,2256865713920
+	
+	;Material::Road, Model::Road___41_
+	C: "OO",2256864267856,2256865683920
+	
+	;Geometry::Scene, Model::Road___41_
+	C: "OO",2256857093280,2256865683920
+	
+	;Material::Road, Model::Road___49_
+	C: "OO",2256864267856,2256865745920
+	
+	;Geometry::Scene, Model::Road___49_
+	C: "OO",2256857093280,2256865745920
+	
+	;Material::Road, Model::Road___65_
+	C: "OO",2256864267856,2256865741920
+	
+	;Geometry::Scene, Model::Road___65_
+	C: "OO",2256857093280,2256865741920
+	
+	;Material::Road, Model::Road___108_
+	C: "OO",2256864267856,2256865729920
+	
+	;Geometry::Scene, Model::Road___108_
+	C: "OO",2256857093280,2256865729920
+	
+	;Material::Road, Model::Road___109_
+	C: "OO",2256864267856,2256865735920
+	
+	;Geometry::Scene, Model::Road___109_
+	C: "OO",2256857093280,2256865735920
+	
+	;Material::Road, Model::Road___39_
+	C: "OO",2256864267856,2256865731920
+	
+	;Geometry::Scene, Model::Road___39_
+	C: "OO",2256857093280,2256865731920
+	
+	;Material::Road, Model::Road___40_
+	C: "OO",2256864267856,2256865733920
+	
+	;Geometry::Scene, Model::Road___40_
+	C: "OO",2256857093280,2256865733920
+	
+	;Material::Road, Model::Road___43_
+	C: "OO",2256864267856,2256865737920
+	
+	;Geometry::Scene, Model::Road___43_
+	C: "OO",2256857093280,2256865737920
+	
+	;Material::Road, Model::Road___44_
+	C: "OO",2256864267856,2256865743920
+	
+	;Geometry::Scene, Model::Road___44_
+	C: "OO",2256857093280,2256865743920
+	
+	;Material::Road, Model::Road___42_
+	C: "OO",2256864267856,2256865739920
+	
+	;Geometry::Scene, Model::Road___42_
+	C: "OO",2256857093280,2256865739920
+	
+	;Material::Road, Model::Road___46_
+	C: "OO",2256864267856,2256865719920
+	
+	;Geometry::Scene, Model::Road___46_
+	C: "OO",2256857093280,2256865719920
+	
+	;Material::Road, Model::Road___14_
+	C: "OO",2256864267856,2256865715920
+	
+	;Geometry::Scene, Model::Road___14_
+	C: "OO",2256857093280,2256865715920
+	
+	;Material::Road, Model::Road___74_
+	C: "OO",2256864267856,2256865747920
+	
+	;Geometry::Scene, Model::Road___74_
+	C: "OO",2256857093280,2256865747920
+	
+	;Material::Road, Model::Road___75_
+	C: "OO",2256864267856,2256865717920
+	
+	;Geometry::Scene, Model::Road___75_
+	C: "OO",2256857093280,2256865717920
+	
+	;Material::Road, Model::Road___15_
+	C: "OO",2256864267856,2256865749920
+	
+	;Geometry::Scene, Model::Road___15_
+	C: "OO",2256857093280,2256865749920
+	
+	;Texture::DiffuseColor_Texture, Material::Road_1
+	C: "OO",2251293301024,2256864269456
+	
+	;Texture::DiffuseColor_Texture, Material::Road_1
+	C: "OP",2251293301024,2256864269456, "DiffuseColor"
+	
+	;Video::DiffuseColor_Texture, Texture::DiffuseColor_Texture
+	C: "OO",2251293308224,2251293301024
+	
+	;Texture::DiffuseColor_Texture_1, Material::Road_2
+	C: "OO",2251293307264,2256864269856
+	
+	;Texture::DiffuseColor_Texture_1, Material::Road_2
+	C: "OP",2251293307264,2256864269856, "DiffuseColor"
+	
+	;Video::DiffuseColor_Texture_1, Texture::DiffuseColor_Texture_1
+	C: "OO",2251293301504,2251293307264
+	
+	;Texture::DiffuseColor_Texture_2, Material::Road
+	C: "OO",2251293314944,2256864267856
+	
+	;Texture::DiffuseColor_Texture_2, Material::Road
+	C: "OP",2251293314944,2256864267856, "DiffuseColor"
+	
+	;Video::DiffuseColor_Texture_2, Texture::DiffuseColor_Texture_2
+	C: "OO",2251293301984,2251293314944
+}
+;Takes section
+;----------------------------------------------------
+
+Takes:  {
+	Current: ""
+}
