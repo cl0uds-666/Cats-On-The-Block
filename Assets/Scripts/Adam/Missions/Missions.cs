@@ -25,7 +25,7 @@ public class Missions : MonoBehaviour
     public GameObject Player;
     public float PromptTime, DistanceFromEnemy;
     public Image LT, RT, LB, RB, Pause;
-    public Transform[] Mission1Points, Mission2Points, Mission3Points, Mission4Points;
+    public Transform[] Mission1EnemyPoints, Mission1NPCPoints, Mission2Points, Mission3Points, Mission4Points;
 
     void Start()
     {
@@ -42,7 +42,7 @@ public class Missions : MonoBehaviour
                 if (Mission1Enemy != null)
                 {
                     MissionIcon.transform.position = new Vector3(Mission1Enemy.transform.position.x, MissionIcon.transform.position.y, Mission1Enemy.transform.position.z);
-                    LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission1Points);
+                    LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission1EnemyPoints);
 
                     if (Vector3.Distance(transform.position, Mission1Enemy.transform.position) < DistanceFromEnemy)
                     {
@@ -64,6 +64,7 @@ public class Missions : MonoBehaviour
                 }
 
                 MissionIcon.transform.position = new Vector3(MissionNPC.transform.position.x, MissionIcon.transform.position.y, MissionNPC.transform.position.z);
+                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission1NPCPoints);
             }
         }
 
@@ -72,6 +73,7 @@ public class Missions : MonoBehaviour
             if (Mission2Enemy != null)
             {
                 MissionIcon.transform.position = new Vector3(Mission2Enemy.transform.position.x, MissionIcon.transform.position.y, Mission2Enemy.transform.position.z);
+                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission2Points);
             }
 
             else
@@ -93,6 +95,7 @@ public class Missions : MonoBehaviour
             if (Mission3ParkEnemies.Count > 0)
             {
                 MissionIcon.transform.position = new Vector3(ParkIconSpawn.transform.position.x, MissionIcon.transform.position.y, ParkIconSpawn.transform.position.z);
+                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission3Points);
             }
 
             else
@@ -107,6 +110,7 @@ public class Missions : MonoBehaviour
             if (Mission4ConstructionEnemies.Count > 0)
             {
                 MissionIcon.transform.position = new Vector3(ConstructionIconSpawn.transform.position.x, MissionIcon.transform.position.y, ConstructionIconSpawn.transform.position.z);
+                LineRenderer.GetComponent<MissionLinepath>().SetLine(Mission4Points);
             }
 
             else
@@ -119,6 +123,7 @@ public class Missions : MonoBehaviour
         else
         {
             MissionIcon.SetActive(false);
+            LineRenderer?.SetActive(false);
         }
     }
 
