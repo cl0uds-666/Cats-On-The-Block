@@ -1,29 +1,46 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XInput;
 
 public class Open_Pause : MonoBehaviour
 {
     public GameObject Panel, UnlockScreen, MiniMap;
-    void OnPause(InputValue value)
-    {
-        print("Pause");
+    private bool IsPressed;
 
-        if (!UnlockScreen.activeSelf)
+    private void Update()
+    {
+        if (XInputController.current != null)
         {
-            if (Panel.activeSelf)
+            if (XInputController.current.startButton.isPressed)
             {
-                GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
-                Panel.SetActive(false);
-                MiniMap.SetActive(true);
-                Time.timeScale = 1.0f;
+                if (!IsPressed)
+                {
+                    IsPressed = true;
+
+                    if (!UnlockScreen.activeSelf)
+                    {
+                        if (Panel.activeSelf)
+                        {
+                            GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
+                            Panel.SetActive(false);
+                            MiniMap.SetActive(true);
+                            Time.timeScale = 1.0f;
+                        }
+
+                        else
+                        {
+                            GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
+                            Panel.SetActive(true);
+                            MiniMap.SetActive(false);
+                            Time.timeScale = 0f;
+                        }
+                    }
+                }
             }
 
             else
             {
-                GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
-                Panel.SetActive(true);
-                MiniMap.SetActive(false);
-                Time.timeScale = 0f;
+                IsPressed = false;
             }
         }
     }
