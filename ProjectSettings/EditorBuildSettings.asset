@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main Menu/GameoverScreen.unity
     guid: 94e75e727ebc84048a021420b8a5e842
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: f5b7223be6d97a74a96ad63cb8ca1514
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7da6deb6182ae8946864edfb58bdf7ca, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
