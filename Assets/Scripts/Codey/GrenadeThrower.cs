@@ -132,7 +132,7 @@ public class GrenadeThrower : MonoBehaviour
     {
         if (heldGrenade != null)
         {
-            // Instantiate explosion effect at the grenade's position
+            // Instantiate explosion effect at the grenades position
             if (explosionPrefab != null)
             {
                 Instantiate(explosionPrefab, heldGrenade.transform.position, Quaternion.identity);

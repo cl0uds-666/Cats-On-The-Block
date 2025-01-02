@@ -28,14 +28,13 @@ public class PlayerRaycastShooting : MonoBehaviour
         {
             Debug.Log("Hit: " + hit.collider.name);
 
-            // Optional: Apply damage if the hit object has a health component
+            // Apply damage if the hit object has a health component
             //Player_Stats targetStats = hit.collider.GetComponent<Player_Stats>();
             //if (targetStats != null)
             //{
-            //    targetStats.Health -= 10;  // Apply damage to the target (adjust as needed)
+            //    targetStats.Health -= 10;  // Apply damage to the target
             //}
 
-            // Optional: Add hit effects (e.g., decals, particles)
         }
         else
         {

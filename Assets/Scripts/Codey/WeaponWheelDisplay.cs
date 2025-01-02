@@ -25,7 +25,7 @@ public class WeaponWheelDisplay : MonoBehaviour
 
     void Update()
     {
-        // Optionally, call UpdateWeaponImage() only when the weapon changes
+        // Call UpdateWeaponImage() only when the weapon changes
         UpdateWeaponImage();
     }
 

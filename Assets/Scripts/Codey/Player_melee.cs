@@ -5,7 +5,7 @@ public class Player_melee : MonoBehaviour
 {
     public bool Scratch;                          // Flag to trigger attack
     public int Damage;                            // Damage dealt by melee attack
-    public float AttackTimer;                     // Attack timer (if needed)
+    public float AttackTimer;                     // Attack timer
     private GameObject Enemy;                     // Reference to the enemy being attacked
     public float AttackForce;                     // Force applied to push enemy
     private bool PushEnemy;                       // Flag to indicate if enemy should be pushed
