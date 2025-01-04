@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Respawn_Button_script : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Respawn_Button_script : MonoBehaviour
 
     public void OnRespawnButton ()
     {
+        SceneManager.LoadScene("Block out");
         var missions = FindAnyObjectByType<Missions>();
         missions.Respawn();
         print("Reapwnn");
