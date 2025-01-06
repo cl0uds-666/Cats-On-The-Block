@@ -83575,6 +83575,10 @@ PrefabInstance:
       value: Plane
       objectReference: {fileID: 0}
     - target: {fileID: 428224082219925550, guid: c37dc7b017b371144a1eb71e9765125d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 428224082219925550, guid: c37dc7b017b371144a1eb71e9765125d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
