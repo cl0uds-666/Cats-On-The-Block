@@ -9,6 +9,7 @@ public class bullet_colision : MonoBehaviour
     private void Start()
     {
         Player = GameObject.Find("Player");
+        Player.GetComponent<BulletVibration>().CanVibrate = true;
 
         if (Player.GetComponent<WeaponSwitching>().currentWeaponIndex == 1)
         {

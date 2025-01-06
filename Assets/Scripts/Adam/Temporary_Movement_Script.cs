@@ -64,7 +64,7 @@ public class Movement : MonoBehaviour
 
          if (XInputController.current != null)
         {
-            if (XInputController.current.bButton.isPressed)
+            if (XInputController.current.bButton.isPressed && CanDash)
             {
                 StartCoroutine(DashTimer());
             }

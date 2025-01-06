@@ -125,6 +125,9 @@ public class Missions : MonoBehaviour
 
         else
         {
+            StickPrompts.SetActive(false);
+            RightPrompts.SetActive(false);
+            LeftPrompts.SetActive(false);
             MissionIcon.SetActive(false);
             LineRenderer?.SetActive(false);
         }

@@ -57650,7 +57650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4693068161900402620, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
       propertyPath: DashCoolDown
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4976592130631200738, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57963,6 +57963,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1525421523988915452, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1504651850}
+    - targetCorrespondingSourceObject: {fileID: 1525421523988915452, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1504651865}
   m_SourcePrefab: {fileID: 100100000, guid: 820f07c3c7b690c4089a8afb23487743, type: 3}
 --- !u!1 &1504651753 stripped
 GameObject:
@@ -58097,6 +58100,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Source: {fileID: 927174621}
+--- !u!114 &1504651865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504651753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3341ea781a5c7bb4e92c9907d1122583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VibrationTime: 0.1
+  CanVibrate: 0
 --- !u!1001 &1506718158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58688,9 +58705,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 927761660656987462, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2071441630}
-    - targetCorrespondingSourceObject: {fileID: 927761660656987462, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 137253665}
     - targetCorrespondingSourceObject: {fileID: 927761660656987462, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
       insertIndex: -1
@@ -58713,6 +58727,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 927761660656987462, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2063712198}
+    - targetCorrespondingSourceObject: {fileID: 927761660656987462, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2071441630}
     - targetCorrespondingSourceObject: {fileID: 927761660656987462, guid: 8c0839e6a2d45114a992235f87dfe350, type: 3}
       insertIndex: -1
       addedObject: {fileID: 518211369}
