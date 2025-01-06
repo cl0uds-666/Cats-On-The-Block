@@ -24,7 +24,7 @@ public class Missions : MonoBehaviour
     public Vector3 CheckpointPosition;
     public GameObject Player;
     public float PromptTime, DistanceFromEnemy;
-    public Image LT, RT, LB, RB, Pause;
+    public Image LT, RT, LB, RB, Pause, B, LeftRB, LS;
     public Transform[] Mission1EnemyPoints, Mission1NPCPoints, Mission2Points, Mission3Points, Mission4Points;
 
     void Start()
@@ -46,9 +46,10 @@ public class Missions : MonoBehaviour
 
                     if (Vector3.Distance(transform.position, Mission1Enemy.transform.position) < DistanceFromEnemy)
                     {
-                        RightPrompts.GetComponent<Image>().sprite = RT.sprite;
                         A.SetActive(false);
                         RightPromptText.gameObject.SetActive(true);
+                        B.gameObject.SetActive(false);
+                        RT.gameObject.SetActive(true);
                         RightPrompts.SetActive(true);
                     }
                 }
@@ -82,8 +83,10 @@ public class Missions : MonoBehaviour
                 UnlockScreen.SetActive(true);
                 LeftPromptText.text = "Swap Weapon";
                 RightPromptText.text = "Shoot";
-                RightPrompts.GetComponent<Image>().sprite = RT.sprite;
-                LeftPrompts.GetComponent<Image>().sprite = RB.sprite;
+                RT.gameObject.SetActive(true);
+                LeftRB.gameObject.SetActive(true);
+                LB.gameObject.SetActive(true);
+                LS.gameObject.SetActive(false);
                 RightPrompts.SetActive(true);
                 LeftPrompts.SetActive(true);
                 SelectMission();

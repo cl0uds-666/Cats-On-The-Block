@@ -68,7 +68,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ReloadAmmo(maxAmmo); // Reload to full ammo; can be adjusted as needed
+            ReloadAmmo(maxAmmo); // Reload to full ammo
         }
     }
 

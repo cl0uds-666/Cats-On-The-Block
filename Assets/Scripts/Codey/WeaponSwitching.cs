@@ -6,7 +6,7 @@ public class WeaponSwitching : MonoBehaviour
 {
     public List<GameObject> weapons;                // Array of weapon GameObjects
     public int currentWeaponIndex = 0;          // Index of the currently selected weapon
-    public WaterBar waterBarUI;                 // Reference to the WaterBar UI script (set in Inspector)
+    public WaterBar waterBarUI;                 // Reference to the WaterBar UI script 
     public GameObject WheelImage;
     private PlayerProjectileShooting currentShootingScript;
     private GrenadeThrower currentGrenadeThrower;
@@ -56,7 +56,7 @@ public class WeaponSwitching : MonoBehaviour
             SelectWeapon(currentWeaponIndex);
         }
 
-        // Xbox Controller support for weapon switching:
+        // Xbox Controller support for weapon switching
         if (Input.GetButtonDown("Xbox_LB"))
         {
             currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Count) % weapons.Count;

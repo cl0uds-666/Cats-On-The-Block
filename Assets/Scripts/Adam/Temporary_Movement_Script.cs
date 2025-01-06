@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XInput;
 
 public class Movement : MonoBehaviour
 {
@@ -60,7 +62,13 @@ public class Movement : MonoBehaviour
 
         }
 
-         
+         if (XInputController.current != null)
+        {
+            if (XInputController.current.bButton.isPressed)
+            {
+                StartCoroutine(DashTimer());
+            }
+        }
     }
 
     private void FixedUpdate()

@@ -31,7 +31,7 @@ public class WaterBar : MonoBehaviour
 
     private void UpdateCurrentWeapon()
     {
-        // Get the active weapon's PlayerCombat component
+        // Get the active weapons PlayerCombat component
         PlayerProjectileShooting activeWeapon = weaponSwitching.GetActiveWeapon();
 
         if (activeWeapon != null)

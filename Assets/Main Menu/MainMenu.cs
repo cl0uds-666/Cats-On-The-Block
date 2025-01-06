@@ -3,10 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private void Start()
-    {
-        
-    }
     public void OnPlayButton () 
    {
 	SceneManager.LoadScene("Block out");
@@ -22,6 +18,11 @@ public class MainMenu : MonoBehaviour
    {
     Application.Quit();
    }
+
+    public void OnRestartButton()
+    {
+        SceneManager.LoadScene("Intro");
+    }
 
     public void OnAccessibilityButton()
     {
