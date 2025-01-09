@@ -40,6 +40,8 @@ public class UnlockScreen : MonoBehaviour
     {
         if (XInputController.current != null)
         {
+            XInputController.current.SetMotorSpeeds(0f, 0f);
+
             if (XInputController.current.bButton.isPressed)
             {
                 Skip();

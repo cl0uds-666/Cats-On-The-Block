@@ -1,8 +1,17 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XInput;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    private void Start()
+    {
+        if (XInputController.current != null)
+        {
+            XInputController.current.SetMotorSpeeds(0f, 0f);
+        }
+    }
     public void OnPlayButton () 
    {
 	SceneManager.LoadScene("Block out");
