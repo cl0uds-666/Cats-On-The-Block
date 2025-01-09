@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Missions : MonoBehaviour
@@ -125,11 +125,7 @@ public class Missions : MonoBehaviour
 
         else
         {
-            StickPrompts.SetActive(false);
-            RightPrompts.SetActive(false);
-            LeftPrompts.SetActive(false);
-            MissionIcon.SetActive(false);
-            LineRenderer?.SetActive(false);
+            SceneManager.LoadScene("Level Complete");
         }
     }
 
