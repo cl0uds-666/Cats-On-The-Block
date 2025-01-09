@@ -1,0 +1,31 @@
+The Game:
+
+Cats on the block is an action packed third person shooter. You play a stray cat named Vinny, who wants to get revenge on the cat mafia who killed his family. Follow missions where you can unlock more weapons as you go.
+
+Controls:
+
+Sticks to move and look
+A to jump
+B to dash and to enter cover
+Click left stick to sprint
+RT to shoot/scratch
+RB/LB to switch weapon
+Menu to pause
+
+Bugs:
+
+Z fighting
+Walking animation constantly running
+Can only quit to menu from options
+Shooting through walls
+Line renderer has no texture
+
+References to third party assets:
+
+Cross Punch animation - Mixamo (no date) Mixamo. Available at: https://www.mixamo.com/#/?page=1&query=cross+punch&type=Motion%2CMotionPack (Accessed: 09 January 2025).
+
+Breathing idle animation - Mixamo (no date a) Mixamo. Available at: https://www.mixamo.com/#/?page=1&query=idle&type=Motion%2CMotionPack (Accessed: 09 January 2025).
+
+Walking animation Mixamo (no date a) Mixamo. Available at: https://www.mixamo.com/#/?page=1&query=Walking&type=Motion%2CMotionPack (Accessed: 09 January 2025).
+
+FREE Keyboard and controllers prompts pack - Xelu (2021) Free keyboard and controllers prompts pack, OpenGameArt.org. Available at: https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack (Accessed: 09 January 2025).
